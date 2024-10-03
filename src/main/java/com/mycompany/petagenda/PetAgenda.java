@@ -6,7 +6,7 @@ package com.mycompany.petagenda;
 
 /**
  *
- * @author k.andrade
+ * @author c.nunes
  */
 public class PetAgenda {
 

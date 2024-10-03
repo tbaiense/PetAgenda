@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1920, 1080]"/>
+    </Property>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="743" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jlbl_bairro" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jtxtf_campo_bairro" pref="236" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlbl_cidade" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtf_campo_cidade" min="-2" pref="219" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="704" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jlbl_cpf" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
+                                      <Component id="jlbl_telefone" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jlbl_rua" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlbl_nome_cliente" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="jlbl_servico_contratado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jtxtf_campo_cpf" min="-2" pref="224" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jtxtf_campo_servico" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jtxtf_campo_telefone" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jtxtf_campo_cep" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                          <Component id="jlbl_cep" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jlbl_numero" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jtxtf_campo_num" min="-2" pref="90" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jtxtf_campo_nome_cliente" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtxtf_campo_rua" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
+              <Component id="jlbl_nome_cliente" min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jtxtf_campo_nome_cliente" min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlbl_cpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlbl_telefone" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtf_campo_telefone" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtxtf_campo_cpf" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlbl_servico_contratado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlbl_cep" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlbl_numero" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtf_campo_servico" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
+                  <Component id="jtxtf_campo_cep" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                  <Component id="jtxtf_campo_num" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlbl_rua" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jtxtf_campo_rua" min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlbl_cidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlbl_bairro" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jtxtf_campo_cidade" pref="55" max="32767" attributes="0"/>
+                  <Component id="jtxtf_campo_bairro" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="495" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jlbl_nome_cliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nome Completo do Compliente:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtf_campo_nome_cliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="campo_nome_cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbl_cpf">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CPF:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtf_campo_cpf">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="campo_cpf"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbl_telefone">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Telefone:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtf_campo_telefone">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="campo_telefone"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtxtf_campo_telefoneActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbl_servico_contratado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Servi&#xe7;o contratado:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtf_campo_servico">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="campo_servico_contratado"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbl_cep">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CEP:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbl_numero">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xb0;:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtf_campo_cep">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="campo_cep"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtf_campo_num">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="campo_numero"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbl_rua">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Rua:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtf_campo_rua">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="campo_rua"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbl_bairro">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bairro:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtf_campo_bairro">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="campo_bairro"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbl_cidade">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cidade:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtf_campo_cidade">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="campo_cidade"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
