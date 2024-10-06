@@ -27,35 +27,160 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jlbl_cadastrarUsuario = new javax.swing.JLabel();
+        jlbl_nome = new javax.swing.JLabel();
+        jtxt_CPF = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jtxt_nome = new javax.swing.JTextField();
+        jlbl_login = new javax.swing.JLabel();
+        jtxt_login = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jtxt_senha = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setFont(new java.awt.Font("Merriweather", 0, 12)); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(949, 778));
+
+        jlbl_cadastrarUsuario.setFont(new java.awt.Font("Merriweather", 0, 45)); // NOI18N
+        jlbl_cadastrarUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cadastrarUsuario.setText("Cadastrar usuário");
+
+        jlbl_nome.setFont(new java.awt.Font("Merriweather", 0, 20)); // NOI18N
+        jlbl_nome.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_nome.setText("Nome:");
+
+        jtxt_CPF.setMinimumSize(new java.awt.Dimension(717, 62));
+        jtxt_CPF.setPreferredSize(new java.awt.Dimension(717, 62));
+        jtxt_CPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_CPFActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Merriweather", 0, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("CPF:");
+
+        jtxt_nome.setMinimumSize(new java.awt.Dimension(717, 62));
+        jtxt_nome.setPreferredSize(new java.awt.Dimension(717, 62));
+        jtxt_nome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_nomeActionPerformed(evt);
+            }
+        });
+
+        jlbl_login.setFont(new java.awt.Font("Merriweather", 0, 20)); // NOI18N
+        jlbl_login.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_login.setText("Login:");
+
+        jtxt_login.setMinimumSize(new java.awt.Dimension(717, 62));
+        jtxt_login.setPreferredSize(new java.awt.Dimension(717, 62));
+        jtxt_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_loginActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Merriweather", 0, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("SENHA (8 dígitos, incluindo números e caracteres especiais):");
+
+        jtxt_senha.setMinimumSize(new java.awt.Dimension(717, 62));
+        jtxt_senha.setPreferredSize(new java.awt.Dimension(717, 62));
+        jtxt_senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_senhaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2033, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtxt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(jlbl_login)
+                            .addComponent(jtxt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(jlbl_nome)
+                            .addComponent(jtxt_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(259, 259, 259)
+                        .addComponent(jlbl_cadastrarUsuario)))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1337, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jlbl_cadastrarUsuario)
+                .addGap(181, 181, 181)
+                .addComponent(jlbl_nome)
+                .addGap(18, 18, 18)
+                .addComponent(jtxt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jtxt_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jlbl_login)
+                .addGap(18, 18, 18)
+                .addComponent(jtxt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jtxt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(489, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(482, 482, 482))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtxt_CPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_CPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_CPFActionPerformed
+
+    private void jtxt_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_nomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_nomeActionPerformed
+
+    private void jtxt_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_loginActionPerformed
+
+    private void jtxt_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_senhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_senhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,6 +218,15 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jlbl_cadastrarUsuario;
+    private javax.swing.JLabel jlbl_login;
+    private javax.swing.JLabel jlbl_nome;
+    private javax.swing.JTextField jtxt_CPF;
+    private javax.swing.JTextField jtxt_login;
+    private javax.swing.JTextField jtxt_nome;
+    private javax.swing.JTextField jtxt_senha;
     // End of variables declaration//GEN-END:variables
 }
