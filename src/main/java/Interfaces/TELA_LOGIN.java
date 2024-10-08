@@ -26,73 +26,69 @@ public class TELA_LOGIN extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel_Usuario = new javax.swing.JLabel();
-        jLabel_Senha = new javax.swing.JLabel();
-        jPasswordField_SENHA = new javax.swing.JPasswordField();
-        jTextField_LoginUsuario = new javax.swing.JTextField();
-        jButton_Login = new javax.swing.JButton();
-        jButton_Cadastrar = new javax.swing.JButton();
+        jButton_ENTRAR = new javax.swing.JButton();
+        Cadastrar = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jLabel_LOGIN = new javax.swing.JLabel();
+        jLabel_SENHA = new javax.swing.JLabel();
+        jLabel_ImgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel_Usuario.setText("Usuário");
-
-        jLabel_Senha.setText("Senha");
-
-        jPasswordField_SENHA.setText("jPasswordField1");
-
-        jTextField_LoginUsuario.setText("MasterAdmin");
-        jTextField_LoginUsuario.addActionListener(new java.awt.event.ActionListener() {
+        jButton_ENTRAR.setText("Entrar");
+        jButton_ENTRAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_LoginUsuarioActionPerformed(evt);
+                jButton_ENTRARActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton_ENTRAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 110, 30));
 
-        jButton_Login.setText("Entrar");
+        Cadastrar.setText("Cadastrar");
+        getContentPane().add(Cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 110, 30));
 
-        jButton_Cadastrar.setText("Cadastrar");
+        jTextField1.setText("TheMasterOfTheMasterAdmin");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 240, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(802, 802, 802)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton_Cadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_Login))
-                    .addComponent(jTextField_LoginUsuario, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPasswordField_SENHA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel_Senha, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel_Usuario, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(936, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(345, 345, 345)
-                .addComponent(jLabel_Usuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField_LoginUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel_Senha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField_SENHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_Login)
-                    .addComponent(jButton_Cadastrar))
-                .addContainerGap(554, Short.MAX_VALUE))
-        );
+        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 240, 40));
+
+        jLabel_LOGIN.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel_LOGIN.setText("Login");
+        getContentPane().add(jLabel_LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 60, 20));
+
+        jLabel_SENHA.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel_SENHA.setText("Senha");
+        getContentPane().add(jLabel_SENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
+
+        jLabel_ImgFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\d.rodrigues\\Desktop\\Tela_LoginTeste.png")); // NOI18N
+        getContentPane().add(jLabel_ImgFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1280, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField_LoginUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_LoginUsuarioActionPerformed
+    private void jButton_ENTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ENTRARActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_LoginUsuarioActionPerformed
+    }//GEN-LAST:event_jButton_ENTRARActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,11 +126,12 @@ public class TELA_LOGIN extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_Cadastrar;
-    private javax.swing.JButton jButton_Login;
-    private javax.swing.JLabel jLabel_Senha;
-    private javax.swing.JLabel jLabel_Usuario;
-    private javax.swing.JPasswordField jPasswordField_SENHA;
-    private javax.swing.JTextField jTextField_LoginUsuario;
+    private javax.swing.JButton Cadastrar;
+    private javax.swing.JButton jButton_ENTRAR;
+    private javax.swing.JLabel jLabel_ImgFundo;
+    private javax.swing.JLabel jLabel_LOGIN;
+    private javax.swing.JLabel jLabel_SENHA;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
