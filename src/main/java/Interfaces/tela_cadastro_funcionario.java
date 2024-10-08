@@ -26,42 +26,65 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jlbl_nome_funcionario = new javax.swing.JLabel();
-        field_nome_funcionario = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         jlbl_cpf = new javax.swing.JLabel();
-        field_cpf = new javax.swing.JTextField();
-        jlbl_telefone = new javax.swing.JLabel();
+        jlbl_rua = new javax.swing.JLabel();
+        jlbl_cidade = new javax.swing.JLabel();
+        jlbl_nome_funcionario = new javax.swing.JLabel();
+        jlbl_bairro = new javax.swing.JLabel();
+        field_cep = new javax.swing.JTextField();
+        field_bairro = new javax.swing.JTextField();
+        jlbl_numero = new javax.swing.JLabel();
         field_telefone = new javax.swing.JTextField();
+        field_cidade = new javax.swing.JTextField();
+        field_cpf = new javax.swing.JTextField();
         jlbl_servico_prestado = new javax.swing.JLabel();
         field_servico_prestado = new javax.swing.JTextField();
-        jlbl_cep = new javax.swing.JLabel();
-        field_cep = new javax.swing.JTextField();
-        jlbl_numero = new javax.swing.JLabel();
+        field_nome_funcionario = new javax.swing.JTextField();
+        jlbl_telefone = new javax.swing.JLabel();
         field_numero = new javax.swing.JTextField();
-        jlbl_rua = new javax.swing.JLabel();
+        jlbl_cep = new javax.swing.JLabel();
         field_rua = new javax.swing.JTextField();
-        jlbl_bairro = new javax.swing.JLabel();
-        field_bairro = new javax.swing.JTextField();
-        jlbl_cidade = new javax.swing.JLabel();
-        field_cidade = new javax.swing.JTextField();
+        jbutton_cadastrar = new javax.swing.JButton();
+        jlbl_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlbl_nome_funcionario.setText("Nome do funcionário:");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        field_nome_funcionario.setPreferredSize(new java.awt.Dimension(653, 60));
-        field_nome_funcionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_nome_funcionarioActionPerformed(evt);
-            }
-        });
-
+        jlbl_cpf.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jlbl_cpf.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_cpf.setText("CPF:");
 
-        field_cpf.setPreferredSize(new java.awt.Dimension(320, 60));
+        jlbl_rua.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jlbl_rua.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_rua.setText("Rua:");
 
-        jlbl_telefone.setText("Telefone:");
+        jlbl_cidade.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jlbl_cidade.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cidade.setText("Cidade:");
 
+        jlbl_nome_funcionario.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jlbl_nome_funcionario.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_nome_funcionario.setText("Nome do funcionário:");
+
+        jlbl_bairro.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jlbl_bairro.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_bairro.setText("Bairro:");
+
+        field_cep.setBackground(new java.awt.Color(255, 255, 255));
+        field_cep.setPreferredSize(new java.awt.Dimension(200, 60));
+
+        field_bairro.setBackground(new java.awt.Color(255, 255, 255));
+        field_bairro.setPreferredSize(new java.awt.Dimension(320, 60));
+
+        jlbl_numero.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jlbl_numero.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_numero.setText("N°:");
+
+        field_telefone.setBackground(new java.awt.Color(255, 255, 255));
         field_telefone.setPreferredSize(new java.awt.Dimension(300, 60));
         field_telefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,8 +92,17 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
             }
         });
 
+        field_cidade.setBackground(new java.awt.Color(255, 255, 255));
+        field_cidade.setPreferredSize(new java.awt.Dimension(300, 60));
+
+        field_cpf.setBackground(new java.awt.Color(255, 255, 255));
+        field_cpf.setPreferredSize(new java.awt.Dimension(320, 60));
+
+        jlbl_servico_prestado.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jlbl_servico_prestado.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_servico_prestado.setText("Serviço prestado:");
 
+        field_servico_prestado.setBackground(new java.awt.Color(255, 255, 255));
         field_servico_prestado.setPreferredSize(new java.awt.Dimension(300, 60));
         field_servico_prestado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,16 +110,26 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
             }
         });
 
-        jlbl_cep.setText("CEP:");
+        field_nome_funcionario.setBackground(new java.awt.Color(255, 255, 255));
+        field_nome_funcionario.setPreferredSize(new java.awt.Dimension(653, 60));
+        field_nome_funcionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                field_nome_funcionarioActionPerformed(evt);
+            }
+        });
 
-        field_cep.setPreferredSize(new java.awt.Dimension(200, 60));
+        jlbl_telefone.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jlbl_telefone.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_telefone.setText("Telefone:");
 
-        jlbl_numero.setText("N°:");
-
+        field_numero.setBackground(new java.awt.Color(255, 255, 255));
         field_numero.setPreferredSize(new java.awt.Dimension(100, 60));
 
-        jlbl_rua.setText("Rua:");
+        jlbl_cep.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jlbl_cep.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cep.setText("CEP:");
 
+        field_rua.setBackground(new java.awt.Color(255, 255, 255));
         field_rua.setPreferredSize(new java.awt.Dimension(653, 60));
         field_rua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,98 +137,112 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
             }
         });
 
-        jlbl_bairro.setText("Bairro:");
+        jbutton_cadastrar.setBackground(new java.awt.Color(71, 120, 63));
+        jbutton_cadastrar.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jbutton_cadastrar.setForeground(new java.awt.Color(0, 0, 0));
+        jbutton_cadastrar.setText("Cadastrar");
+        jbutton_cadastrar.setPreferredSize(new java.awt.Dimension(300, 40));
+        jbutton_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbutton_cadastrarActionPerformed(evt);
+            }
+        });
 
-        field_bairro.setPreferredSize(new java.awt.Dimension(320, 60));
-
-        jlbl_cidade.setText("Cidade:");
-
-        field_cidade.setPreferredSize(new java.awt.Dimension(300, 60));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(568, 568, 568)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(field_rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlbl_rua)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(field_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlbl_nome_funcionario)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(field_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbl_rua)
+                            .addComponent(field_rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(field_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jlbl_cpf)
+                                        .addGap(44, 44, 44)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlbl_telefone)
+                                    .addComponent(field_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(field_servico_prestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jlbl_servico_prestado))
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jlbl_cep)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(field_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jlbl_numero)))
-                                    .addComponent(field_cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jlbl_cpf)
-                                .addComponent(field_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(33, 33, 33)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jlbl_telefone)
-                                .addComponent(field_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlbl_bairro)
-                            .addComponent(field_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(field_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbl_cidade))))
-                .addContainerGap(699, Short.MAX_VALUE))
+                                .addGap(20, 20, 20)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(field_cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlbl_cep))
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlbl_numero)
+                                    .addComponent(field_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(field_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlbl_bairro))
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlbl_cidade)
+                                    .addComponent(field_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(jbutton_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(54, 54, 54))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(jlbl_nome_funcionario)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jlbl_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(field_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbl_cpf)
                     .addComponent(jlbl_telefone))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(field_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(field_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbl_servico_prestado)
                     .addComponent(jlbl_cep)
                     .addComponent(jlbl_numero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(field_servico_prestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(field_cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(field_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(field_cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(field_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jlbl_rua)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(field_rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbl_bairro)
                     .addComponent(jlbl_cidade))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(field_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(field_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(jbutton_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 760, 630));
+
+        jlbl_background.setIcon(new javax.swing.ImageIcon("C:\\Users\\k.andrade\\Desktop\\PetAgenda\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
+        getContentPane().add(jlbl_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,6 +262,10 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     private void field_ruaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_ruaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_field_ruaActionPerformed
+
+    private void jbutton_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbutton_cadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbutton_cadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,6 +312,9 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     private javax.swing.JTextField field_rua;
     private javax.swing.JTextField field_servico_prestado;
     private javax.swing.JTextField field_telefone;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbutton_cadastrar;
+    private javax.swing.JLabel jlbl_background;
     private javax.swing.JLabel jlbl_bairro;
     private javax.swing.JLabel jlbl_cep;
     private javax.swing.JLabel jlbl_cidade;
