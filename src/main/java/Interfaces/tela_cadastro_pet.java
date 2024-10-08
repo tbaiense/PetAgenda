@@ -26,35 +26,36 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        label_nome_funcionario = new javax.swing.JLabel();
-        label_CPF = new javax.swing.JLabel();
+        label_nome_do_pet = new javax.swing.JLabel();
+        label_porte = new javax.swing.JLabel();
         field_nome_funcionario = new javax.swing.JTextField();
         field_telefone = new javax.swing.JTextField();
-        label_telefone = new javax.swing.JLabel();
-        label_servico_prestado = new javax.swing.JLabel();
+        label_cor = new javax.swing.JLabel();
+        javax.swing.JLabel label_raca = new javax.swing.JLabel();
         field_servico_prestado = new javax.swing.JTextField();
-        label_cep = new javax.swing.JLabel();
+        label_sexo = new javax.swing.JLabel();
         field_cep = new javax.swing.JTextField();
-        label_numero = new javax.swing.JLabel();
-        field_numero = new javax.swing.JTextField();
-        label_rua = new javax.swing.JLabel();
+        label_comportamento_do_pet = new javax.swing.JLabel();
         field_rua = new javax.swing.JTextField();
         label_bairro = new javax.swing.JLabel();
         field_bairro = new javax.swing.JTextField();
-        label_cidade = new javax.swing.JLabel();
-        field_cidade = new javax.swing.JTextField();
         field_CPF = new javax.swing.JTextField();
         button_cadastrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label_nome_funcionario.setText("Nome do funcionário:");
-        getContentPane().add(label_nome_funcionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 213, -1, -1));
+        label_nome_do_pet.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        label_nome_do_pet.setForeground(new java.awt.Color(0, 0, 0));
+        label_nome_do_pet.setText("Nome do Pet:");
+        getContentPane().add(label_nome_do_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, -1, -1));
 
-        label_CPF.setText("CPF:");
-        getContentPane().add(label_CPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 313, -1, -1));
+        label_porte.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        label_porte.setForeground(new java.awt.Color(0, 0, 0));
+        label_porte.setText("Porte:");
+        getContentPane().add(label_porte, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 313, -1, -1));
 
         field_nome_funcionario.setPreferredSize(new java.awt.Dimension(653, 60));
         field_nome_funcionario.addActionListener(new java.awt.event.ActionListener() {
@@ -67,34 +68,31 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         field_telefone.setPreferredSize(new java.awt.Dimension(300, 60));
         getContentPane().add(field_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(917, 335, -1, -1));
 
-        label_telefone.setText("Telefone:");
-        getContentPane().add(label_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(917, 313, -1, -1));
+        label_cor.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        label_cor.setForeground(new java.awt.Color(0, 0, 0));
+        label_cor.setText("Cor:");
+        getContentPane().add(label_cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(917, 313, -1, -1));
 
-        label_servico_prestado.setText("Serviço prestado:");
-        getContentPane().add(label_servico_prestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 413, -1, -1));
+        label_raca.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        label_raca.setForeground(new java.awt.Color(0, 0, 0));
+        label_raca.setText("Raça:");
+        getContentPane().add(label_raca, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 413, -1, -1));
 
         field_servico_prestado.setPreferredSize(new java.awt.Dimension(300, 60));
         getContentPane().add(field_servico_prestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 435, -1, -1));
 
-        label_cep.setText("CEP:");
-        getContentPane().add(label_cep, new org.netbeans.lib.awtextra.AbsoluteConstraints(891, 413, -1, -1));
+        label_sexo.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        label_sexo.setForeground(new java.awt.Color(0, 0, 0));
+        label_sexo.setText("Sexo:");
+        getContentPane().add(label_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(891, 413, -1, -1));
 
         field_cep.setPreferredSize(new java.awt.Dimension(200, 60));
         getContentPane().add(field_cep, new org.netbeans.lib.awtextra.AbsoluteConstraints(891, 435, -1, -1));
 
-        label_numero.setText("N°:");
-        getContentPane().add(label_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(1117, 413, -1, -1));
-
-        field_numero.setPreferredSize(new java.awt.Dimension(100, 60));
-        field_numero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_numeroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(field_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(1117, 435, -1, -1));
-
-        label_rua.setText("Rua:");
-        getContentPane().add(label_rua, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 513, -1, -1));
+        label_comportamento_do_pet.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        label_comportamento_do_pet.setForeground(new java.awt.Color(0, 0, 0));
+        label_comportamento_do_pet.setText("Comportamento do Pet:");
+        getContentPane().add(label_comportamento_do_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 513, -1, -1));
 
         field_rua.setPreferredSize(new java.awt.Dimension(653, 60));
         field_rua.addActionListener(new java.awt.event.ActionListener() {
@@ -115,12 +113,6 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         });
         getContentPane().add(field_bairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 635, -1, -1));
 
-        label_cidade.setText("Cidade:");
-        getContentPane().add(label_cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(917, 613, -1, -1));
-
-        field_cidade.setPreferredSize(new java.awt.Dimension(300, 60));
-        getContentPane().add(field_cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(917, 635, -1, -1));
-
         field_CPF.setPreferredSize(new java.awt.Dimension(320, 60));
         field_CPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,16 +130,16 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         });
         getContentPane().add(button_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 726, -1, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\c.nunes\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1750, 900));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void field_nome_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_nome_funcionarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_field_nome_funcionarioActionPerformed
-
-    private void field_numeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_numeroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_field_numeroActionPerformed
 
     private void field_ruaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_ruaActionPerformed
         // TODO add your handling code here:
@@ -205,20 +197,16 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
     private javax.swing.JTextField field_CPF;
     private javax.swing.JTextField field_bairro;
     private javax.swing.JTextField field_cep;
-    private javax.swing.JTextField field_cidade;
     private javax.swing.JTextField field_nome_funcionario;
-    private javax.swing.JTextField field_numero;
     private javax.swing.JTextField field_rua;
     private javax.swing.JTextField field_servico_prestado;
     private javax.swing.JTextField field_telefone;
-    private javax.swing.JLabel label_CPF;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel label_bairro;
-    private javax.swing.JLabel label_cep;
-    private javax.swing.JLabel label_cidade;
-    private javax.swing.JLabel label_nome_funcionario;
-    private javax.swing.JLabel label_numero;
-    private javax.swing.JLabel label_rua;
-    private javax.swing.JLabel label_servico_prestado;
-    private javax.swing.JLabel label_telefone;
+    private javax.swing.JLabel label_comportamento_do_pet;
+    private javax.swing.JLabel label_cor;
+    private javax.swing.JLabel label_nome_do_pet;
+    private javax.swing.JLabel label_porte;
+    private javax.swing.JLabel label_sexo;
     // End of variables declaration//GEN-END:variables
 }
