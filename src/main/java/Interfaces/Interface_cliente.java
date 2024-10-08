@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Interface;
+package Interfaces;
 
 /**
  *
@@ -26,37 +26,44 @@ public class Interface_cliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jlbl_nome_cliente = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jtxtf_campo_nome_cliente = new javax.swing.JTextField();
-        jlbl_cpf = new javax.swing.JLabel();
+        jlbl_nome_cliente = new javax.swing.JLabel();
         jtxtf_campo_cpf = new javax.swing.JTextField();
-        jlbl_telefone = new javax.swing.JLabel();
+        jlbl_cpf = new javax.swing.JLabel();
         jtxtf_campo_telefone = new javax.swing.JTextField();
-        jlbl_servico_contratado = new javax.swing.JLabel();
+        jlbl_telefone = new javax.swing.JLabel();
         jtxtf_campo_servico = new javax.swing.JTextField();
-        jlbl_cep = new javax.swing.JLabel();
-        jlbl_numero = new javax.swing.JLabel();
+        jlbl_servico_contratado = new javax.swing.JLabel();
         jtxtf_campo_cep = new javax.swing.JTextField();
+        jlbl_cep = new javax.swing.JLabel();
         jtxtf_campo_num = new javax.swing.JTextField();
+        jlbl_numero = new javax.swing.JLabel();
         jlbl_rua = new javax.swing.JLabel();
         jtxtf_campo_rua = new javax.swing.JTextField();
         jlbl_bairro = new javax.swing.JLabel();
         jtxtf_campo_bairro = new javax.swing.JTextField();
-        jlbl_cidade = new javax.swing.JLabel();
         jtxtf_campo_cidade = new javax.swing.JTextField();
+        jlbl_cidade = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlbl_nome_cliente.setText("Nome Completo do Compliente:");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jtxtf_campo_nome_cliente.setText("campo_nome_cliente");
 
-        jlbl_cpf.setText("CPF:");
+        jlbl_nome_cliente.setText("Nome Completo do Compliente:");
 
         jtxtf_campo_cpf.setText("campo_cpf");
 
-        jlbl_telefone.setText("Telefone:");
+        jlbl_cpf.setText("CPF:");
 
         jtxtf_campo_telefone.setText("campo_telefone");
         jtxtf_campo_telefone.addActionListener(new java.awt.event.ActionListener() {
@@ -65,17 +72,19 @@ public class Interface_cliente extends javax.swing.JFrame {
             }
         });
 
-        jlbl_servico_contratado.setText("Serviço contratado:");
+        jlbl_telefone.setText("Telefone:");
 
         jtxtf_campo_servico.setText("campo_servico_contratado");
 
-        jlbl_cep.setText("CEP:");
-
-        jlbl_numero.setText("N°:");
+        jlbl_servico_contratado.setText("Serviço contratado:");
 
         jtxtf_campo_cep.setText("campo_cep");
 
+        jlbl_cep.setText("CEP:");
+
         jtxtf_campo_num.setText("campo_numero");
+
+        jlbl_numero.setText("N°:");
 
         jlbl_rua.setText("Rua:");
 
@@ -85,100 +94,91 @@ public class Interface_cliente extends javax.swing.JFrame {
 
         jtxtf_campo_bairro.setText("campo_bairro");
 
-        jlbl_cidade.setText("Cidade:");
-
         jtxtf_campo_cidade.setText("campo_cidade");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(743, 743, 743)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jlbl_bairro)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jtxtf_campo_bairro, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlbl_cidade)
-                            .addComponent(jtxtf_campo_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(704, 704, 704))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jlbl_cpf)
-                                        .addGap(220, 220, 220)
-                                        .addComponent(jlbl_telefone))
-                                    .addComponent(jlbl_rua)
-                                    .addComponent(jlbl_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(110, 110, 110))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jlbl_servico_contratado, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jtxtf_campo_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jtxtf_campo_servico, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtxtf_campo_telefone)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jtxtf_campo_cep, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jlbl_cep))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jlbl_numero)
-                                            .addComponent(jtxtf_campo_num, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addComponent(jtxtf_campo_nome_cliente)
-                            .addComponent(jtxtf_campo_rua))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        jlbl_cidade.setText("Cidade:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlbl_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtf_campo_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jlbl_cpf)
+                        .addGap(228, 228, 228)
+                        .addComponent(jlbl_telefone))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jtxtf_campo_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(jtxtf_campo_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jlbl_servico_contratado)
+                        .addGap(155, 155, 155)
+                        .addComponent(jlbl_cep)
+                        .addGap(108, 108, 108)
+                        .addComponent(jlbl_numero))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jtxtf_campo_servico, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jtxtf_campo_cep, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(jtxtf_campo_num, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlbl_rua)
+                    .addComponent(jtxtf_campo_rua, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jlbl_bairro)
+                        .addGap(228, 228, 228)
+                        .addComponent(jlbl_cidade))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jtxtf_campo_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jtxtf_campo_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(336, 336, 336)
-                .addComponent(jlbl_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtxtf_campo_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jlbl_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jtxtf_campo_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlbl_cpf)
                     .addComponent(jlbl_telefone))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxtf_campo_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtf_campo_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtxtf_campo_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtf_campo_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlbl_servico_contratado)
                     .addComponent(jlbl_cep)
                     .addComponent(jlbl_numero))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxtf_campo_servico, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtf_campo_cep, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtf_campo_num, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtxtf_campo_servico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtf_campo_cep, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtf_campo_num, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addComponent(jlbl_rua)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtxtf_campo_rua, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbl_cidade)
-                    .addComponent(jlbl_bairro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtxtf_campo_cidade, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                    .addComponent(jtxtf_campo_bairro))
-                .addGap(495, 495, 495))
+                .addGap(5, 5, 5)
+                .addComponent(jtxtf_campo_rua, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlbl_bairro)
+                    .addComponent(jlbl_cidade))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtxtf_campo_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtf_campo_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 750, 540));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\c.nunes\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1920, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -223,6 +223,9 @@ public class Interface_cliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlbl_bairro;
     private javax.swing.JLabel jlbl_cep;
     private javax.swing.JLabel jlbl_cidade;
