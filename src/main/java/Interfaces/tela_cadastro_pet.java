@@ -41,7 +41,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         field_bairro = new javax.swing.JTextField();
         field_CPF = new javax.swing.JTextField();
         button_cadastrar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jlbl_background_cadastro_pet = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
@@ -130,9 +130,8 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         });
         getContentPane().add(button_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 726, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\c.nunes\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1750, 900));
+        jlbl_background_cadastro_pet.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
+        getContentPane().add(jlbl_background_cadastro_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -201,7 +200,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
     private javax.swing.JTextField field_rua;
     private javax.swing.JTextField field_servico_prestado;
     private javax.swing.JTextField field_telefone;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jlbl_background_cadastro_pet;
     private javax.swing.JLabel label_bairro;
     private javax.swing.JLabel label_comportamento_do_pet;
     private javax.swing.JLabel label_cor;

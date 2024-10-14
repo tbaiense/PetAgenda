@@ -49,7 +49,7 @@ public class Interface_cliente extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jbttn_Adicionar_Pet = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jlbl_background_cadastro_cliente = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -194,9 +194,9 @@ public class Interface_cliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtxtf_campo_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbl_cpf)
-                    .addComponent(jlbl_telefone))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlbl_telefone)
+                    .addComponent(jlbl_cpf))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtxtf_campo_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -234,8 +234,8 @@ public class Interface_cliente extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 750, 540));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\c.nunes\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1920, -1));
+        jlbl_background_cadastro_cliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
+        getContentPane().add(jlbl_background_cadastro_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -281,11 +281,11 @@ public class Interface_cliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbttn_Adicionar_Pet;
+    private javax.swing.JLabel jlbl_background_cadastro_cliente;
     private javax.swing.JLabel jlbl_bairro;
     private javax.swing.JLabel jlbl_cep;
     private javax.swing.JLabel jlbl_cidade;

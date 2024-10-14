@@ -26,6 +26,21 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpanel_menu_cadastro_funcionario = new javax.swing.JPanel();
+        jpanel_agenda = new javax.swing.JPanel();
+        jlbl_icon_agenda = new javax.swing.JLabel();
+        jpanel_financeiro = new javax.swing.JPanel();
+        jlbl_icon_financeiro = new javax.swing.JLabel();
+        jpanel_cadastrar_cliente = new javax.swing.JPanel();
+        jlbl_icon_cliente = new javax.swing.JLabel();
+        jpanel_cadastrar_funcionario = new javax.swing.JPanel();
+        jlbl_icon_funcionario = new javax.swing.JLabel();
+        jpanel_lista_pets = new javax.swing.JPanel();
+        jlbl_icon_pets = new javax.swing.JLabel();
+        jpanel_configuracoes = new javax.swing.JPanel();
+        jlbl_icon_configuracoes = new javax.swing.JLabel();
+        jpanel_sair = new javax.swing.JPanel();
+        jlbl_icon_sair = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jlbl_cpf = new javax.swing.JLabel();
         jlbl_rua = new javax.swing.JLabel();
@@ -46,10 +61,193 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jlbl_cep = new javax.swing.JLabel();
         field_rua = new javax.swing.JTextField();
         jbutton_cadastrar = new javax.swing.JButton();
-        jlbl_background = new javax.swing.JLabel();
+        jlbl_background_cadastro_funcionario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jpanel_menu_cadastro_funcionario.setBackground(new java.awt.Color(124, 115, 101));
+        jpanel_menu_cadastro_funcionario.setForeground(new java.awt.Color(124, 115, 101));
+
+        jpanel_agenda.setBackground(new java.awt.Color(0, 0, 0));
+
+        jlbl_icon_agenda.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\icon agenda.png")); // NOI18N
+
+        javax.swing.GroupLayout jpanel_agendaLayout = new javax.swing.GroupLayout(jpanel_agenda);
+        jpanel_agenda.setLayout(jpanel_agendaLayout);
+        jpanel_agendaLayout.setHorizontalGroup(
+            jpanel_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_agendaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbl_icon_agenda)
+                .addContainerGap(194, Short.MAX_VALUE))
+        );
+        jpanel_agendaLayout.setVerticalGroup(
+            jpanel_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_agendaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlbl_icon_agenda)
+                .addContainerGap())
+        );
+
+        jpanel_financeiro.setBackground(new java.awt.Color(0, 0, 0));
+        jpanel_financeiro.setPreferredSize(new java.awt.Dimension(250, 60));
+
+        jlbl_icon_financeiro.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\icon financeiro.png")); // NOI18N
+
+        javax.swing.GroupLayout jpanel_financeiroLayout = new javax.swing.GroupLayout(jpanel_financeiro);
+        jpanel_financeiro.setLayout(jpanel_financeiroLayout);
+        jpanel_financeiroLayout.setHorizontalGroup(
+            jpanel_financeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_financeiroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbl_icon_financeiro)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpanel_financeiroLayout.setVerticalGroup(
+            jpanel_financeiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_financeiroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbl_icon_financeiro)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+
+        jpanel_cadastrar_cliente.setBackground(new java.awt.Color(0, 0, 0));
+        jpanel_cadastrar_cliente.setPreferredSize(new java.awt.Dimension(250, 60));
+
+        javax.swing.GroupLayout jpanel_cadastrar_clienteLayout = new javax.swing.GroupLayout(jpanel_cadastrar_cliente);
+        jpanel_cadastrar_cliente.setLayout(jpanel_cadastrar_clienteLayout);
+        jpanel_cadastrar_clienteLayout.setHorizontalGroup(
+            jpanel_cadastrar_clienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_cadastrar_clienteLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jlbl_icon_cliente)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpanel_cadastrar_clienteLayout.setVerticalGroup(
+            jpanel_cadastrar_clienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_cadastrar_clienteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbl_icon_cliente)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        jpanel_cadastrar_funcionario.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jpanel_cadastrar_funcionarioLayout = new javax.swing.GroupLayout(jpanel_cadastrar_funcionario);
+        jpanel_cadastrar_funcionario.setLayout(jpanel_cadastrar_funcionarioLayout);
+        jpanel_cadastrar_funcionarioLayout.setHorizontalGroup(
+            jpanel_cadastrar_funcionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_cadastrar_funcionarioLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jlbl_icon_funcionario)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpanel_cadastrar_funcionarioLayout.setVerticalGroup(
+            jpanel_cadastrar_funcionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_cadastrar_funcionarioLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jlbl_icon_funcionario)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
+        jpanel_lista_pets.setBackground(new java.awt.Color(0, 0, 0));
+        jpanel_lista_pets.setPreferredSize(new java.awt.Dimension(250, 60));
+
+        javax.swing.GroupLayout jpanel_lista_petsLayout = new javax.swing.GroupLayout(jpanel_lista_pets);
+        jpanel_lista_pets.setLayout(jpanel_lista_petsLayout);
+        jpanel_lista_petsLayout.setHorizontalGroup(
+            jpanel_lista_petsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_lista_petsLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jlbl_icon_pets)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpanel_lista_petsLayout.setVerticalGroup(
+            jpanel_lista_petsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_lista_petsLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(jlbl_icon_pets)
+                .addGap(21, 21, 21))
+        );
+
+        jpanel_configuracoes.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jpanel_configuracoesLayout = new javax.swing.GroupLayout(jpanel_configuracoes);
+        jpanel_configuracoes.setLayout(jpanel_configuracoesLayout);
+        jpanel_configuracoesLayout.setHorizontalGroup(
+            jpanel_configuracoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_configuracoesLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jlbl_icon_configuracoes)
+                .addContainerGap(197, Short.MAX_VALUE))
+        );
+        jpanel_configuracoesLayout.setVerticalGroup(
+            jpanel_configuracoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_configuracoesLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jlbl_icon_configuracoes)
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
+        jpanel_sair.setBackground(new java.awt.Color(0, 0, 0));
+        jpanel_sair.setPreferredSize(new java.awt.Dimension(250, 60));
+
+        javax.swing.GroupLayout jpanel_sairLayout = new javax.swing.GroupLayout(jpanel_sair);
+        jpanel_sair.setLayout(jpanel_sairLayout);
+        jpanel_sairLayout.setHorizontalGroup(
+            jpanel_sairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_sairLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jlbl_icon_sair)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpanel_sairLayout.setVerticalGroup(
+            jpanel_sairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_sairLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jlbl_icon_sair)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jpanel_menu_cadastro_funcionarioLayout = new javax.swing.GroupLayout(jpanel_menu_cadastro_funcionario);
+        jpanel_menu_cadastro_funcionario.setLayout(jpanel_menu_cadastro_funcionarioLayout);
+        jpanel_menu_cadastro_funcionarioLayout.setHorizontalGroup(
+            jpanel_menu_cadastro_funcionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_menu_cadastro_funcionarioLayout.createSequentialGroup()
+                .addComponent(jpanel_agenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jpanel_financeiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpanel_cadastrar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpanel_cadastrar_funcionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpanel_lista_pets, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_menu_cadastro_funcionarioLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jpanel_menu_cadastro_funcionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jpanel_configuracoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpanel_sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jpanel_menu_cadastro_funcionarioLayout.setVerticalGroup(
+            jpanel_menu_cadastro_funcionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_menu_cadastro_funcionarioLayout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(jpanel_agenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jpanel_financeiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jpanel_cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpanel_cadastrar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpanel_lista_pets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpanel_configuracoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpanel_sair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jpanel_menu_cadastro_funcionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 1080));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -163,12 +361,9 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
                             .addComponent(field_rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(field_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(30, 30, 30))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jlbl_cpf)
-                                        .addGap(44, 44, 44)))
+                                    .addComponent(field_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlbl_cpf))
+                                .addGap(30, 30, 30)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jlbl_telefone)
                                     .addComponent(field_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -213,10 +408,11 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
                     .addComponent(field_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(field_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbl_servico_prestado)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlbl_cep)
-                    .addComponent(jlbl_numero))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jlbl_servico_prestado)
+                        .addComponent(jlbl_numero)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(field_servico_prestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -241,8 +437,8 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 760, 630));
 
-        jlbl_background.setIcon(new javax.swing.ImageIcon("C:\\Users\\k.andrade\\Desktop\\PetAgenda\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
-        getContentPane().add(jlbl_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+        jlbl_background_cadastro_funcionario.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
+        getContentPane().add(jlbl_background_cadastro_funcionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -314,15 +510,30 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     private javax.swing.JTextField field_telefone;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbutton_cadastrar;
-    private javax.swing.JLabel jlbl_background;
+    private javax.swing.JLabel jlbl_background_cadastro_funcionario;
     private javax.swing.JLabel jlbl_bairro;
     private javax.swing.JLabel jlbl_cep;
     private javax.swing.JLabel jlbl_cidade;
     private javax.swing.JLabel jlbl_cpf;
+    private javax.swing.JLabel jlbl_icon_agenda;
+    private javax.swing.JLabel jlbl_icon_cliente;
+    private javax.swing.JLabel jlbl_icon_configuracoes;
+    private javax.swing.JLabel jlbl_icon_financeiro;
+    private javax.swing.JLabel jlbl_icon_funcionario;
+    private javax.swing.JLabel jlbl_icon_pets;
+    private javax.swing.JLabel jlbl_icon_sair;
     private javax.swing.JLabel jlbl_nome_funcionario;
     private javax.swing.JLabel jlbl_numero;
     private javax.swing.JLabel jlbl_rua;
     private javax.swing.JLabel jlbl_servico_prestado;
     private javax.swing.JLabel jlbl_telefone;
+    private javax.swing.JPanel jpanel_agenda;
+    private javax.swing.JPanel jpanel_cadastrar_cliente;
+    private javax.swing.JPanel jpanel_cadastrar_funcionario;
+    private javax.swing.JPanel jpanel_configuracoes;
+    private javax.swing.JPanel jpanel_financeiro;
+    private javax.swing.JPanel jpanel_lista_pets;
+    private javax.swing.JPanel jpanel_menu_cadastro_funcionario;
+    private javax.swing.JPanel jpanel_sair;
     // End of variables declaration//GEN-END:variables
 }
