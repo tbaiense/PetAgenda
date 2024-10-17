@@ -8,12 +8,12 @@ package Interfaces;
  *
  * @author c.nunes
  */
-public class Interface_cliente extends javax.swing.JFrame {
+public class Tela_cadastro_cliente extends javax.swing.JFrame {
 
     /**
      * Creates new form Interface_cliente
      */
-    public Interface_cliente() {
+    public Tela_cadastro_cliente() {
         initComponents();
     }
 
@@ -39,110 +39,88 @@ public class Interface_cliente extends javax.swing.JFrame {
         jtxtf_campo_cep = new javax.swing.JTextField();
         jlbl_cep = new javax.swing.JLabel();
         jtxtf_campo_num = new javax.swing.JTextField();
-        jlbl_numero = new javax.swing.JLabel();
         jlbl_rua = new javax.swing.JLabel();
         jtxtf_campo_rua = new javax.swing.JTextField();
         jlbl_bairro = new javax.swing.JLabel();
         jtxtf_campo_bairro = new javax.swing.JTextField();
         jtxtf_campo_cidade = new javax.swing.JTextField();
         jlbl_cidade = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jbttn_Adicionar_Pet = new javax.swing.JButton();
+        jlbl_titulo = new javax.swing.JLabel();
+        jlbl_num = new javax.swing.JLabel();
+        jbtn_Cadastrar_cliente = new javax.swing.JButton();
         jlbl_background_cadastro_cliente = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1320, 768));
+        setPreferredSize(new java.awt.Dimension(1320, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jtxtf_campo_nome_cliente.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtf_campo_nome_cliente.setText("campo_nome_cliente");
         jtxtf_campo_nome_cliente.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        jlbl_nome_cliente.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jlbl_nome_cliente.setForeground(new java.awt.Color(0, 0, 0));
-        jlbl_nome_cliente.setText("Nome Completo do Completo:");
+        jlbl_nome_cliente.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        jlbl_nome_cliente.setText("Nome completo do cliente:");
 
-        jtxtf_campo_cpf.setText("campo_cpf");
-
-        jlbl_cpf.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jlbl_cpf.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cpf.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_cpf.setText("CPF:");
 
-        jtxtf_campo_telefone.setText("campo_telefone");
         jtxtf_campo_telefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtf_campo_telefoneActionPerformed(evt);
             }
         });
 
-        jlbl_telefone.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jlbl_telefone.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_telefone.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_telefone.setText("Telefone:");
 
-        jtxtf_campo_servico.setText("campo_servico_contratado");
-
-        jlbl_servico_contratado.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jlbl_servico_contratado.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_servico_contratado.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_servico_contratado.setText("Serviço contratado:");
 
-        jtxtf_campo_cep.setText("campo_cep");
-
-        jlbl_cep.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jlbl_cep.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cep.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_cep.setText("CEP:");
 
-        jtxtf_campo_num.setText("campo_numero");
-
-        jlbl_numero.setText("N°:");
-
-        jlbl_rua.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jlbl_rua.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_rua.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_rua.setText("Rua:");
 
-        jtxtf_campo_rua.setText("campo_rua");
-
-        jlbl_bairro.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jlbl_bairro.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_bairro.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_bairro.setText("Bairro:");
 
-        jtxtf_campo_bairro.setText("campo_bairro");
-
-        jtxtf_campo_cidade.setText("campo_cidade");
-
-        jlbl_cidade.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jlbl_cidade.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cidade.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_cidade.setText("Cidade:");
 
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Cadastro de Cliente");
+        jlbl_titulo.setBackground(new java.awt.Color(0, 0, 0));
+        jlbl_titulo.setFont(new java.awt.Font("Merriweather", 0, 45)); // NOI18N
+        jlbl_titulo.setText("Cadastro de Cliente");
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("N°");
+        jlbl_num.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        jlbl_num.setText("N°");
 
-        jbttn_Adicionar_Pet.setBackground(new java.awt.Color(51, 153, 0));
-        jbttn_Adicionar_Pet.setText("ADICIONAR PET");
+        jbtn_Cadastrar_cliente.setBackground(new java.awt.Color(51, 153, 0));
+        jbtn_Cadastrar_cliente.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
+        jbtn_Cadastrar_cliente.setText("CADASTRAR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlbl_titulo)
+                .addGap(147, 147, 147))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jtxtf_campo_nome_cliente)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtxtf_campo_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbl_cpf))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jlbl_telefone)
                             .addComponent(jtxtf_campo_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -155,41 +133,35 @@ public class Interface_cliente extends javax.swing.JFrame {
                                         .addComponent(jlbl_cep)
                                         .addGap(192, 192, 192)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
+                                    .addComponent(jlbl_num)
                                     .addComponent(jtxtf_campo_num, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(jtxtf_campo_rua)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jtxtf_campo_rua, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jtxtf_campo_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(jtxtf_campo_cidade))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jlbl_bairro)
                                 .addGap(338, 338, 338)
                                 .addComponent(jlbl_cidade))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(212, 212, 212)
-                                .addComponent(jLabel3))
                             .addComponent(jlbl_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jtxtf_campo_servico, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(159, 159, 159)
-                                .addComponent(jlbl_numero))
+                            .addComponent(jtxtf_campo_servico, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbl_servico_contratado)
-                            .addComponent(jlbl_rua))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jtxtf_campo_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addComponent(jtxtf_campo_cidade))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jbttn_Adicionar_Pet, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jlbl_rua)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(267, 267, 267)
+                                .addComponent(jbtn_Cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(32, 32, 32)
+                .addComponent(jlbl_titulo)
+                .addGap(32, 32, 32)
                 .addComponent(jlbl_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtxtf_campo_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,11 +177,10 @@ public class Interface_cliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbl_servico_contratado)
                     .addComponent(jlbl_cep)
-                    .addComponent(jLabel4))
+                    .addComponent(jlbl_num))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jtxtf_campo_num, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jlbl_numero, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jtxtf_campo_servico)
                     .addComponent(jtxtf_campo_cep))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -227,17 +198,16 @@ public class Interface_cliente extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
                         .addComponent(jtxtf_campo_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbttn_Adicionar_Pet, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(42, 42, 42)
+                .addComponent(jbtn_Cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 750, 540));
-
-        jlbl_background_cadastro_cliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 47, 750, 590));
         getContentPane().add(jlbl_background_cadastro_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtxtf_campo_telefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtf_campo_telefoneActionPerformed
@@ -261,40 +231,39 @@ public class Interface_cliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interface_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_cadastro_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interface_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_cadastro_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interface_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_cadastro_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interface_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_cadastro_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Interface_cliente().setVisible(true);
+                new Tela_cadastro_cliente().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton jbttn_Adicionar_Pet;
+    private javax.swing.JButton jbtn_Cadastrar_cliente;
     private javax.swing.JLabel jlbl_background_cadastro_cliente;
     private javax.swing.JLabel jlbl_bairro;
     private javax.swing.JLabel jlbl_cep;
     private javax.swing.JLabel jlbl_cidade;
     private javax.swing.JLabel jlbl_cpf;
     private javax.swing.JLabel jlbl_nome_cliente;
-    private javax.swing.JLabel jlbl_numero;
+    private javax.swing.JLabel jlbl_num;
     private javax.swing.JLabel jlbl_rua;
     private javax.swing.JLabel jlbl_servico_contratado;
     private javax.swing.JLabel jlbl_telefone;
+    private javax.swing.JLabel jlbl_titulo;
     private javax.swing.JTextField jtxtf_campo_bairro;
     private javax.swing.JTextField jtxtf_campo_cep;
     private javax.swing.JTextField jtxtf_campo_cidade;

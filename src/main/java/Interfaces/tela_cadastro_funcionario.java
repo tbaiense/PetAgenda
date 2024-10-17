@@ -61,17 +61,18 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jlbl_cep = new javax.swing.JLabel();
         field_rua = new javax.swing.JTextField();
         jbutton_cadastrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jlbl_background_cadastro_funcionario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1320, 768));
+        setPreferredSize(new java.awt.Dimension(1320, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpanel_menu_cadastro_funcionario.setBackground(new java.awt.Color(124, 115, 101));
         jpanel_menu_cadastro_funcionario.setForeground(new java.awt.Color(124, 115, 101));
 
         jpanel_agenda.setBackground(new java.awt.Color(0, 0, 0));
-
-        jlbl_icon_agenda.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\icon agenda.png")); // NOI18N
 
         javax.swing.GroupLayout jpanel_agendaLayout = new javax.swing.GroupLayout(jpanel_agenda);
         jpanel_agenda.setLayout(jpanel_agendaLayout);
@@ -93,8 +94,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jpanel_financeiro.setBackground(new java.awt.Color(0, 0, 0));
         jpanel_financeiro.setPreferredSize(new java.awt.Dimension(250, 60));
 
-        jlbl_icon_financeiro.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\icon financeiro.png")); // NOI18N
-
         javax.swing.GroupLayout jpanel_financeiroLayout = new javax.swing.GroupLayout(jpanel_financeiro);
         jpanel_financeiro.setLayout(jpanel_financeiroLayout);
         jpanel_financeiroLayout.setHorizontalGroup(
@@ -109,7 +108,7 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
             .addGroup(jpanel_financeiroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlbl_icon_financeiro)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         jpanel_cadastrar_cliente.setBackground(new java.awt.Color(0, 0, 0));
@@ -252,37 +251,28 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        jlbl_cpf.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_cpf.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cpf.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_cpf.setText("CPF:");
 
-        jlbl_rua.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_rua.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_rua.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_rua.setText("Rua:");
 
-        jlbl_cidade.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_cidade.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cidade.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_cidade.setText("Cidade:");
 
-        jlbl_nome_funcionario.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_nome_funcionario.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_nome_funcionario.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_nome_funcionario.setText("Nome do funcionário:");
 
-        jlbl_bairro.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_bairro.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_bairro.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_bairro.setText("Bairro:");
 
-        field_cep.setBackground(new java.awt.Color(255, 255, 255));
         field_cep.setPreferredSize(new java.awt.Dimension(200, 60));
 
-        field_bairro.setBackground(new java.awt.Color(255, 255, 255));
         field_bairro.setPreferredSize(new java.awt.Dimension(320, 60));
 
-        jlbl_numero.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_numero.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_numero.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_numero.setText("N°:");
 
-        field_telefone.setBackground(new java.awt.Color(255, 255, 255));
         field_telefone.setPreferredSize(new java.awt.Dimension(300, 60));
         field_telefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,17 +280,13 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
             }
         });
 
-        field_cidade.setBackground(new java.awt.Color(255, 255, 255));
         field_cidade.setPreferredSize(new java.awt.Dimension(300, 60));
 
-        field_cpf.setBackground(new java.awt.Color(255, 255, 255));
         field_cpf.setPreferredSize(new java.awt.Dimension(320, 60));
 
-        jlbl_servico_prestado.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_servico_prestado.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_servico_prestado.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_servico_prestado.setText("Serviço prestado:");
 
-        field_servico_prestado.setBackground(new java.awt.Color(255, 255, 255));
         field_servico_prestado.setPreferredSize(new java.awt.Dimension(300, 60));
         field_servico_prestado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,7 +294,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
             }
         });
 
-        field_nome_funcionario.setBackground(new java.awt.Color(255, 255, 255));
         field_nome_funcionario.setPreferredSize(new java.awt.Dimension(653, 60));
         field_nome_funcionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -316,18 +301,14 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
             }
         });
 
-        jlbl_telefone.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_telefone.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_telefone.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_telefone.setText("Telefone:");
 
-        field_numero.setBackground(new java.awt.Color(255, 255, 255));
         field_numero.setPreferredSize(new java.awt.Dimension(100, 60));
 
-        jlbl_cep.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_cep.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cep.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_cep.setText("CEP:");
 
-        field_rua.setBackground(new java.awt.Color(255, 255, 255));
         field_rua.setPreferredSize(new java.awt.Dimension(653, 60));
         field_rua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -336,8 +317,7 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         });
 
         jbutton_cadastrar.setBackground(new java.awt.Color(71, 120, 63));
-        jbutton_cadastrar.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jbutton_cadastrar.setForeground(new java.awt.Color(0, 0, 0));
+        jbutton_cadastrar.setFont(new java.awt.Font("Merriweather", 0, 22)); // NOI18N
         jbutton_cadastrar.setText("Cadastrar");
         jbutton_cadastrar.setPreferredSize(new java.awt.Dimension(300, 40));
         jbutton_cadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -346,6 +326,9 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Merriweather", 0, 36)); // NOI18N
+        jLabel1.setText("Cadastrar funcionário");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -353,7 +336,10 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
+                        .addGap(228, 228, 228)
+                        .addComponent(jbutton_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlbl_nome_funcionario)
                             .addComponent(field_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -386,16 +372,18 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
                                 .addGap(30, 30, 30)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jlbl_cidade)
-                                    .addComponent(field_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(228, 228, 228)
-                        .addComponent(jbutton_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(54, 54, 54))
+                                    .addComponent(field_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(59, 59, 59))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(181, 181, 181))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jlbl_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(field_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -430,17 +418,16 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(field_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(field_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addComponent(jbutton_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 760, 630));
-
-        jlbl_background_cadastro_funcionario.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 760, 670));
         getContentPane().add(jlbl_background_cadastro_funcionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void field_nome_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_nome_funcionarioActionPerformed
@@ -508,6 +495,7 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     private javax.swing.JTextField field_rua;
     private javax.swing.JTextField field_servico_prestado;
     private javax.swing.JTextField field_telefone;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbutton_cadastrar;
     private javax.swing.JLabel jlbl_background_cadastro_funcionario;

@@ -38,22 +38,20 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
         jlbl_background_cadastro_pet = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1320, 768));
+        setPreferredSize(new java.awt.Dimension(1320, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(759, 583));
 
-        jlbl_titulo_redefinicao_senha.setFont(new java.awt.Font("Segoe UI", 0, 45)); // NOI18N
-        jlbl_titulo_redefinicao_senha.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_titulo_redefinicao_senha.setFont(new java.awt.Font("Merriweather", 0, 24)); // NOI18N
         jlbl_titulo_redefinicao_senha.setText("Redefinição de senha");
 
-        jlbl_cpf.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_cpf.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_cpf.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_cpf.setText("CPF:");
 
-        jfield_cpf.setBackground(new java.awt.Color(255, 255, 255));
         jfield_cpf.setPreferredSize(new java.awt.Dimension(653, 60));
         jfield_cpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,23 +59,18 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
             }
         });
 
-        jlbl_nova_senha.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_nova_senha.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_nova_senha.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_nova_senha.setText("Nova senha:");
 
-        jfield_nova_senha.setBackground(new java.awt.Color(255, 255, 255));
         jfield_nova_senha.setPreferredSize(new java.awt.Dimension(653, 60));
 
-        jlbl_confirmacao_nova_senha.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jlbl_confirmacao_nova_senha.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_confirmacao_nova_senha.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_confirmacao_nova_senha.setText("Confirme a nova senha:");
 
-        jfield_confirmacao_nova_senha.setBackground(new java.awt.Color(255, 255, 255));
         jfield_confirmacao_nova_senha.setPreferredSize(new java.awt.Dimension(653, 60));
 
         jbutton_redefinir_senha.setBackground(new java.awt.Color(71, 120, 63));
-        jbutton_redefinir_senha.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jbutton_redefinir_senha.setForeground(new java.awt.Color(0, 0, 0));
+        jbutton_redefinir_senha.setFont(new java.awt.Font("Merriweather", 0, 20)); // NOI18N
         jbutton_redefinir_senha.setText("Redefinir senha");
         jbutton_redefinir_senha.setPreferredSize(new java.awt.Dimension(240, 50));
         jbutton_redefinir_senha.addActionListener(new java.awt.event.ActionListener() {
@@ -91,31 +84,30 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(253, 253, 253)
+                .addGap(289, 289, 289)
                 .addComponent(jbutton_redefinir_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
+                .addContainerGap(106, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlbl_titulo_redefinicao_senha)
-                        .addGap(157, 157, 157))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jfield_confirmacao_nova_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbl_confirmacao_nova_senha)
-                            .addComponent(jfield_nova_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbl_nova_senha)
-                            .addComponent(jlbl_cpf)
-                            .addComponent(jfield_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(48, 48, 48))))
+                    .addComponent(jfield_confirmacao_nova_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbl_confirmacao_nova_senha)
+                    .addComponent(jfield_nova_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbl_nova_senha)
+                    .addComponent(jlbl_cpf)
+                    .addComponent(jfield_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(292, 292, 292)
+                .addComponent(jlbl_titulo_redefinicao_senha)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(48, 48, 48)
                 .addComponent(jlbl_titulo_redefinicao_senha)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(jlbl_cpf)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jfield_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,17 +119,16 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
                 .addComponent(jlbl_confirmacao_nova_senha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jfield_confirmacao_nova_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(65, 65, 65)
                 .addComponent(jbutton_redefinir_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addGap(48, 48, 48))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(581, 145, -1, -1));
-
-        jlbl_background_cadastro_pet.setIcon(new javax.swing.ImageIcon("C:\\Users\\kevin\\Desktop\\PetAgenda\\src\\main\\java\\IMAGENS\\BG_padrao.png")); // NOI18N
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 840, 610));
         getContentPane().add(jlbl_background_cadastro_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jfield_cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfield_cpfActionPerformed
