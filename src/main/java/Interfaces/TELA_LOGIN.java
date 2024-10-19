@@ -77,6 +77,7 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 445, 466, 41));
 
         jLabel_LOGIN.setFont(new java.awt.Font("Merriweather", 0, 32)); // NOI18N
+        jLabel_LOGIN.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_LOGIN.setText("Login");
         jLabel_LOGIN.setMaximumSize(new java.awt.Dimension(123, 49));
         jLabel_LOGIN.setMinimumSize(new java.awt.Dimension(123, 49));
@@ -84,13 +85,12 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         getContentPane().add(jLabel_LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 250, 110, 50));
 
         jLabel_SENHA.setFont(new java.awt.Font("Merriweather", 0, 32)); // NOI18N
+        jLabel_SENHA.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_SENHA.setText("Senha");
         getContentPane().add(jLabel_SENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 396, 130, 40));
 
         jLabel_ImgFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_LOGIN.png"))); // NOI18N
         jLabel_ImgFundo.setMaximumSize(new java.awt.Dimension(1920, 1080));
-        jLabel_ImgFundo.setMinimumSize(new java.awt.Dimension(1366, 768));
-        jLabel_ImgFundo.setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().add(jLabel_ImgFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
         pack();

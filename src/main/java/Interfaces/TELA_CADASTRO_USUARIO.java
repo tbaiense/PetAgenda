@@ -35,7 +35,6 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jtxt_senha = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
         jlbl_background_cadastro_usuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,10 +51,12 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jlbl_cadastrarUsuario.setFont(new java.awt.Font("Merriweather", 0, 36)); // NOI18N
+        jlbl_cadastrarUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_cadastrarUsuario.setText("Cadastrar usuário");
         jPanel1.add(jlbl_cadastrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 318, 36));
 
         jlbl_nome.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        jlbl_nome.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_nome.setText("Nome:");
         jPanel1.add(jlbl_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 76, -1, -1));
 
@@ -71,6 +72,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jPanel1.add(jtxt_CPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 184, 550, 50));
 
         jLabel1.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("CPF (Será utilizado como Login):");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 165, -1, -1));
 
@@ -86,6 +88,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jPanel1.add(jtxt_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 95, 550, 50));
 
         jLabel2.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("SENHA (8 dígitos, incluindo números e caracteres especiais):");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 251, -1, -1));
 
@@ -118,30 +121,9 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 120, 643, 451));
 
         jlbl_background_cadastro_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        jlbl_background_cadastro_usuario.setLabelFor(jlbl_background_cadastro_usuario);
         jlbl_background_cadastro_usuario.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/BG_padrao.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1370, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jlbl_background_cadastro_usuario)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jlbl_background_cadastro_usuario)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
+        getContentPane().add(jlbl_background_cadastro_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -203,7 +185,6 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jlbl_background_cadastro_usuario;
     private javax.swing.JLabel jlbl_cadastrarUsuario;
     private javax.swing.JLabel jlbl_nome;
