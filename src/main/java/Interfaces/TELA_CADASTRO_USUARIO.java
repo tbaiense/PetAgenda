@@ -122,7 +122,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
 
         jlbl_background_cadastro_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
         jlbl_background_cadastro_usuario.setLabelFor(jlbl_background_cadastro_usuario);
-        jlbl_background_cadastro_usuario.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/BG_padrao.png"))); // NOI18N
+        jlbl_background_cadastro_usuario.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
         getContentPane().add(jlbl_background_cadastro_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

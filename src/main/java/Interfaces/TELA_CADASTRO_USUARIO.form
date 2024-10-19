@@ -253,7 +253,7 @@
           <ComponentRef name="jlbl_background_cadastro_usuario"/>
         </Property>
         <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/IMAGENS/BG_padrao.png"/>
+          <Image iconType="3" name="/BG_PADRAO.png"/>
         </Property>
       </Properties>
       <Constraints>

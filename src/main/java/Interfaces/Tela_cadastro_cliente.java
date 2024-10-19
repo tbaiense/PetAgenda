@@ -209,7 +209,7 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 47, 750, 590));
 
-        jlbl_background_cadastro_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/BG_PADRAO.png"))); // NOI18N
+        jlbl_background_cadastro_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
         getContentPane().add(jlbl_background_cadastro_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -150, 1920, 1080));
 
         pack();
