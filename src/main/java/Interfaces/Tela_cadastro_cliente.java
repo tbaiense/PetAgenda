@@ -90,6 +90,8 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
         jlbl_bairro.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_bairro.setText("Bairro:");
 
+        jtxtf_campo_cidade.setPreferredSize(new java.awt.Dimension(300, 60));
+
         jlbl_cidade.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_cidade.setText("Cidade:");
 
@@ -103,6 +105,7 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
         jbtn_Cadastrar_cliente.setBackground(new java.awt.Color(51, 153, 0));
         jbtn_Cadastrar_cliente.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
         jbtn_Cadastrar_cliente.setText("CADASTRAR");
+        jbtn_Cadastrar_cliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,17 +113,17 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jlbl_titulo)
+                .addComponent(jlbl_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
                 .addGap(147, 147, 147))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jtxtf_campo_nome_cliente)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtxtf_campo_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbl_cpf))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jlbl_telefone)
                             .addComponent(jtxtf_campo_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,7 +142,7 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jtxtf_campo_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
-                        .addComponent(jtxtf_campo_cidade))
+                        .addComponent(jtxtf_campo_cidade, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -149,12 +152,13 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
                             .addComponent(jlbl_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtxtf_campo_servico, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbl_servico_contratado)
-                            .addComponent(jlbl_rua)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(267, 267, 267)
-                                .addComponent(jbtn_Cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jlbl_rua))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(274, 274, 274)
+                .addComponent(jbtn_Cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +208,9 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 47, 750, 590));
-        getContentPane().add(jlbl_background_cadastro_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+
+        jlbl_background_cadastro_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/BG_PADRAO.png"))); // NOI18N
+        getContentPane().add(jlbl_background_cadastro_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -150, 1920, 1080));
 
         pack();
         setLocationRelativeTo(null);
