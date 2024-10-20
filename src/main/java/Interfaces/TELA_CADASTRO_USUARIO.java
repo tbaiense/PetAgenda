@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import ui.custom.RoundedCornerButtonUI;
+
 /**
  *
  * @author ncunha
@@ -34,7 +36,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jtxt_nome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jtxt_senha = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jbtn_CadastrarUsuario = new javax.swing.JButton();
         jlbl_background_cadastro_usuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,7 +55,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jlbl_cadastrarUsuario.setFont(new java.awt.Font("Merriweather", 0, 36)); // NOI18N
         jlbl_cadastrarUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_cadastrarUsuario.setText("Cadastrar usuário");
-        jPanel1.add(jlbl_cadastrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 318, 36));
+        jPanel1.add(jlbl_cadastrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 318, 36));
 
         jlbl_nome.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_nome.setForeground(new java.awt.Color(0, 0, 0));
@@ -103,20 +105,21 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         });
         jPanel1.add(jtxt_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 273, 550, 50));
 
-        jButton1.setBackground(new java.awt.Color(71, 120, 63));
-        jButton1.setFont(new java.awt.Font("Merriweather", 0, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("CADASTRAR");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jButton1.setMaximumSize(new java.awt.Dimension(170, 35));
-        jButton1.setMinimumSize(new java.awt.Dimension(170, 35));
-        jButton1.setPreferredSize(new java.awt.Dimension(170, 35));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_CadastrarUsuario.setBackground(new java.awt.Color(71, 120, 63));
+        jbtn_CadastrarUsuario.setFont(new java.awt.Font("Merriweather", 0, 20)); // NOI18N
+        jbtn_CadastrarUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jbtn_CadastrarUsuario.setText("CADASTRAR");
+        jbtn_CadastrarUsuario.setBorder(null);
+        jbtn_CadastrarUsuario.setMaximumSize(new java.awt.Dimension(170, 35));
+        jbtn_CadastrarUsuario.setMinimumSize(new java.awt.Dimension(170, 35));
+        jbtn_CadastrarUsuario.setPreferredSize(new java.awt.Dimension(170, 35));
+        jbtn_CadastrarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbtn_CadastrarUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 368, 240, 50));
+        jbtn_CadastrarUsuario.setUI(new RoundedCornerButtonUI());
+        jPanel1.add(jbtn_CadastrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 368, 240, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 120, 643, 451));
 
@@ -141,9 +144,9 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxt_senhaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbtn_CadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_CadastrarUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbtn_CadastrarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,10 +184,10 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbtn_CadastrarUsuario;
     private javax.swing.JLabel jlbl_background_cadastro_usuario;
     private javax.swing.JLabel jlbl_cadastrarUsuario;
     private javax.swing.JLabel jlbl_nome;
