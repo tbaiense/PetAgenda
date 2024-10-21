@@ -8,6 +8,9 @@ package Interfaces;
  *
  * @author The Great Garibaldo
  */
+
+import javax.swing.JFrame;
+
 public class TELA_LOGIN extends javax.swing.JFrame {
 
     /**
@@ -26,23 +29,68 @@ public class TELA_LOGIN extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbl_logo = new javax.swing.JLabel();
+        jLabel_LOGIN = new javax.swing.JLabel();
+        txt_login = new javax.swing.JTextField();
+        jLabel_SENHA = new javax.swing.JLabel();
+        txt_senha = new javax.swing.JPasswordField();
         jButton_ENTRAR = new javax.swing.JButton();
         jButton_Cadastrar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel_LOGIN = new javax.swing.JLabel();
-        jLabel_SENHA = new javax.swing.JLabel();
         jLabel_ImgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lbl_logo.setBackground(new java.awt.Color(239, 225, 201));
+        lbl_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo_PetAgendaMenor.png"))); // NOI18N
+        lbl_logo.setOpaque(true);
+        getContentPane().add(lbl_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 210));
+
+        jLabel_LOGIN.setFont(new java.awt.Font("Merriweather", 0, 32)); // NOI18N
+        jLabel_LOGIN.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel_LOGIN.setText("Login");
+        jLabel_LOGIN.setMaximumSize(new java.awt.Dimension(123, 49));
+        jLabel_LOGIN.setMinimumSize(new java.awt.Dimension(123, 49));
+        jLabel_LOGIN.setPreferredSize(new java.awt.Dimension(123, 49));
+        getContentPane().add(jLabel_LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 250, 110, 50));
+
+        txt_login.setBackground(new java.awt.Color(152, 141, 124));
+        txt_login.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txt_login.setForeground(new java.awt.Color(30, 30, 30));
+        txt_login.setText("TheMasterOfTheMasterAdmin");
+        txt_login.setCaretColor(new java.awt.Color(0, 0, 0));
+        txt_login.setMinimumSize(new java.awt.Dimension(466, 41));
+        txt_login.setPreferredSize(new java.awt.Dimension(466, 41));
+        txt_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_loginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 299, 466, 41));
+
+        jLabel_SENHA.setFont(new java.awt.Font("Merriweather", 0, 32)); // NOI18N
+        jLabel_SENHA.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel_SENHA.setText("Senha");
+        getContentPane().add(jLabel_SENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 396, 130, 40));
+
+        txt_senha.setBackground(new java.awt.Color(152, 141, 124));
+        txt_senha.setForeground(new java.awt.Color(0, 0, 0));
+        txt_senha.setText("jPasswordField1");
+        txt_senha.setCaretColor(new java.awt.Color(0, 0, 0));
+        txt_senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_senhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 445, 466, 41));
+
         jButton_ENTRAR.setBackground(new java.awt.Color(239, 225, 201));
         jButton_ENTRAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botao_osso_entrar.png"))); // NOI18N
         jButton_ENTRAR.setBorder(null);
         jButton_ENTRAR.setBorderPainted(false);
         jButton_ENTRAR.setContentAreaFilled(false);
+        jButton_ENTRAR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_ENTRAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_ENTRARActionPerformed(evt);
@@ -55,39 +103,18 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         jButton_Cadastrar.setBorder(null);
         jButton_Cadastrar.setBorderPainted(false);
         jButton_Cadastrar.setContentAreaFilled(false);
-        jButton_Cadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_Cadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_Cadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_CadastrarMouseClicked(evt);
+            }
+        });
+        jButton_Cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CadastrarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 510, 190, 90));
-
-        jTextField1.setText("TheMasterOfTheMasterAdmin");
-        jTextField1.setMinimumSize(new java.awt.Dimension(466, 41));
-        jTextField1.setPreferredSize(new java.awt.Dimension(466, 41));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 299, 466, 41));
-
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 445, 466, 41));
-
-        jLabel_LOGIN.setFont(new java.awt.Font("Merriweather", 0, 32)); // NOI18N
-        jLabel_LOGIN.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel_LOGIN.setText("Login");
-        jLabel_LOGIN.setMaximumSize(new java.awt.Dimension(123, 49));
-        jLabel_LOGIN.setMinimumSize(new java.awt.Dimension(123, 49));
-        jLabel_LOGIN.setPreferredSize(new java.awt.Dimension(123, 49));
-        getContentPane().add(jLabel_LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 250, 110, 50));
-
-        jLabel_SENHA.setFont(new java.awt.Font("Merriweather", 0, 32)); // NOI18N
-        jLabel_SENHA.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel_SENHA.setText("Senha");
-        getContentPane().add(jLabel_SENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 396, 130, 40));
 
         jLabel_ImgFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_LOGIN.png"))); // NOI18N
         jLabel_ImgFundo.setMaximumSize(new java.awt.Dimension(1920, 1080));
@@ -99,15 +126,31 @@ public class TELA_LOGIN extends javax.swing.JFrame {
 
     private void jButton_ENTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ENTRARActionPerformed
         // TODO add your handling code here:
+        //Adicionar conexão com o banco de dados
+        
+        Tela_Inicial telaPrincipal = new Tela_Inicial();
+        telaPrincipal.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton_ENTRARActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void txt_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_senhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_txt_senhaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txt_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_loginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txt_loginActionPerformed
+
+    private void jButton_CadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_CadastrarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_CadastrarMouseClicked
+
+    private void jButton_CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CadastrarActionPerformed
+        // TODO add your handling code here:
+        TELA_CADASTRO_USUARIO telaCadastroUsuario = new TELA_CADASTRO_USUARIO();
+        telaCadastroUsuario.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton_CadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,7 +193,8 @@ public class TELA_LOGIN extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_ImgFundo;
     private javax.swing.JLabel jLabel_LOGIN;
     private javax.swing.JLabel jLabel_SENHA;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lbl_logo;
+    private javax.swing.JTextField txt_login;
+    private javax.swing.JPasswordField txt_senha;
     // End of variables declaration//GEN-END:variables
 }

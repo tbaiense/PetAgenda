@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import ui.custom.RoundedCornerButtonUI;
+
 /**
  *
  * @author kevin
@@ -26,127 +28,463 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel_menu = new javax.swing.JPanel();
+        btn_Home = new javax.swing.JToggleButton();
+        btn_agenda = new javax.swing.JButton();
+        btn_financeiro = new javax.swing.JButton();
+        btn_clientes = new javax.swing.JButton();
+        btn_funcionarios = new javax.swing.JButton();
+        btn_pets = new javax.swing.JButton();
+        btn_config = new javax.swing.JButton();
+        btn_sair = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lbl_CadastrarPet = new javax.swing.JLabel();
         label_nome_do_pet = new javax.swing.JLabel();
+        field_nome_Pet = new javax.swing.JTextField();
+        javax.swing.JLabel label_raca = new javax.swing.JLabel();
+        txtf_Raca = new javax.swing.JTextField();
+        lbl_Castrado = new javax.swing.JLabel();
+        chkBx_Sim = new javax.swing.JCheckBox();
+        chkBx_Nao = new javax.swing.JCheckBox();
+        lbl_Vacinas = new javax.swing.JLabel();
+        jbtn_AddVacinas = new javax.swing.JButton();
         label_porte = new javax.swing.JLabel();
-        field_nome_funcionario = new javax.swing.JTextField();
         field_telefone = new javax.swing.JTextField();
         label_cor = new javax.swing.JLabel();
-        javax.swing.JLabel label_raca = new javax.swing.JLabel();
-        field_servico_prestado = new javax.swing.JTextField();
+        field_Cor = new javax.swing.JTextField();
         label_sexo = new javax.swing.JLabel();
-        field_cep = new javax.swing.JTextField();
+        jcmbBx_Sexo = new javax.swing.JComboBox<>();
         label_comportamento_do_pet = new javax.swing.JLabel();
-        field_rua = new javax.swing.JTextField();
-        label_bairro = new javax.swing.JLabel();
-        field_bairro = new javax.swing.JTextField();
-        field_CPF = new javax.swing.JTextField();
-        button_cadastrar = new javax.swing.JButton();
+        jtxtArea_Comportamento = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        lbl_Saude = new javax.swing.JLabel();
+        jtxtArea_Saude = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jbtn_cadastrarPet = new javax.swing.JButton();
         jlbl_background_cadastro_pet = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("PetAgenda - Cadastrar Pets");
+        setMinimumSize(new java.awt.Dimension(1366, 768));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label_nome_do_pet.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        jPanel_menu.setBackground(new java.awt.Color(124, 115, 101));
+        jPanel_menu.setForeground(new java.awt.Color(124, 115, 101));
+        jPanel_menu.setFont(new java.awt.Font("Merriweather", 0, 12)); // NOI18N
+        jPanel_menu.setMinimumSize(new java.awt.Dimension(205, 768));
+        jPanel_menu.setPreferredSize(new java.awt.Dimension(205, 768));
+        jPanel_menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_Home.setBackground(new java.awt.Color(124, 115, 101));
+        btn_Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo_PetAgendaMenor.png"))); // NOI18N
+        btn_Home.setBorder(null);
+        btn_Home.setBorderPainted(false);
+        btn_Home.setContentAreaFilled(false);
+        btn_Home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Home.setFocusPainted(false);
+        btn_Home.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/logo_PetAgendaPressed.png"))); // NOI18N
+        btn_Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_HomeMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btn_HomeMouseReleased(evt);
+            }
+        });
+        btn_Home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_HomeActionPerformed(evt);
+            }
+        });
+        jPanel_menu.add(btn_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 193, -1));
+
+        btn_agenda.setBackground(new java.awt.Color(124, 115, 101));
+        btn_agenda.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
+        btn_agenda.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_agenda.png"))); // NOI18N
+        btn_agenda.setText("Agenda");
+        btn_agenda.setBorder(null);
+        btn_agenda.setBorderPainted(false);
+        btn_agenda.setContentAreaFilled(false);
+        btn_agenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_agenda.setFocusPainted(false);
+        btn_agenda.setHideActionText(true);
+        btn_agenda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_agenda.setIconTextGap(8);
+        btn_agenda.setMaximumSize(new java.awt.Dimension(205, 50));
+        btn_agenda.setMinimumSize(new java.awt.Dimension(205, 50));
+        btn_agenda.setPreferredSize(new java.awt.Dimension(205, 60));
+        btn_agenda.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btn_agendaMouseMoved(evt);
+            }
+        });
+        btn_agenda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_agendaMousePressed(evt);
+            }
+        });
+        btn_agenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agendaActionPerformed(evt);
+            }
+        });
+        jPanel_menu.add(btn_agenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 248, -1, -1));
+
+        btn_financeiro.setBackground(new java.awt.Color(124, 115, 101));
+        btn_financeiro.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
+        btn_financeiro.setForeground(new java.awt.Color(255, 255, 255));
+        btn_financeiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_financeiro.png"))); // NOI18N
+        btn_financeiro.setText("Financeiro");
+        btn_financeiro.setBorder(null);
+        btn_financeiro.setContentAreaFilled(false);
+        btn_financeiro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_financeiro.setHideActionText(true);
+        btn_financeiro.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_financeiro.setIconTextGap(8);
+        btn_financeiro.setMaximumSize(new java.awt.Dimension(205, 50));
+        btn_financeiro.setMinimumSize(new java.awt.Dimension(205, 50));
+        btn_financeiro.setPreferredSize(new java.awt.Dimension(205, 60));
+        btn_financeiro.setSelected(true);
+        jPanel_menu.add(btn_financeiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 308, -1, -1));
+
+        btn_clientes.setBackground(new java.awt.Color(124, 115, 101));
+        btn_clientes.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
+        btn_clientes.setForeground(new java.awt.Color(255, 255, 255));
+        btn_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_clientes.png"))); // NOI18N
+        btn_clientes.setText("Clientes");
+        btn_clientes.setBorder(null);
+        btn_clientes.setContentAreaFilled(false);
+        btn_clientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_clientes.setHideActionText(true);
+        btn_clientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_clientes.setIconTextGap(8);
+        btn_clientes.setMaximumSize(new java.awt.Dimension(205, 50));
+        btn_clientes.setMinimumSize(new java.awt.Dimension(205, 50));
+        btn_clientes.setPreferredSize(new java.awt.Dimension(205, 60));
+        jPanel_menu.add(btn_clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 368, -1, -1));
+
+        btn_funcionarios.setBackground(new java.awt.Color(124, 115, 101));
+        btn_funcionarios.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
+        btn_funcionarios.setForeground(new java.awt.Color(255, 255, 255));
+        btn_funcionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_funcionario.png"))); // NOI18N
+        btn_funcionarios.setText("Funcionários");
+        btn_funcionarios.setBorder(null);
+        btn_funcionarios.setContentAreaFilled(false);
+        btn_funcionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_funcionarios.setHideActionText(true);
+        btn_funcionarios.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_funcionarios.setIconTextGap(8);
+        btn_funcionarios.setMaximumSize(new java.awt.Dimension(205, 50));
+        btn_funcionarios.setMinimumSize(new java.awt.Dimension(205, 50));
+        btn_funcionarios.setPreferredSize(new java.awt.Dimension(205, 60));
+        jPanel_menu.add(btn_funcionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 428, -1, -1));
+
+        btn_pets.setBackground(new java.awt.Color(124, 115, 101));
+        btn_pets.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
+        btn_pets.setForeground(new java.awt.Color(255, 255, 255));
+        btn_pets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_pets.png"))); // NOI18N
+        btn_pets.setText("Pets");
+        btn_pets.setBorder(null);
+        btn_pets.setContentAreaFilled(false);
+        btn_pets.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_pets.setHideActionText(true);
+        btn_pets.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_pets.setIconTextGap(8);
+        btn_pets.setMaximumSize(new java.awt.Dimension(205, 50));
+        btn_pets.setMinimumSize(new java.awt.Dimension(205, 50));
+        btn_pets.setPreferredSize(new java.awt.Dimension(205, 60));
+        jPanel_menu.add(btn_pets, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 488, -1, -1));
+
+        btn_config.setBackground(new java.awt.Color(124, 115, 101));
+        btn_config.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
+        btn_config.setForeground(new java.awt.Color(255, 255, 255));
+        btn_config.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_configuracoes.png"))); // NOI18N
+        btn_config.setText("Configurações");
+        btn_config.setBorder(null);
+        btn_config.setContentAreaFilled(false);
+        btn_config.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_config.setHideActionText(true);
+        btn_config.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_config.setIconTextGap(8);
+        btn_config.setMaximumSize(new java.awt.Dimension(205, 50));
+        btn_config.setMinimumSize(new java.awt.Dimension(205, 50));
+        btn_config.setPreferredSize(new java.awt.Dimension(205, 60));
+        jPanel_menu.add(btn_config, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 548, -1, -1));
+
+        btn_sair.setBackground(new java.awt.Color(124, 115, 101));
+        btn_sair.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
+        btn_sair.setForeground(new java.awt.Color(255, 255, 255));
+        btn_sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_sair.png"))); // NOI18N
+        btn_sair.setText("Sair");
+        btn_sair.setBorder(null);
+        btn_sair.setContentAreaFilled(false);
+        btn_sair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_sair.setHideActionText(true);
+        btn_sair.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_sair.setIconTextGap(8);
+        btn_sair.setMaximumSize(new java.awt.Dimension(205, 50));
+        btn_sair.setMinimumSize(new java.awt.Dimension(205, 50));
+        btn_sair.setPreferredSize(new java.awt.Dimension(205, 60));
+        btn_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sairActionPerformed(evt);
+            }
+        });
+        jPanel_menu.add(btn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 608, -1, -1));
+
+        getContentPane().add(jPanel_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 205, 768));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(899, 617));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbl_CadastrarPet.setFont(new java.awt.Font("Merriweather", 0, 45)); // NOI18N
+        lbl_CadastrarPet.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_CadastrarPet.setText("Cadastrar pets");
+        jPanel1.add(lbl_CadastrarPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 20, -1, -1));
+
+        label_nome_do_pet.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        label_nome_do_pet.setForeground(new java.awt.Color(0, 0, 0));
         label_nome_do_pet.setText("Nome do Pet:");
-        getContentPane().add(label_nome_do_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, -1, -1));
+        jPanel1.add(label_nome_do_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 84, -1, -1));
 
-        label_porte.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        label_porte.setText("Porte:");
-        getContentPane().add(label_porte, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, -1, -1));
-
-        field_nome_funcionario.setPreferredSize(new java.awt.Dimension(653, 60));
-        field_nome_funcionario.addActionListener(new java.awt.event.ActionListener() {
+        field_nome_Pet.setBackground(new java.awt.Color(217, 217, 217));
+        field_nome_Pet.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        field_nome_Pet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        field_nome_Pet.setCaretColor(new java.awt.Color(0, 0, 0));
+        field_nome_Pet.setMinimumSize(new java.awt.Dimension(250, 50));
+        field_nome_Pet.setPreferredSize(new java.awt.Dimension(250, 50));
+        field_nome_Pet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_nome_funcionarioActionPerformed(evt);
+                field_nome_PetActionPerformed(evt);
             }
         });
-        getContentPane().add(field_nome_funcionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, -1, -1));
+        jPanel1.add(field_nome_Pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 103, -1, -1));
 
-        field_telefone.setPreferredSize(new java.awt.Dimension(300, 60));
-        getContentPane().add(field_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, -1, -1));
-
-        label_cor.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        label_cor.setText("Cor:");
-        getContentPane().add(label_cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, -1, -1));
-
-        label_raca.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        label_raca.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        label_raca.setForeground(new java.awt.Color(0, 0, 0));
         label_raca.setText("Raça:");
-        getContentPane().add(label_raca, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, -1, -1));
+        jPanel1.add(label_raca, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 84, -1, -1));
 
-        field_servico_prestado.setPreferredSize(new java.awt.Dimension(300, 60));
-        getContentPane().add(field_servico_prestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
+        txtf_Raca.setBackground(new java.awt.Color(217, 217, 217));
+        txtf_Raca.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtf_Raca.setForeground(new java.awt.Color(0, 0, 0));
+        txtf_Raca.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        txtf_Raca.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtf_Raca.setMinimumSize(new java.awt.Dimension(200, 50));
+        txtf_Raca.setPreferredSize(new java.awt.Dimension(200, 50));
+        jPanel1.add(txtf_Raca, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 103, -1, -1));
 
-        label_sexo.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        lbl_Castrado.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        lbl_Castrado.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_Castrado.setText("Castrado:");
+        jPanel1.add(lbl_Castrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, -1, -1));
+
+        chkBx_Sim.setBackground(new java.awt.Color(255, 255, 255));
+        chkBx_Sim.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        chkBx_Sim.setForeground(new java.awt.Color(0, 0, 0));
+        chkBx_Sim.setText("SIM");
+        chkBx_Sim.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        chkBx_Sim.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        chkBx_Sim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkBx_SimActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chkBx_Sim, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, -1, -1));
+
+        chkBx_Nao.setBackground(new java.awt.Color(255, 255, 255));
+        chkBx_Nao.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        chkBx_Nao.setForeground(new java.awt.Color(0, 0, 0));
+        chkBx_Nao.setText("NÃO");
+        chkBx_Nao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        chkBx_Nao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(chkBx_Nao, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, -1, -1));
+
+        lbl_Vacinas.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        lbl_Vacinas.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_Vacinas.setText("Vacinas:");
+        jPanel1.add(lbl_Vacinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, -1, -1));
+
+        jbtn_AddVacinas.setBackground(new java.awt.Color(217, 217, 217));
+        jbtn_AddVacinas.setFont(new java.awt.Font("Merriweather", 0, 12)); // NOI18N
+        jbtn_AddVacinas.setForeground(new java.awt.Color(0, 0, 0));
+        jbtn_AddVacinas.setText("ADICIONAR");
+        jbtn_AddVacinas.setBorder(null);
+        jbtn_AddVacinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_AddVacinas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_AddVacinasActionPerformed(evt);
+            }
+        });
+        // Aplicando a UI personalizada
+        jbtn_cadastrarPet.setUI(new RoundedCornerButtonUI());
+        jPanel1.add(jbtn_AddVacinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 122, 19));
+
+        label_porte.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        label_porte.setForeground(new java.awt.Color(0, 0, 0));
+        label_porte.setText("Porte:");
+        jPanel1.add(label_porte, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 182, -1, -1));
+
+        field_telefone.setBackground(new java.awt.Color(217, 217, 217));
+        field_telefone.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        field_telefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        field_telefone.setCaretColor(new java.awt.Color(0, 0, 0));
+        field_telefone.setMinimumSize(new java.awt.Dimension(250, 50));
+        field_telefone.setPreferredSize(new java.awt.Dimension(250, 50));
+        jPanel1.add(field_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 201, -1, -1));
+
+        label_cor.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        label_cor.setForeground(new java.awt.Color(0, 0, 0));
+        label_cor.setText("Cor:");
+        jPanel1.add(label_cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 182, -1, -1));
+
+        field_Cor.setBackground(new java.awt.Color(217, 217, 217));
+        field_Cor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        field_Cor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        field_Cor.setCaretColor(new java.awt.Color(0, 0, 0));
+        field_Cor.setPreferredSize(new java.awt.Dimension(200, 50));
+        jPanel1.add(field_Cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 201, -1, -1));
+
+        label_sexo.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        label_sexo.setForeground(new java.awt.Color(0, 0, 0));
         label_sexo.setText("Sexo:");
-        getContentPane().add(label_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 280, -1, -1));
+        jPanel1.add(label_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, -1, -1));
 
-        field_cep.setPreferredSize(new java.awt.Dimension(200, 60));
-        getContentPane().add(field_cep, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 310, -1, -1));
+        jcmbBx_Sexo.setBackground(new java.awt.Color(217, 217, 217));
+        jcmbBx_Sexo.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        jcmbBx_Sexo.setForeground(new java.awt.Color(0, 0, 0));
+        jcmbBx_Sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "Fêmea", "Macho" }));
+        jcmbBx_Sexo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jcmbBx_Sexo.setMinimumSize(new java.awt.Dimension(200, 50));
+        jcmbBx_Sexo.setPreferredSize(new java.awt.Dimension(200, 50));
+        jPanel1.add(jcmbBx_Sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, -1, -1));
 
-        label_comportamento_do_pet.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        label_comportamento_do_pet.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        label_comportamento_do_pet.setForeground(new java.awt.Color(0, 0, 0));
         label_comportamento_do_pet.setText("Comportamento do Pet:");
-        getContentPane().add(label_comportamento_do_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
+        jPanel1.add(label_comportamento_do_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 271, -1, -1));
 
-        field_rua.setPreferredSize(new java.awt.Dimension(653, 60));
-        field_rua.addActionListener(new java.awt.event.ActionListener() {
+        jtxtArea_Comportamento.setBackground(new java.awt.Color(217, 217, 217));
+        jtxtArea_Comportamento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jtxtArea_Comportamento.setForeground(new java.awt.Color(0, 0, 0));
+        jtxtArea_Comportamento.setPreferredSize(new java.awt.Dimension(800, 80));
+
+        jTextArea1.setBackground(new java.awt.Color(217, 217, 217));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
+        jTextArea1.setCaretColor(new java.awt.Color(0, 0, 0));
+        jTextArea1.setPreferredSize(new java.awt.Dimension(800, 80));
+        jtxtArea_Comportamento.setViewportView(jTextArea1);
+
+        jPanel1.add(jtxtArea_Comportamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
+
+        lbl_Saude.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        lbl_Saude.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_Saude.setText("Saúde do Pet:");
+        jPanel1.add(lbl_Saude, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 390, -1, -1));
+
+        jtxtArea_Saude.setBackground(new java.awt.Color(217, 217, 217));
+        jtxtArea_Saude.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jtxtArea_Saude.setForeground(new java.awt.Color(0, 0, 0));
+        jtxtArea_Saude.setPreferredSize(new java.awt.Dimension(800, 80));
+
+        jTextArea2.setBackground(new java.awt.Color(217, 217, 217));
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea2.setRows(5);
+        jTextArea2.setBorder(null);
+        jTextArea2.setCaretColor(new java.awt.Color(0, 0, 0));
+        jTextArea2.setPreferredSize(new java.awt.Dimension(800, 80));
+        jtxtArea_Saude.setViewportView(jTextArea2);
+
+        jPanel1.add(jtxtArea_Saude, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 409, -1, -1));
+
+        jbtn_cadastrarPet.setBackground(new java.awt.Color(77, 120, 63));
+        jbtn_cadastrarPet.setFont(new java.awt.Font("Merriweather", 0, 20)); // NOI18N
+        jbtn_cadastrarPet.setForeground(new java.awt.Color(255, 255, 255));
+        jbtn_cadastrarPet.setText("CADASTRAR");
+        jbtn_cadastrarPet.setBorder(null);
+        jbtn_cadastrarPet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_cadastrarPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_ruaActionPerformed(evt);
+                jbtn_cadastrarPetActionPerformed(evt);
             }
         });
-        getContentPane().add(field_rua, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, -1, -1));
+        // Aplicando a UI personalizada
+        jbtn_cadastrarPet.setUI(new RoundedCornerButtonUI());
+        jPanel1.add(jbtn_cadastrarPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 530, 240, 50));
 
-        label_bairro.setText("Bairro:");
-        getContentPane().add(label_bairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 480, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
-        field_bairro.setPreferredSize(new java.awt.Dimension(320, 60));
-        field_bairro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_bairroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(field_bairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 510, -1, -1));
-
-        field_CPF.setPreferredSize(new java.awt.Dimension(320, 60));
-        field_CPF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_CPFActionPerformed(evt);
-            }
-        });
-        getContentPane().add(field_CPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, -1, -1));
-
-        button_cadastrar.setText("Cadastrar");
-        button_cadastrar.setPreferredSize(new java.awt.Dimension(300, 40));
-        button_cadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_cadastrarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(button_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 600, -1, -1));
-        getContentPane().add(jlbl_background_cadastro_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+        jlbl_background_cadastro_pet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        getContentPane().add(jlbl_background_cadastro_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void field_nome_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_nome_funcionarioActionPerformed
+    private void field_nome_PetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_nome_PetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_field_nome_funcionarioActionPerformed
+    }//GEN-LAST:event_field_nome_PetActionPerformed
 
-    private void field_ruaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_ruaActionPerformed
+    private void btn_HomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_HomeMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_field_ruaActionPerformed
+    }//GEN-LAST:event_btn_HomeMousePressed
 
-    private void field_bairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_bairroActionPerformed
+    private void btn_HomeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_HomeMouseReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_field_bairroActionPerformed
+    }//GEN-LAST:event_btn_HomeMouseReleased
 
-    private void field_CPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_CPFActionPerformed
+    private void btn_HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_field_CPFActionPerformed
+        Tela_Inicial telaPrincipal = new Tela_Inicial();
+        telaPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_HomeActionPerformed
 
-    private void button_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_cadastrarActionPerformed
+    private void btn_agendaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_agendaMouseMoved
         // TODO add your handling code here:
-    }//GEN-LAST:event_button_cadastrarActionPerformed
+    }//GEN-LAST:event_btn_agendaMouseMoved
+
+    private void btn_agendaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_agendaMousePressed
+        // TODO add your handling code here:
+        btn_agenda.setBackground(new java.awt.Color(99, 90, 77));
+    }//GEN-LAST:event_btn_agendaMousePressed
+
+    private void jbtn_cadastrarPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cadastrarPetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtn_cadastrarPetActionPerformed
+
+    private void chkBx_SimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkBx_SimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkBx_SimActionPerformed
+
+    private void jbtn_AddVacinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_AddVacinasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtn_AddVacinasActionPerformed
+
+    private void btn_agendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendaActionPerformed
+        // TODO add your handling code here:
+        Tela_de_visualizacao_do_mes telaVisualizaMes = new Tela_de_visualizacao_do_mes();
+        telaVisualizaMes.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_agendaActionPerformed
+
+    private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
+        // TODO add your handling code here:
+        TELA_LOGIN telaLogin = new TELA_LOGIN();
+        telaLogin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_sairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,20 +522,38 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton button_cadastrar;
-    private javax.swing.JTextField field_CPF;
-    private javax.swing.JTextField field_bairro;
-    private javax.swing.JTextField field_cep;
-    private javax.swing.JTextField field_nome_funcionario;
-    private javax.swing.JTextField field_rua;
-    private javax.swing.JTextField field_servico_prestado;
+    private javax.swing.JToggleButton btn_Home;
+    private javax.swing.JButton btn_agenda;
+    private javax.swing.JButton btn_clientes;
+    private javax.swing.JButton btn_config;
+    private javax.swing.JButton btn_financeiro;
+    private javax.swing.JButton btn_funcionarios;
+    private javax.swing.JButton btn_pets;
+    private javax.swing.JButton btn_sair;
+    private javax.swing.JCheckBox chkBx_Nao;
+    private javax.swing.JCheckBox chkBx_Sim;
+    private javax.swing.JTextField field_Cor;
+    private javax.swing.JTextField field_nome_Pet;
     private javax.swing.JTextField field_telefone;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel_menu;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JButton jbtn_AddVacinas;
+    private javax.swing.JButton jbtn_cadastrarPet;
+    private javax.swing.JComboBox<String> jcmbBx_Sexo;
     private javax.swing.JLabel jlbl_background_cadastro_pet;
-    private javax.swing.JLabel label_bairro;
+    private javax.swing.JScrollPane jtxtArea_Comportamento;
+    private javax.swing.JScrollPane jtxtArea_Saude;
     private javax.swing.JLabel label_comportamento_do_pet;
     private javax.swing.JLabel label_cor;
     private javax.swing.JLabel label_nome_do_pet;
     private javax.swing.JLabel label_porte;
     private javax.swing.JLabel label_sexo;
+    private javax.swing.JLabel lbl_CadastrarPet;
+    private javax.swing.JLabel lbl_Castrado;
+    private javax.swing.JLabel lbl_Saude;
+    private javax.swing.JLabel lbl_Vacinas;
+    private javax.swing.JTextField txtf_Raca;
     // End of variables declaration//GEN-END:variables
 }
