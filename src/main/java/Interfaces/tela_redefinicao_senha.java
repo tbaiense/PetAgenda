@@ -332,6 +332,8 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
         // TODO add your handling code here:
+        //Adicionar conexão com o banco
+       
         TELA_LOGIN telaLogin = new TELA_LOGIN();
         telaLogin.setVisible(true);
         this.dispose();
