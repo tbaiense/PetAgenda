@@ -4,8 +4,7 @@
  */
 package Interfaces;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import javax.swing.*;
 import javax.swing.JOptionPane;
 import ui.custom.RoundedCornerBorder;
 import ui.custom.RoundedCornerButtonUI;
@@ -259,8 +258,8 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
 
         jtxt_nome.setBackground(new java.awt.Color(217, 217, 217));
         jtxt_nome.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxt_nome.setText("jTextField1");
-        jtxt_nome.setBorder(null);
+        jtxt_nome.setForeground(new java.awt.Color(0, 0, 0));
+        jtxt_nome.setBorder(new RoundedCornerBorder(50));
         jtxt_nome.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxt_nome.setMinimumSize(new java.awt.Dimension(550, 50));
         jtxt_nome.setPreferredSize(new java.awt.Dimension(550, 50));
@@ -273,7 +272,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
 
         jtxt_CPF.setBackground(new java.awt.Color(217, 217, 217));
         jtxt_CPF.setForeground(new java.awt.Color(0, 0, 0));
-        jtxt_CPF.setBorder(null);
+        jtxt_CPF.setBorder(new RoundedCornerBorder(50));
         jtxt_CPF.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxt_CPF.setMinimumSize(new java.awt.Dimension(464, 42));
         jtxt_CPF.setPreferredSize(new java.awt.Dimension(550, 50));
@@ -291,7 +290,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
 
         jtxt_senha.setBackground(new java.awt.Color(217, 217, 217));
         jtxt_senha.setForeground(new java.awt.Color(0, 0, 0));
-        jtxt_senha.setBorder(null);
+        jtxt_senha.setBorder(new RoundedCornerBorder(50));
         jtxt_senha.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxt_senha.setMinimumSize(new java.awt.Dimension(464, 42));
         jtxt_senha.setPreferredSize(new java.awt.Dimension(550, 50));
