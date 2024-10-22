@@ -5,7 +5,7 @@ package petagenda.exception;
  *
  * @author thiago
  */
-public class IllegalDescricaoException extends Exception {
+public class IllegalDescricaoException extends ComparableException {
     public IllegalDescricaoException() {
         super("descrição inválida");
     }

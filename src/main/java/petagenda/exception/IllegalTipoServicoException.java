@@ -5,7 +5,7 @@ package petagenda.exception;
  *
  * @author thiago
  */
-public class IllegalTipoServicoException extends Exception {
+public class IllegalTipoServicoException extends ComparableException {
     public IllegalTipoServicoException() {
         super("tipo de serviço inválido");
     }

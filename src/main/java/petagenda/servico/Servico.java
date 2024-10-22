@@ -1,18 +1,20 @@
 package petagenda.servico;
 
+import petagenda.exception.IllegalArgumentsException;
 import petagenda.exception.IllegalDuracaoException;
 import petagenda.exception.IllegalIdException;
 import petagenda.exception.IllegalNomeException;
 import petagenda.exception.IllegalPrecoException;
-import petagenda.exception.IllegalServicoException;
 import petagenda.exception.IllegalTipoServicoException;
 import petagenda.exception.IllegalDescricaoException;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author Thiago M. Baiense
  */
-public class Servico {
+public final class Servico {
     private int id;
     private String nome;
     private TipoServico tipo;
@@ -20,25 +22,89 @@ public class Servico {
     private double preco;
     private String descricao;
     
-    public Servico() {
-        this.id = -1;
+    public static final int NULL_ID = -1;
+    
+    public Servico(String nome, TipoServico tipo, int duracao, double preco) {
+        this(1, nome, tipo, duracao, preco, null);
+        this.id = NULL_ID;
     }
     
-    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco, String descricao) {
-//        TODO: fazer try..catches
-//        this.setId(id);
-//        this.setNome(nome);
-//        this.setTipo(tipo);
-//        this.setDuracao(duracao);
-//        this.setPreco(preco);
-//        this.setDescricao(descricao);
+    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco) {
+        this(id, nome, tipo, duracao, preco, null);
     }
     
     public Servico(String nome, TipoServico tipo, int duracao, double preco, String descricao) {
-        this(-1, nome, tipo, duracao, preco, descricao);
+        this(1, nome, tipo, duracao, preco, descricao);
+        this.id = NULL_ID;
     }
     
-    public void setId(int id) throws IllegalIdException {
+    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco, String descricao) {
+        ArrayList<Throwable> cList = null; // Armazena as cause a serem adicionadas ao construtor
+        
+        try {
+            this.setId(id);
+        } catch (IllegalIdException ex) {
+            cList = new ArrayList<Throwable>();
+            cList.add(ex);
+        }
+        
+        try {
+            this.setNome(nome);
+        } catch (IllegalNomeException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        try {
+            this.setTipo(tipo);
+        } catch (IllegalTipoServicoException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        try {
+            this.setDuracao(duracao);
+        } catch (IllegalDuracaoException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        try {
+            this.setPreco(preco);
+        } catch (IllegalPrecoException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        try {
+            this.setDescricao(descricao);
+        } catch (IllegalDescricaoException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        if (cList != null && !cList.isEmpty()) {
+            Throwable[] tArray = new Throwable[cList.size()];
+            cList.toArray(tArray);
+            throw new IllegalArgumentsException(tArray);
+        }
+    }
+    
+    public boolean isNew() {
+        return this.getId() == NULL_ID;
+    }
+    
+    public void setId(int id) {
         if (id < 1) {
             throw new IllegalIdException();
         }
@@ -50,7 +116,7 @@ public class Servico {
         return this.id;
     }
     
-    public void setNome(String nome) throws IllegalNomeException {
+    public void setNome(String nome) {
         if (nome == null) {
             throw new IllegalNomeException("nome não pode ser nulo");
         }
@@ -70,7 +136,7 @@ public class Servico {
         return this.nome;
     }
     
-    public void setTipo(TipoServico t) throws IllegalTipoServicoException {
+    public void setTipo(TipoServico t) {
         if (t == null) {
             throw new IllegalTipoServicoException("tipo do serviço não pode ser nulo");
         }
@@ -82,7 +148,7 @@ public class Servico {
         return this.tipo;
     }
     
-    public void setDuracao(int duracao) throws IllegalDuracaoException {
+    public void setDuracao(int duracao) {
         if (duracao < 1) {
             throw new IllegalDuracaoException();
         }
@@ -94,7 +160,7 @@ public class Servico {
         return this.duracao;
     }
     
-    public void setPreco(double preco) throws IllegalPrecoException {
+    public void setPreco(double preco) {
         if (preco < 0) {
             throw new IllegalPrecoException("preço não pode ser inferior a 0");
         }
@@ -106,23 +172,38 @@ public class Servico {
         return this.preco;
     }
     
-    public void setDescricao(String desc) throws IllegalDescricaoException {
+    public void setDescricao(String desc) {
         if (desc == null) {
-            throw new IllegalDescricaoException("descrição não pode ser nula");
+//            throw new IllegalDescricaoException("descrição não pode ser nula");
+            this.descricao = null;
+        } else {
+            desc = desc.trim();
+        
+            if (desc.isEmpty()) {
+//                throw new IllegalDescricaoException("descrição não pode ser vazia");
+                this.descricao = null;
+            } else if (desc.length() > 200) {
+                throw new IllegalDescricaoException("descrição não pode conter mais de 200 caracteres");
+            } else {
+                this.descricao = desc;
+            }
         }
-        
-        desc = desc.trim();
-        
-        if (desc.isEmpty()) {
-            throw new IllegalDescricaoException("descrição não pode ser vazia");
-        } else if (desc.length() > 200) {
-            throw new IllegalDescricaoException("descrição não pode conter mais de 200 caracteres");
-        }
-        
-        this.descricao = desc;
     }
     
     public String getDescricao() {
         return this.descricao;
+    }
+    
+    public boolean equals(Object o) {
+        if (o != null && o instanceof Servico) {
+            return this.getId() == ((Servico)o).getId();
+        } else {
+            return false;
+        }
+    }
+    
+    @Override
+    public String toString() {
+        return this.getNome();
     }
 }

@@ -5,7 +5,14 @@
 package Interfaces;
 
 import com.mycompany.petagenda.MenuPanel;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
+import petagenda.Usuario;
+import petagenda.bd.BD;
+import petagenda.dados.Endereco;
+import petagenda.dados.LocalAtuacao;
+import petagenda.exception.*;
+import petagenda.servico.Servico;
 import ui.custom.RoundedCornerBorder;
 import ui.custom.RoundedCornerButtonUI;
 
@@ -19,9 +26,118 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
      * Creates new form tela_cadastro_funcionario
      */
     public tela_cadastro_funcionario() {
-        initComponents();
-        initMenuPanel();
+        // Validação de login
+        if (Usuario.getAtual() != null) {
+            initComponents();
+            initMenuPanel();
+            Servico[] servicosCadastrados = BD.Servico.selectAll();
+            if (servicosCadastrados != null) {
+                for (Servico s : servicosCadastrados) {
+                    jcbox_Selecao_servico.addItem(s);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Nenhum Serviço disponível recebido do banco de dados.");
+            }
+
+            setFieldsInfo(BD.Usuario.selectLast()); // Recebe o último Usuario do banco e preenche os campos com ele
+        } else {
+            JOptionPane.showMessageDialog(null, "É necessário estar logado para acessar esta funcionalidade.");
+            super.dispose();
+            System.exit(0);
+        }
     }
+
+    // Define as informações dos campos usando um objeto do tipo petagenda.Usuario
+    private void setFieldsInfo(Usuario usuario) {
+        if (usuario != null) {
+            field_nome_funcionario.setText(usuario.getNome());
+            field_cpf.setText(usuario.getCpf().toString());
+            field_telefone.setText(usuario.getTelefone());
+            Servico servUsuario = usuario.getServico();
+            for (int i=0; i < jcbox_Selecao_servico.getItemCount(); i++) {
+                Servico servCBox = (Servico)jcbox_Selecao_servico.getItemAt(i);
+                if (servCBox.equals(servUsuario)) {
+                    jcbox_Selecao_servico.setSelectedIndex(i);
+                }
+            }
+            field_cep.setText(usuario.getEndereco().CEP);
+            field_numero.setText(usuario.getEndereco().NUMERO);
+            field_rua.setText(usuario.getEndereco().RUA);
+            field_bairro.setText(usuario.getEndereco().BAIRRO);
+            field_cidade.setText(usuario.getEndereco().CIDADE);
+        }
+    }
+    
+    // Limpa as informações dos campos de Usuario
+    private void clearFieldsInfo() {
+        field_nome_funcionario.setText(null);
+        field_cpf.setText(null);
+        field_telefone.setText(null);
+        jcbox_Selecao_servico.setSelectedIndex(0);
+        field_cep.setText(null);
+        field_numero.setText(null);
+        field_rua.setText(null);
+        field_bairro.setText(null);
+        field_cidade.setText(null);
+    }
+    
+    // Recebe as informações dos campos em um novo objeto do tipo petagenda.Usuario
+    private Usuario getFieldsInfo() {
+        Usuario novoUsuario = null;
+        String nome, cpf, telefone, cep, numero, rua, bairro, cidade;
+        Servico servicoPresta;
+        
+        nome = field_nome_funcionario.getText();
+        cpf = field_cpf.getText();
+        telefone = field_telefone.getText();
+        servicoPresta = (Servico)jcbox_Selecao_servico.getSelectedItem();
+        cep = field_cep.getText();
+        numero = field_numero.getText();
+        rua = field_rua.getText();
+        bairro = field_bairro.getText();
+        cidade = field_cidade.getText();
+        
+        IllegalArgumentsException exsCadastro = new IllegalArgumentsException();
+        // Criação do objeto do endereco;
+        Endereco endereco = null;
+        try {
+            endereco = new Endereco(rua, numero, bairro, cidade, cep);
+        } catch (IllegalArgumentsException exs) {
+            exsCadastro.addCause(exs.getCauses());
+        }
+        
+        LocalAtuacao localAtuacao = null;
+        try {
+            localAtuacao = LocalAtuacao.valueOf(endereco);
+        } catch (NullPointerException ex) {
+//            exsCadastro.addCause(ex);
+        }
+        
+        // Criação do usuário
+        try {
+            novoUsuario = new Usuario(nome, endereco, cpf, telefone, servicoPresta, localAtuacao);
+        } catch (IllegalArgumentsException exs) {
+            exsCadastro.addCause(exs.getCauses());
+        }
+            
+        if (exsCadastro.size() > 0) {
+            Throwable[] todasCauses = exsCadastro.getCauses();
+            Arrays.sort(todasCauses); // Ordena as mensagens de exceção usando order_index das exceções
+            
+            StringBuilder erros = new StringBuilder();
+            for (Throwable c : todasCauses) {
+                if (c != null && !(c instanceof IllegalLocalAtuacaoException) && !(c instanceof IllegalEnderecoException)) {
+                    erros.append(c.getMessage());
+                    erros.append("\n");
+                }
+            }
+            
+            JOptionPane.showMessageDialog(null, erros.toString(), "Campos inválidos", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        return novoUsuario;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -105,6 +221,7 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 174, -1, -1));
 
         field_cpf.setBackground(new java.awt.Color(217, 217, 217));
+
         field_cpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         field_cpf.setMinimumSize(new java.awt.Dimension(250, 50));
         field_cpf.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -119,6 +236,7 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 174, -1, -1));
 
         field_telefone.setBackground(new java.awt.Color(217, 217, 217));
+
         field_telefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         field_telefone.setMinimumSize(new java.awt.Dimension(250, 50));
         field_telefone.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -247,8 +365,14 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     }//GEN-LAST:event_field_ruaActionPerformed
 
     private void jbtn_cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cadastrarFuncionarioActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
+        Usuario cadastrar = getFieldsInfo(); // Retorna null se informações forem inválidas
+        if (cadastrar != null) {
+            int r = BD.Usuario.insert(cadastrar);
+            if (r > 0) { // Insert funcionou
+                clearFieldsInfo();
+                JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+            }
+        }
     }//GEN-LAST:event_jbtn_cadastrarFuncionarioActionPerformed
 
     private void jcbox_Selecao_servicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbox_Selecao_servicoActionPerformed

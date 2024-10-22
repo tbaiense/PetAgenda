@@ -6,7 +6,7 @@ package petagenda.exception;
  * @author thiago
  */
 
-public class IllegalPrecoException extends Exception {
+public class IllegalPrecoException extends ComparableException {
     public IllegalPrecoException() {
         super("preço inválido");
     }

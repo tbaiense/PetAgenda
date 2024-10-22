@@ -9,68 +9,74 @@ import java.util.ArrayList;
  * @author Thiago M. Baiense
  */
 
-public class IllegalArgumentsException extends Exception {
-    private Throwable cause;
-    private Throwable[] causes;
+public final class IllegalArgumentsException extends IllegalArgumentException {
+    private final ArrayList<Throwable> causeList = new ArrayList<Throwable>();
     
     public IllegalArgumentsException() {
         super("um ou mais argumentos são inválidos");
-        this.causes = null;
     }
     
     public IllegalArgumentsException(String message) {
         super(message);
-        this.causes = null;
     }
     
     public IllegalArgumentsException(Throwable cause) {
         super("um dos argumentos fornecidos é inválido");
-        this.causes = new Throwable[] { cause };
+        this.causeList.add(cause);
     }
     
     public IllegalArgumentsException(Throwable... causes) {
-        super("um dos argumentos fornecidos é inválido");
-        this.initCauses(causes);
+        super("um ou mais dos argumentos fornecidos é inválido");
+        this.initCauseList(causes);
     }
     
     public IllegalArgumentsException(String message, Throwable cause) {
         super(message);
-        this.initCauses(cause);
+        this.initCauseList(cause);
     }
     
     public IllegalArgumentsException(String message, Throwable... causes) {
         super(message);
-        this.initCauses(causes);
+        this.initCauseList(causes);
     }
     
-    public Throwable initCauses(Throwable... causes) {
+    public void initCauseList(Throwable... causes) {
         if (causes == null) {
             throw new NullPointerException();
-        }
-        
-        ArrayList<Throwable> cList = new ArrayList<Throwable>();
-        for(Throwable t : causes) {
-            if (t != null) {
-                cList.add(t);
+        } else {
+            for(Throwable t : causes) {
+                if (t != null) {
+                    this.causeList.add(t);
+                }
             }
         }
-        
-        if (cList.isEmpty()) {
-            return this;
+    }
+    
+    public void addCause(Throwable... causes) {
+        if (causes != null) {
+            for (Throwable ex : causes) {
+                if (ex != null) {
+                    this.causeList.add(ex);
+                }
+            }
         }
-        
-        Throwable[] tArray = new Throwable[cList.size()];
-        cList.toArray(tArray);
-        this.causes = tArray;
-        return this;
+    }
+    
+    public int size() { // Retorna a quantidade de causes
+        return this.causeList.size();
     }
     
     public Throwable[] getCauses() {
-        return this.causes;
+        Throwable[] cArray = new Throwable[this.size()];
+        return causeList.toArray(cArray);
     }
     
     @Override
     public Throwable getCause() {
-        return this.causes[0];
+        return this.causeList.get(0);
+    }
+    
+    public Throwable getCause(int index) {
+        return this.causeList.get(index);
     }
 }

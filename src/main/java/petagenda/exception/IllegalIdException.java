@@ -5,7 +5,7 @@ package petagenda.exception;
  *
  * @author Thiago M. Baiense
  */
-public class IllegalIdException extends Exception {
+public class IllegalIdException extends ComparableException {
     public IllegalIdException() {
         super("Id inválido");
     }
