@@ -1,16 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.petagenda;
 
-/**
- *
- * @author c.nunes
- */
+import petagenda.bd.BD;
+import petagenda.servico.TipoServico;
+import java.util.Arrays;
+
 public class PetAgenda {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        TipoServico.init();
+        System.out.print(Arrays.toString(TipoServico.values()));
     }
 }
