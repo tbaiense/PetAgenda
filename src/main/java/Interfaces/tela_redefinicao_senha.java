@@ -327,7 +327,7 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
 
     private void jbtn_cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cadastrarFuncionarioActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
+        JOptionPane.showMessageDialog(this, "Senha alterada com sucesso.");
     }//GEN-LAST:event_jbtn_cadastrarFuncionarioActionPerformed
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
