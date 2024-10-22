@@ -18,10 +18,12 @@ public class TipoServico {
     private String nome;
     private int id;
     
+    
+    
     public static void init() {
         TipoServico[] tipos = BD.TipoServico.selectAll();
         if (tipos == null) {
-            System.out.print("AVISO: banco de dados retornou 0 TipoServicos cadastrados.");
+            System.out.println("AVISO: banco de dados retornou 0 TipoServicos cadastrados ou não foi possível conectar ao banco.");
             return; 
         }
         
@@ -96,4 +98,7 @@ public class TipoServico {
             return null;
     }
     
+    static {
+        TipoServico.init();
+    }
 }
