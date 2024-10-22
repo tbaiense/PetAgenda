@@ -59,12 +59,8 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`servico_disponivel` (
   `preco` DECIMAL(8,2) NOT NULL DEFAULT 0,
   `descricao` VARCHAR(200) NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_id_tipo_servico_idx` (`id_tipo_servico` ASC) VISIBLE,
-  CONSTRAINT `fk_id_tipo_servico`
-    FOREIGN KEY (`id_tipo_servico`)
-    REFERENCES `pet_agenda`.`tipo_servico` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_tipo_servico`)
+    REFERENCES `pet_agenda`.`tipo_servico` (`id`))
 ENGINE = InnoDB;
 
 
@@ -83,18 +79,10 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`cliente` (
   `buscar_com` VARCHAR(64) NULL,
   `devolver_para` VARCHAR(64) NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_id_endereco_idx` (`id_endereco` ASC) VISIBLE,
-  INDEX `fk_id_servico_solicita_idx` (`id_servico_solicita` ASC) VISIBLE,
-  CONSTRAINT `fk_id_endereco`
-    FOREIGN KEY (`id_endereco`)
-    REFERENCES `pet_agenda`.`endereco` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_servico_solicita`
-    FOREIGN KEY (`id_servico_solicita`)
-    REFERENCES `pet_agenda`.`servico_disponivel` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_endereco`)
+    REFERENCES `pet_agenda`.`endereco` (`id`),
+  FOREIGN KEY (`id_servico_solicita`)
+    REFERENCES `pet_agenda`.`servico_disponivel` (`id`))
 ENGINE = InnoDB;
 
 
@@ -139,30 +127,14 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`usuario` (
   `id_permissao` INT NULL COMMENT 'Grupo de permissão do usuário dentro do sistema.',
   `id_local_atuacao` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_id_endereco_idx` (`id_endereco` ASC) VISIBLE,
-  INDEX `fk_id_servico_presta_idx` (`id_servico_presta` ASC) VISIBLE,
-  INDEX `fk_id_permissao_idx` (`id_permissao` ASC) VISIBLE,
-  INDEX `fk_id_local_atuacao_idx` (`id_local_atuacao` ASC) VISIBLE,
-  CONSTRAINT `fk_id_endereco`
-    FOREIGN KEY (`id_endereco`)
-    REFERENCES `pet_agenda`.`endereco` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_servico_presta`
-    FOREIGN KEY (`id_servico_presta`)
-    REFERENCES `pet_agenda`.`servico_disponivel` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_permissao`
-    FOREIGN KEY (`id_permissao`)
-    REFERENCES `pet_agenda`.`permissao` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_local_atuacao`
-    FOREIGN KEY (`id_local_atuacao`)
-    REFERENCES `pet_agenda`.`local_atuacao` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_endereco`)
+    REFERENCES `pet_agenda`.`endereco` (`id`),
+  FOREIGN KEY (`id_servico_presta`)
+    REFERENCES `pet_agenda`.`servico_disponivel` (`id`),
+  FOREIGN KEY (`id_permissao`)
+    REFERENCES `pet_agenda`.`permissao` (`id`),
+  FOREIGN KEY (`id_local_atuacao`)
+    REFERENCES `pet_agenda`.`local_atuacao` (`id`))
 ENGINE = InnoDB;
 
 
@@ -184,12 +156,8 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`pet` (
   `caminho_cartao_vacinacao` VARCHAR(255) NULL,
   `estado_saude` VARCHAR(80) NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_id_cliente_dono_idx` (`id_cliente_dono` ASC) VISIBLE,
-  CONSTRAINT `fk_id_cliente_dono`
-    FOREIGN KEY (`id_cliente_dono`)
-    REFERENCES `pet_agenda`.`cliente` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_cliente_dono`)
+    REFERENCES `pet_agenda`.`cliente` (`id`))
 ENGINE = InnoDB;
 
 
@@ -224,36 +192,16 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`agendamento` (
   `qnt_passeios` INT NOT NULL DEFAULT 0,
   `local_cuidado` VARCHAR(255) NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_id_servico_idx` (`id_servico` ASC) VISIBLE,
-  INDEX `fk_id_pet_idx` (`id_pet` ASC) VISIBLE,
-  INDEX `fk_id_funcionario_agend_idx` (`id_funcionario_agend` ASC) VISIBLE,
-  INDEX `fk_id_pacote_agendamento_idx` (`id_pacote_agendamento` ASC) VISIBLE,
-  INDEX `fk_id_id_tipo_servico_idx` (`id_tipo_servico` ASC) VISIBLE,
-  CONSTRAINT `fk_id_servico`
-    FOREIGN KEY (`id_servico`)
-    REFERENCES `pet_agenda`.`servico_disponivel` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_pet`
-    FOREIGN KEY (`id_pet`)
-    REFERENCES `pet_agenda`.`pet` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_funcionario_agend`
-    FOREIGN KEY (`id_funcionario_agend`)
-    REFERENCES `pet_agenda`.`usuario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_pacote_agendamento`
-    FOREIGN KEY (`id_pacote_agendamento`)
-    REFERENCES `pet_agenda`.`pacote_agendamento` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_id_tipo_servico`
-    FOREIGN KEY (`id_tipo_servico`)
-    REFERENCES `pet_agenda`.`tipo_servico` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_servico`)
+    REFERENCES `pet_agenda`.`servico_disponivel` (`id`),
+  FOREIGN KEY (`id_pet`)
+    REFERENCES `pet_agenda`.`pet` (`id`),
+  FOREIGN KEY (`id_funcionario_agend`)
+    REFERENCES `pet_agenda`.`usuario` (`id`),
+  FOREIGN KEY (`id_pacote_agendamento`)
+    REFERENCES `pet_agenda`.`pacote_agendamento` (`id`),
+  FOREIGN KEY (`id_tipo_servico`)
+    REFERENCES `pet_agenda`.`tipo_servico` (`id`))
 ENGINE = InnoDB;
 
 
@@ -268,11 +216,8 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`remedio_agend` (
   `hr_administrar` TIME NOT NULL,
   `instrucoes` VARCHAR(120) NULL,
   PRIMARY KEY (`id_agendamento`, `remedio`),
-  CONSTRAINT `fk_id_agendamento`
-    FOREIGN KEY (`id_agendamento`)
-    REFERENCES `pet_agenda`.`agendamento` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_agendamento`)
+    REFERENCES `pet_agenda`.`agendamento` (`id`))
 ENGINE = InnoDB;
 
 
@@ -285,11 +230,8 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`hr_alim_agend` (
   `id_agendamento` INT NOT NULL,
   `hr_alimentacao` TIME NOT NULL,
   PRIMARY KEY (`id_agendamento`, `hr_alimentacao`),
-  CONSTRAINT `fk_id_agendamento`
-    FOREIGN KEY (`id_agendamento`)
-    REFERENCES `pet_agenda`.`agendamento` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_agendamento`)
+    REFERENCES `pet_agenda`.`agendamento` (`id`))
 ENGINE = InnoDB;
 
 
@@ -306,18 +248,10 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`incidente` (
   `id_servico_contratado` INT NOT NULL,
   `descricao` TEXT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_id_pet_idx` (`id_pet` ASC) VISIBLE,
-  INDEX `fk_id_servico_contratado_idx` (`id_servico_contratado` ASC) VISIBLE,
-  CONSTRAINT `fk_id_pet`
-    FOREIGN KEY (`id_pet`)
-    REFERENCES `pet_agenda`.`pet` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_servico_contratado`
-    FOREIGN KEY (`id_servico_contratado`)
-    REFERENCES `pet_agenda`.`servico_disponivel` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_pet`)
+    REFERENCES `pet_agenda`.`pet` (`id`),
+  FOREIGN KEY (`id_servico_contratado`)
+    REFERENCES `pet_agenda`.`servico_disponivel` (`id`))
 ENGINE = InnoDB;
 
 
@@ -335,17 +269,10 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`historico_servico` (
   `comportamento_pet` VARCHAR(120) NULL,
   `id_incidente` INT NULL,
   PRIMARY KEY (`id_agendamento`),
-  INDEX `fk_id_incidente_idx` (`id_incidente` ASC) VISIBLE,
-  CONSTRAINT `fk_id_agendamento`
-    FOREIGN KEY (`id_agendamento`)
-    REFERENCES `pet_agenda`.`agendamento` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_id_incidente`
-    FOREIGN KEY (`id_incidente`)
-    REFERENCES `pet_agenda`.`incidente` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_agendamento`)
+	REFERENCES `pet_agenda`.`agendamento` (`id`),
+  FOREIGN KEY (`id_incidente`)
+	REFERENCES `pet_agenda`.`incidente` (`id`))
 ENGINE = InnoDB;
 
 
@@ -359,11 +286,8 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`anexo_historico` (
   `nome` VARCHAR(64) NOT NULL,
   `caminho_anexo` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id_agendamento`, `caminho_anexo`),
-  CONSTRAINT `fk_id_agendamento`
-    FOREIGN KEY (`id_agendamento`)
-    REFERENCES `pet_agenda`.`agendamento` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_agendamento`)
+	REFERENCES `pet_agenda`.`agendamento` (`id`))
 ENGINE = InnoDB;
 
 
