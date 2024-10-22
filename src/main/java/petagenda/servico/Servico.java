@@ -1,18 +1,20 @@
 package petagenda.servico;
 
+import petagenda.exception.IllegalArgumentsException;
 import petagenda.exception.IllegalDuracaoException;
 import petagenda.exception.IllegalIdException;
 import petagenda.exception.IllegalNomeException;
 import petagenda.exception.IllegalPrecoException;
-import petagenda.exception.IllegalServicoException;
 import petagenda.exception.IllegalTipoServicoException;
 import petagenda.exception.IllegalDescricaoException;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author Thiago M. Baiense
  */
-public class Servico {
+public final class Servico {
     private int id;
     private String nome;
     private TipoServico tipo;
@@ -24,18 +26,71 @@ public class Servico {
         this.id = -1;
     }
     
-    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco, String descricao) {
-//        TODO: fazer try..catches
-//        this.setId(id);
-//        this.setNome(nome);
-//        this.setTipo(tipo);
-//        this.setDuracao(duracao);
-//        this.setPreco(preco);
-//        this.setDescricao(descricao);
+    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco, String descricao) throws IllegalArgumentsException {
+        ArrayList<Throwable> cList = null; // Armazena as cause a serem adicionadas ao construtor
+        
+        try {
+            this.setId(id);
+        } catch (IllegalIdException ex) {
+            cList = new ArrayList<Throwable>();
+            cList.add(ex);
+        }
+        
+        try {
+            this.setNome(nome);
+        } catch (IllegalNomeException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        try {
+            this.setTipo(tipo);
+        } catch (IllegalTipoServicoException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        try {
+            this.setDuracao(duracao);
+        } catch (IllegalDuracaoException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        try {
+            this.setPreco(preco);
+        } catch (IllegalPrecoException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        try {
+            this.setDescricao(descricao);
+        } catch (IllegalDescricaoException ex) {
+            if (cList == null) {
+                cList = new ArrayList<Throwable>();
+            }
+            cList.add(ex);
+        }
+        
+        if (cList != null && !cList.isEmpty()) {
+            Throwable[] tArray = new Throwable[cList.size()];
+            cList.toArray(tArray);
+            throw new IllegalArgumentsException(tArray);
+        }
     }
     
-    public Servico(String nome, TipoServico tipo, int duracao, double preco, String descricao) {
-        this(-1, nome, tipo, duracao, preco, descricao);
+    public Servico(String nome, TipoServico tipo, int duracao, double preco, String descricao) throws IllegalArgumentsException {
+        this(1, nome, tipo, duracao, preco, descricao);
+        this.id = -1;
     }
     
     public void setId(int id) throws IllegalIdException {

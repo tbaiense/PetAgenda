@@ -43,6 +43,9 @@ public class BD {
         public static petagenda.servico.TipoServico[] selectAll() {
             try {
                 Connection conn = BD.getConnection();
+                if (conn == null) {
+                    return null;
+                }
                 String selectStr = String.format("SELECT id, nome FROM %s", TABLE);
                 PreparedStatement select = conn.prepareStatement(selectStr);
                 
