@@ -47,6 +47,7 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         getContentPane().add(lbl_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 210));
 
         jLabel_LOGIN.setFont(new java.awt.Font("Merriweather", 0, 32)); // NOI18N
+        jLabel_LOGIN.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_LOGIN.setText("Login");
         jLabel_LOGIN.setMaximumSize(new java.awt.Dimension(123, 49));
         jLabel_LOGIN.setMinimumSize(new java.awt.Dimension(123, 49));
@@ -67,10 +68,12 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         getContentPane().add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 299, 466, 41));
 
         jLabel_SENHA.setFont(new java.awt.Font("Merriweather", 0, 32)); // NOI18N
+        jLabel_SENHA.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_SENHA.setText("Senha");
         getContentPane().add(jLabel_SENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 396, 130, 40));
 
         txt_senha.setBackground(new java.awt.Color(152, 141, 124));
+        txt_senha.setForeground(new java.awt.Color(0, 0, 0));
         txt_senha.setText("jPasswordField1");
         txt_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

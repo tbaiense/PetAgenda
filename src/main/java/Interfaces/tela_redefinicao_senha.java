@@ -218,13 +218,15 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jlbl_titulo_redefinicao_senha.setFont(new java.awt.Font("Merriweather", 0, 45)); // NOI18N
+        jlbl_titulo_redefinicao_senha.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_titulo_redefinicao_senha.setText("Redefinição de senha");
         jlbl_titulo_redefinicao_senha.setPreferredSize(new java.awt.Dimension(468, 56));
         jPanel1.add(jlbl_titulo_redefinicao_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 20, -1, -1));
 
         jlbl_cpf.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        jlbl_cpf.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_cpf.setText("CPF:");
-        jPanel1.add(jlbl_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 99, -1, -1));
+        jPanel1.add(jlbl_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 99, -1, -1));
 
         jfield_cpf.setBackground(new java.awt.Color(217, 217, 217));
         jfield_cpf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -235,27 +237,29 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
                 jfield_cpfActionPerformed(evt);
             }
         });
-        jPanel1.add(jfield_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 118, -1, -1));
+        jPanel1.add(jfield_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 118, -1, -1));
 
         jlbl_nova_senha.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        jlbl_nova_senha.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_nova_senha.setText("Nova senha:");
-        jPanel1.add(jlbl_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 188, -1, -1));
+        jPanel1.add(jlbl_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 188, -1, -1));
 
         jfield_nova_senha.setBackground(new java.awt.Color(217, 217, 217));
         jfield_nova_senha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jfield_nova_senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jfield_nova_senha.setPreferredSize(new java.awt.Dimension(550, 50));
-        jPanel1.add(jfield_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 207, -1, -1));
+        jPanel1.add(jfield_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 207, -1, -1));
 
         jlbl_confirmacao_nova_senha.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        jlbl_confirmacao_nova_senha.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_confirmacao_nova_senha.setText("Confirme a nova senha:");
-        jPanel1.add(jlbl_confirmacao_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        jPanel1.add(jlbl_confirmacao_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 277, -1, -1));
 
         jfield_confirmacao_nova_senha.setBackground(new java.awt.Color(217, 217, 217));
         jfield_confirmacao_nova_senha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jfield_confirmacao_nova_senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jfield_confirmacao_nova_senha.setPreferredSize(new java.awt.Dimension(550, 50));
-        jPanel1.add(jfield_confirmacao_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
+        jPanel1.add(jfield_confirmacao_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 298, -1, -1));
 
         jbtn_cadastrarFuncionario.setBackground(new java.awt.Color(77, 120, 63));
         jbtn_cadastrarFuncionario.setFont(new java.awt.Font("Merriweather", 0, 20)); // NOI18N
@@ -270,7 +274,7 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
         });
         // Aplicando a UI personalizada
         jbtn_cadastrarFuncionario.setUI(new RoundedCornerButtonUI());
-        jPanel1.add(jbtn_cadastrarFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 557, 240, 50));
+        jPanel1.add(jbtn_cadastrarFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 393, 240, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 129, -1, -1));
 
