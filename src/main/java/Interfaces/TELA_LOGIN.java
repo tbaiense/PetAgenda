@@ -10,6 +10,7 @@ package Interfaces;
  */
 
 import javax.swing.JFrame;
+import ui.custom.RoundedCornerBorder;
 
 public class TELA_LOGIN extends javax.swing.JFrame {
 
@@ -52,35 +53,41 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         jLabel_LOGIN.setMaximumSize(new java.awt.Dimension(123, 49));
         jLabel_LOGIN.setMinimumSize(new java.awt.Dimension(123, 49));
         jLabel_LOGIN.setPreferredSize(new java.awt.Dimension(123, 49));
-        getContentPane().add(jLabel_LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 250, 110, 50));
+        getContentPane().add(jLabel_LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 110, 50));
 
         txt_login.setBackground(new java.awt.Color(152, 141, 124));
+        txt_login.setOpaque(false);
         txt_login.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         txt_login.setForeground(new java.awt.Color(30, 30, 30));
         txt_login.setText("TheMasterOfTheMasterAdmin");
-        txt_login.setMinimumSize(new java.awt.Dimension(466, 41));
-        txt_login.setPreferredSize(new java.awt.Dimension(466, 41));
+        txt_login.setBorder(null);
+        txt_login.setBorder(new RoundedCornerBorder(50));
+        txt_login.setMinimumSize(new java.awt.Dimension(550, 50));
+        txt_login.setPreferredSize(new java.awt.Dimension(550, 50));
         txt_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_loginActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 299, 466, 41));
+        getContentPane().add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, -1, -1));
 
         jLabel_SENHA.setFont(new java.awt.Font("Merriweather", 0, 32)); // NOI18N
         jLabel_SENHA.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_SENHA.setText("Senha");
-        getContentPane().add(jLabel_SENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 396, 130, 40));
+        getContentPane().add(jLabel_SENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 130, 40));
 
         txt_senha.setBackground(new java.awt.Color(152, 141, 124));
         txt_senha.setForeground(new java.awt.Color(0, 0, 0));
         txt_senha.setText("jPasswordField1");
+        txt_senha.setBorder(new RoundedCornerBorder(45));
+        txt_senha.setMinimumSize(new java.awt.Dimension(550, 50));
+        txt_senha.setPreferredSize(new java.awt.Dimension(552, 50));
         txt_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_senhaActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 445, 466, 41));
+        getContentPane().add(txt_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, -1));
 
         jButton_ENTRAR.setBackground(new java.awt.Color(239, 225, 201));
         jButton_ENTRAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botao_osso_entrar.png"))); // NOI18N
@@ -107,8 +114,8 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Adicionar conexão com o banco de dados
         
-        Tela_Inicial telaPrincipal = new Tela_Inicial();
-        telaPrincipal.setVisible(true);
+        tela_redefinicao_senha telaSenha = new tela_redefinicao_senha();
+        telaSenha.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton_ENTRARActionPerformed
 

@@ -271,6 +271,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jPanel1.add(lbl_Cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 165, -1, -1));
 
         jtxt_CPF.setBackground(new java.awt.Color(217, 217, 217));
+        jtxt_CPF.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jtxt_CPF.setForeground(new java.awt.Color(0, 0, 0));
         jtxt_CPF.setBorder(new RoundedCornerBorder(50));
         jtxt_CPF.setCaretColor(new java.awt.Color(0, 0, 0));
@@ -289,6 +290,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jPanel1.add(lbl_Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 251, -1, -1));
 
         jtxt_senha.setBackground(new java.awt.Color(217, 217, 217));
+        jtxt_senha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jtxt_senha.setForeground(new java.awt.Color(0, 0, 0));
         jtxt_senha.setBorder(new RoundedCornerBorder(50));
         jtxt_senha.setCaretColor(new java.awt.Color(0, 0, 0));
@@ -395,6 +397,8 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

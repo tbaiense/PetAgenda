@@ -5,6 +5,7 @@
 package Interfaces;
 
 import javax.swing.JOptionPane;
+import ui.custom.RoundedCornerBorder;
 import ui.custom.RoundedCornerButtonUI;
 
 /**
@@ -207,6 +208,11 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
         btn_sair.setMaximumSize(new java.awt.Dimension(205, 50));
         btn_sair.setMinimumSize(new java.awt.Dimension(205, 50));
         btn_sair.setPreferredSize(new java.awt.Dimension(205, 60));
+        btn_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sairActionPerformed(evt);
+            }
+        });
         jPanel_menu.add(btn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 608, -1, -1));
 
         getContentPane().add(jPanel_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 205, 768));
@@ -225,12 +231,14 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
 
         jlbl_cpf.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jlbl_cpf.setForeground(new java.awt.Color(0, 0, 0));
-        jlbl_cpf.setText("CPF:");
+        jlbl_cpf.setText("Login:");
         jPanel1.add(jlbl_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 99, -1, -1));
 
         jfield_cpf.setBackground(new java.awt.Color(217, 217, 217));
         jfield_cpf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jfield_cpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jfield_cpf.setForeground(new java.awt.Color(0, 0, 0));
+        jfield_cpf.setBorder(new RoundedCornerBorder(50));
+        jfield_cpf.setCaretColor(new java.awt.Color(0, 0, 0));
         jfield_cpf.setPreferredSize(new java.awt.Dimension(550, 50));
         jfield_cpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,7 +254,9 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
 
         jfield_nova_senha.setBackground(new java.awt.Color(217, 217, 217));
         jfield_nova_senha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jfield_nova_senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jfield_nova_senha.setForeground(new java.awt.Color(0, 0, 0));
+        jfield_nova_senha.setBorder(new RoundedCornerBorder(50));
+        jfield_nova_senha.setCaretColor(new java.awt.Color(0, 0, 0));
         jfield_nova_senha.setPreferredSize(new java.awt.Dimension(550, 50));
         jPanel1.add(jfield_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 207, -1, -1));
 
@@ -257,14 +267,16 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
 
         jfield_confirmacao_nova_senha.setBackground(new java.awt.Color(217, 217, 217));
         jfield_confirmacao_nova_senha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jfield_confirmacao_nova_senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jfield_confirmacao_nova_senha.setForeground(new java.awt.Color(0, 0, 0));
+        jfield_confirmacao_nova_senha.setBorder(new RoundedCornerBorder(50));
+        jfield_confirmacao_nova_senha.setCaretColor(new java.awt.Color(0, 0, 0));
         jfield_confirmacao_nova_senha.setPreferredSize(new java.awt.Dimension(550, 50));
         jPanel1.add(jfield_confirmacao_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 298, -1, -1));
 
         jbtn_cadastrarFuncionario.setBackground(new java.awt.Color(77, 120, 63));
         jbtn_cadastrarFuncionario.setFont(new java.awt.Font("Merriweather", 0, 20)); // NOI18N
         jbtn_cadastrarFuncionario.setForeground(new java.awt.Color(255, 255, 255));
-        jbtn_cadastrarFuncionario.setText("CADASTRAR");
+        jbtn_cadastrarFuncionario.setText("REDEFINIR");
         jbtn_cadastrarFuncionario.setBorder(null);
         jbtn_cadastrarFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtn_cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -317,6 +329,13 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
     }//GEN-LAST:event_jbtn_cadastrarFuncionarioActionPerformed
+
+    private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
+        // TODO add your handling code here:
+        TELA_LOGIN telaLogin = new TELA_LOGIN();
+        telaLogin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_sairActionPerformed
 
     /**
      * @param args the command line arguments
