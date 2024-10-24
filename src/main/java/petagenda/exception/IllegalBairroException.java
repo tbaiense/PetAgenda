@@ -4,7 +4,7 @@ package petagenda.exception;
  *
  * @author t.baiense
  */
-public class IllegalBairroException extends Exception {
+public class IllegalBairroException extends IllegalArgumentException {
     public IllegalBairroException() {
         super("bairro inválido");
     }

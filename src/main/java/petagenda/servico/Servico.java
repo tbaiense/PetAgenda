@@ -26,7 +26,7 @@ public final class Servico {
         this.id = -1;
     }
     
-    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco, String descricao) throws IllegalArgumentsException {
+    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco, String descricao) {
         ArrayList<Throwable> cList = null; // Armazena as cause a serem adicionadas ao construtor
         
         try {
@@ -88,12 +88,12 @@ public final class Servico {
         }
     }
     
-    public Servico(String nome, TipoServico tipo, int duracao, double preco, String descricao) throws IllegalArgumentsException {
+    public Servico(String nome, TipoServico tipo, int duracao, double preco, String descricao) {
         this(1, nome, tipo, duracao, preco, descricao);
         this.id = -1;
     }
     
-    public void setId(int id) throws IllegalIdException {
+    public void setId(int id) {
         if (id < 1) {
             throw new IllegalIdException();
         }
@@ -105,7 +105,7 @@ public final class Servico {
         return this.id;
     }
     
-    public void setNome(String nome) throws IllegalNomeException {
+    public void setNome(String nome) {
         if (nome == null) {
             throw new IllegalNomeException("nome não pode ser nulo");
         }
@@ -125,7 +125,7 @@ public final class Servico {
         return this.nome;
     }
     
-    public void setTipo(TipoServico t) throws IllegalTipoServicoException {
+    public void setTipo(TipoServico t) {
         if (t == null) {
             throw new IllegalTipoServicoException("tipo do serviço não pode ser nulo");
         }
@@ -137,7 +137,7 @@ public final class Servico {
         return this.tipo;
     }
     
-    public void setDuracao(int duracao) throws IllegalDuracaoException {
+    public void setDuracao(int duracao) {
         if (duracao < 1) {
             throw new IllegalDuracaoException();
         }
@@ -149,7 +149,7 @@ public final class Servico {
         return this.duracao;
     }
     
-    public void setPreco(double preco) throws IllegalPrecoException {
+    public void setPreco(double preco) {
         if (preco < 0) {
             throw new IllegalPrecoException("preço não pode ser inferior a 0");
         }
@@ -161,7 +161,7 @@ public final class Servico {
         return this.preco;
     }
     
-    public void setDescricao(String desc) throws IllegalDescricaoException {
+    public void setDescricao(String desc) {
         if (desc == null) {
             throw new IllegalDescricaoException("descrição não pode ser nula");
         }

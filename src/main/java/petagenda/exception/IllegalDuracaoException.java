@@ -5,7 +5,7 @@ package petagenda.exception;
  *
  * @author thiago
  */
-public class IllegalDuracaoException extends Exception {
+public class IllegalDuracaoException extends IllegalArgumentException {
     public IllegalDuracaoException() {
         super("duração inválida");
     }

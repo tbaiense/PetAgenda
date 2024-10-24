@@ -5,7 +5,7 @@ package petagenda.exception;
  *
  * @author thiago
  */
-public class IllegalServicoException extends Exception {
+public class IllegalServicoException extends IllegalArgumentException {
     public IllegalServicoException() {
         super("serviço inválido");
     }

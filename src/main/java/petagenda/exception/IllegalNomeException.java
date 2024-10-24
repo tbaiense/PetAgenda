@@ -5,7 +5,7 @@ package petagenda.exception;
  *
  * @author thiago
  */
-public class IllegalNomeException extends Exception {
+public class IllegalNomeException extends IllegalArgumentException {
     public IllegalNomeException() {
         super("nome inválido");
     }

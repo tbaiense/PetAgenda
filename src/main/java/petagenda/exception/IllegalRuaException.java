@@ -4,7 +4,7 @@ package petagenda.exception;
  *
  * @author t.baiense
  */
-public class IllegalRuaException extends Exception {
+public class IllegalRuaException extends IllegalArgumentException {
     public IllegalRuaException() {
         super("rua inválida");
     }

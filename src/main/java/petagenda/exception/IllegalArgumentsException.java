@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author Thiago M. Baiense
  */
 
-public class IllegalArgumentsException extends Exception {
+public class IllegalArgumentsException extends IllegalArgumentException {
     private Throwable cause;
     private Throwable[] causes;
     

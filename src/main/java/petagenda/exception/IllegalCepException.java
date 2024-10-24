@@ -4,7 +4,7 @@ package petagenda.exception;
  *
  * @author t.baiense
  */
-public class IllegalCepException extends Exception {
+public class IllegalCepException extends IllegalArgumentException {
     public IllegalCepException() {
         super("CEP inválido");
     }
