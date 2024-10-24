@@ -4,7 +4,7 @@ package petagenda.exception;
  *
  * @author t.baiense
  */
-public class IllegalNumeroException extends Exception {
+public class IllegalNumeroException extends IllegalArgumentException {
     public IllegalNumeroException() {
         super("número inválido");
     }

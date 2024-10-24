@@ -4,7 +4,7 @@ package petagenda.exception;
  *
  * @author t.baiense
  */
-public class IllegalCidadeException extends Exception {
+public class IllegalCidadeException extends IllegalArgumentException {
     public IllegalCidadeException() {
         super("cidade inválida");
     }

@@ -1,6 +1,10 @@
 package petagenda.servico;
 
+import java.util.ArrayList;
 import petagenda.bd.BD;
+import petagenda.exception.IllegalArgumentsException;
+import petagenda.exception.IllegalIdException;
+import petagenda.exception.IllegalNomeException;
 
 /** Representa os diferentes tipos de serviços disponíveis para agendamento.
  * Cada {@code TipoServico} possui um {@link #id id) e um {@link #nome nome},
@@ -54,8 +58,36 @@ public class TipoServico {
     public TipoServico() {}
     
     public TipoServico(int id, String nome) {
-        this.nome = nome;
+        IllegalArgumentsException exs;
+        ArrayList<Throwable> tList = null;
+        if (id < 0) {
+            tList = new ArrayList<Throwable>();
+            tList.add(new IllegalIdException("id nao pode ser menor que zero"));
+        }
+        if (nome == null) {
+            if (tList == null) {
+                tList = new ArrayList<Throwable>();
+            }
+            tList.add(new IllegalNomeException("nome nao pode ser nulo"));
+        }
+        nome = nome.trim();
+        
+        if (nome.isEmpty()) {
+            if (tList == null) {
+                tList = new ArrayList<Throwable>();
+            }
+            tList.add(new IllegalNomeException("nome nao pode ser vazio"));
+        } else if (nome.length() > 45) {
+            if (tList == null) {
+                tList = new ArrayList<Throwable>();
+            }
+            tList.add(new IllegalNomeException("nome nao pode conter mais do que 45 caracteres"));
+        }
+        
+        
         this.id = id;
+        this.nome = nome;
+        
     }
     
     public int getId() {
