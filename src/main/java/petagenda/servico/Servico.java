@@ -22,7 +22,7 @@ public final class Servico {
     private double preco;
     private String descricao;
     
-    public Servico() {
+    private Servico() {
         this.id = -1;
     }
     
@@ -88,8 +88,17 @@ public final class Servico {
         }
     }
     
+    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco) {
+        this(id, nome, tipo, duracao, preco, null);
+    }
+    
     public Servico(String nome, TipoServico tipo, int duracao, double preco, String descricao) {
         this(1, nome, tipo, duracao, preco, descricao);
+        this.id = -1;
+    }
+    
+    public Servico(String nome, TipoServico tipo, int duracao, double preco) {
+        this(1, nome, tipo, duracao, preco, null);
         this.id = -1;
     }
     
@@ -163,18 +172,20 @@ public final class Servico {
     
     public void setDescricao(String desc) {
         if (desc == null) {
-            throw new IllegalDescricaoException("descrição não pode ser nula");
+//            throw new IllegalDescricaoException("descrição não pode ser nula");
+            this.descricao = null;
+        } else {
+            desc = desc.trim();
+        
+            if (desc.isEmpty()) {
+//                throw new IllegalDescricaoException("descrição não pode ser vazia");
+                this.descricao = null;
+            } else if (desc.length() > 200) {
+                throw new IllegalDescricaoException("descrição não pode conter mais de 200 caracteres");
+            } else {
+                this.descricao = desc;
+            }
         }
-        
-        desc = desc.trim();
-        
-        if (desc.isEmpty()) {
-            throw new IllegalDescricaoException("descrição não pode ser vazia");
-        } else if (desc.length() > 200) {
-            throw new IllegalDescricaoException("descrição não pode conter mais de 200 caracteres");
-        }
-        
-        this.descricao = desc;
     }
     
     public String getDescricao() {

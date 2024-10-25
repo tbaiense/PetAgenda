@@ -99,4 +99,9 @@ public class LocalAtuacao {
     public int getId() {
         return this.id;
     }
+    
+    @Override
+    public String toString() {
+        return String.format("%s, %s", this.BAIRRO, this.CIDADE);
+    }
 }

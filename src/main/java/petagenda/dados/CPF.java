@@ -25,7 +25,7 @@ public class CPF {
      * removidos do início e final de str aplicando str.trim().
      * @param str String contendo a informação do CPF no formato numérico
      * ou com pontuação, contendo 11 dígitos ao total. 
-     * @throws IllegalArgumentException se str for uma representação inválida de CPF.
+     * @throws IllegalCpfException se str for uma representação inválida de CPF.
      * @throws NullPointerException se str for nulo.
      */
     public CPF(String str) {

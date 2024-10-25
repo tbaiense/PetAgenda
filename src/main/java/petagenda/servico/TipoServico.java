@@ -22,8 +22,7 @@ public class TipoServico {
     private String nome;
     private int id;
     
-    
-    
+    // Carrega as constantes estáticas do banco
     public static void init() {
         TipoServico[] tipos = BD.TipoServico.selectAll();
         if (tipos == null) {
@@ -55,7 +54,14 @@ public class TipoServico {
         
     }
     
-    public TipoServico() {}
+    private TipoServico() {
+        this.id = -1;
+    }
+    
+    public TipoServico(String nome) {
+        this(1, nome);
+        this.id = -1;
+    }
     
     public TipoServico(int id, String nome) {
         IllegalArgumentsException exs;
@@ -131,6 +137,7 @@ public class TipoServico {
             return null;
     }
     
+    // Carregamento automático das constantes estáticas. Roda apenas quando a classe for carregada pela primeira vez durante a execução do software
     static {
         TipoServico.init();
     }
