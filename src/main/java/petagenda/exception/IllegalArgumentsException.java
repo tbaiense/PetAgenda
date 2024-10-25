@@ -29,7 +29,7 @@ public class IllegalArgumentsException extends IllegalArgumentException {
     }
     
     public IllegalArgumentsException(Throwable... causes) {
-        super("um dos argumentos fornecidos é inválido");
+        super("um ou mais dos argumentos fornecidos é inválido");
         this.initCauses(causes);
     }
     

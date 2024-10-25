@@ -22,18 +22,20 @@ public class Endereco {
     public final String CIDADE;
     public final String CEP;
     
-    public Endereco(String rua, String numero, String bairro, String cidade, String cep) throws IllegalArgumentsException {
+    public Endereco(String rua, String numero, String bairro, String cidade, String cep) {
         this(1, rua, numero, bairro, cidade, cep);
         this.id = -1;
     }
     
-    public Endereco(int id, String rua, String numero, String bairro, String cidade, String cep) throws IllegalArgumentsException {
+    public Endereco(int id, String rua, String numero, String bairro, String cidade, String cep){
         ArrayList<Throwable> tList = null;
         
         // Validação de id
-        if (id < 0) {
+        try {
+            setId(id);
+        } catch (IllegalIdException ex) {
             tList = new ArrayList<Throwable>();
-            tList.add(new IllegalIdException("id não pode ser inferior a 1"));
+            tList.add(ex);
         }
         
         // Validação de rua
@@ -164,5 +166,17 @@ public class Endereco {
             tList.toArray(tArray);
             throw new IllegalArgumentsException("um ou mais argumentos fornecidos são inválidos", tArray);
         }
+    }
+    
+    public void setId(int id) {
+        if (id < 0) {
+            throw new IllegalIdException("id não pode ser inferior a 0");
+        } else {
+            this.id = id;
+        }
+    }
+    
+    public int getId() {
+        return this.id;
     }
 }

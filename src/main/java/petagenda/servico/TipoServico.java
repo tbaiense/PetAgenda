@@ -83,11 +83,12 @@ public class TipoServico {
             }
             tList.add(new IllegalNomeException("nome nao pode conter mais do que 45 caracteres"));
         }
-        
-        
-        this.id = id;
-        this.nome = nome;
-        
+        if (tList == null) {
+            this.id = id;
+            this.nome = nome;
+        } else {
+            throw new IllegalArgumentsException("um ou mais argumentos são inválidos", tList.toArray(new Throwable[tList.size()]));
+        }
     }
     
     public int getId() {
