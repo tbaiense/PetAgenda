@@ -22,6 +22,11 @@ public class Endereco {
     public final String CIDADE;
     public final String CEP;
     
+    public Endereco(String rua, String numero, String bairro, String cidade) {
+        this(1, rua, numero, bairro, cidade, null);
+        this.id = -1;
+    }
+    
     public Endereco(String rua, String numero, String bairro, String cidade, String cep) {
         this(1, rua, numero, bairro, cidade, cep);
         this.id = -1;
@@ -129,18 +134,19 @@ public class Endereco {
         
         //Validação de CEP
         if (cep == null) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>();
-            }
-            tList.add(new IllegalCepException("CEP não pode ser nulo"));
+//            if (tList == null) {
+//                tList = new ArrayList<Throwable>();
+//            }
+//            tList.add(new IllegalCepException("CEP não pode ser nulo"));
         } else {
             cep = cep.trim();
             
             if (cep.isEmpty()) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalCepException("CEP não pode ser vazio")); 
+//                if (tList == null) {
+//                    tList = new ArrayList<Throwable>();
+//                }
+//                tList.add(new IllegalCepException("CEP não pode ser vazio"));
+                cep = null;
             } else if (cep.length() > 32) {
                 if (tList == null) {
                     tList = new ArrayList<Throwable>();
@@ -178,5 +184,10 @@ public class Endereco {
     
     public int getId() {
         return this.id;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s, %s", RUA, NUMERO, BAIRRO, CIDADE, CEP);
     }
 }

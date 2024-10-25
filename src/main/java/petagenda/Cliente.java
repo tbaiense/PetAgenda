@@ -23,26 +23,26 @@ import petagenda.servico.TipoServico;
  *
  * @author t.baiense
  */
-public final class Usuario {
+public final class Cliente {
     private int id;
     private String nome;
     private Endereco endereco;
     private CPF cpf;
     private String telefone;
-    private String senha;
-    private Servico servicoPresta;
-    private Permissao permissao;
-    private LocalAtuacao localAtuacao;
+    private Servico servicoSolicita;
+    private String buscarPetCom;
+    private String devolverPetPara;
     
     // Exemplo de uso
     public static void main(String[] args) {
-        Usuario eu;
+        Cliente eu;
         try {
             TipoServico passeio = new TipoServico("Passeio");
-            Servico servicoPresta = new Servico("Dog Walking", passeio, 60, 100.0);
-            LocalAtuacao local = new LocalAtuacao("Itaparica", "Vitória");
-            eu = new Usuario("Thiago", "123456789121", servicoPresta, local);
-            System.out.println(eu);
+            Servico servSolicita = new Servico("Dog Walker", passeio, 60, 100.0);
+            Endereco endCliente = new Endereco("Rua Guanabara", "num. 106", "Itaparica", "Vitoria");
+            
+            Cliente cl = new Cliente("Roberto", endCliente, "4002-8922", servSolicita);
+            System.out.println(cl.toString());
         } catch (IllegalArgumentsException exs) {
             Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos
             System.out.println(Arrays.toString(causas)); // Printa as exceções se houver
@@ -50,17 +50,21 @@ public final class Usuario {
         
     }
     
-    public Usuario(String nome, String telefone, Servico servicoPresta, LocalAtuacao localAtuacao) {
-        this(1, nome, null, null, telefone, servicoPresta, localAtuacao );
+    public Cliente(int id, String nome, Endereco endereco, String telefone, Servico servicoSolicita) {
+        this(id, nome, endereco, null, telefone, servicoSolicita, null, null);
+    }
+    
+    public Cliente(String nome, Endereco endereco, String telefone, Servico servicoSolicita) {
+        this(1, nome, endereco, null, telefone, servicoSolicita, null, null);
         this.id = -1;
     }
     
-    public Usuario(String nome, Endereco endereco, String cpf, String telefone, Servico servicoPresta, LocalAtuacao localAtuacao) {
-        this(1, nome, endereco, cpf, telefone, servicoPresta, localAtuacao );
+    public Cliente(String nome, Endereco endereco, String cpf, String telefone, Servico servicoSolicita, String buscarPetCom, String devolverPetPara) {
+        this(1, nome, endereco, cpf, telefone, servicoSolicita, buscarPetCom, devolverPetPara);
         this.id = -1;
     }
     
-    public Usuario(int id, String nome, Endereco endereco, String cpf, String telefone, Servico servicoPresta, LocalAtuacao localAtuacao) {
+    public Cliente(int id, String nome, Endereco endereco, String cpf, String telefone, Servico servicoSolicita, String buscarPetCom, String devolverPetPara) {
         ArrayList<Throwable> tList = null;
         
         // Id
@@ -111,9 +115,9 @@ public final class Usuario {
             tList.add(ex);
         }
         
-        // Serviço prestado
+        // Serviço solicitado
         try {
-            setServico(servicoPresta);
+            setServico(servicoSolicita);
         } catch (IllegalServicoException ex) {
             if (tList == null) {
                 tList = new ArrayList<Throwable>(); 
@@ -121,10 +125,20 @@ public final class Usuario {
             tList.add(ex);
         }
         
-        // Local de atuação
+        // Pessoa com quem buscar o Pet
         try {
-            setLocalAtuacao(localAtuacao);
-        } catch (IllegalLocalAtuacaoException ex) {
+            setBuscarPetCom(buscarPetCom);
+        } catch (IllegalNomeException ex) {
+            if (tList == null) {
+                tList = new ArrayList<Throwable>(); 
+            }
+            tList.add(ex);
+        }
+        
+        // Pessoa a quem o Pet deve ser devolvido
+        try {
+            setDevolverPetPara(devolverPetPara);
+        } catch (IllegalNomeException ex) {
             if (tList == null) {
                 tList = new ArrayList<Throwable>(); 
             }
@@ -167,8 +181,7 @@ public final class Usuario {
     
     public void setEndereco(Endereco endereco) {
         if (endereco == null) {
-//            throw new IllegalEnderecoException("Endereço não pode ser nulo");
-            this.endereco = null;
+            throw new IllegalEnderecoException("Endereço não pode ser nulo");
         } else {
             this.endereco = endereco;
         }
@@ -212,70 +225,61 @@ public final class Usuario {
         return this.telefone;
     }
     
-    public void setPermissao(Permissao permissao) {
-        if (permissao == null) {
-//          throw new IllegalPermissaoException("permissão não pode ser nula"); /* Não é necessário pois coluna permissao não tem restrição de NOT NULL no BD*/
-            this.permissao = null;
-        } else {
-            this.permissao = permissao;
-        }
-    }
-    
-    public Permissao getPermissao() {
-        return this.permissao;
-    }
-    
-    public void setSenha(String senha) {
-        if (senha == null) {
-            throw new IllegalSenhaException("senha não pode ser nula");
-        }
-        senha = senha.trim();
-
-        if (senha.isEmpty()) {
-            throw new IllegalSenhaException("senha não pode ser vazia");
-        } 
-        
-        if (senha.length() > 32) {
-            throw new IllegalSenhaException("senha não pode conter mais do que 32 caracteres");
-        }
-        
-        this.senha = senha;
-    }
-    
     public CPF getCpf() {
         return this.cpf;
-    }
-    
-    public String getSenha() {
-        return this.senha;
     }
     
     public void setServico(Servico servico) {
         if (servico == null) {
             throw new IllegalServicoException("serviço não pode ser nulo");
         } else {
-            this.servicoPresta = servico;
+            this.servicoSolicita = servico;
         }
     }
     
     public Servico getServico() {
-        return this.servicoPresta;
+        return this.servicoSolicita;
     }
     
-    public void setLocalAtuacao(LocalAtuacao local) {
-        if (local == null) {
-            throw new IllegalLocalAtuacaoException("local de atuação não pode ser nulo");
+    public void setBuscarPetCom(String pessoa) {
+        if (pessoa == null) {
+//            throw new IllegalNomeException("pessoa não pode ser nulo");
+            this.buscarPetCom = null;
         } else {
-            this.localAtuacao = local;
+            pessoa = pessoa.trim();
+            if (pessoa.isEmpty()) {
+                throw new IllegalNomeException("pessoa não pode ser vazio");
+            } else if (pessoa.length() > 64) {
+                throw new IllegalNomeException("pessoa não pode conter mais do que 64 caracteres");
+            }
+            this.nome = pessoa;
         }
     }
     
-    public LocalAtuacao getLocalAtuacao() {
-        return this.localAtuacao;
+    public String getBuscarPetCom() {
+        return this.buscarPetCom;
     }
     
+    public void setDevolverPetPara(String pessoa) {
+        if (pessoa == null) {
+//            throw new IllegalNomeException("pessoa não pode ser nulo");
+            this.devolverPetPara = null;
+        } else {
+            pessoa = pessoa.trim();
+            if (pessoa.isEmpty()) {
+                throw new IllegalNomeException("pessoa não pode ser vazio");
+            } else if (pessoa.length() > 64) {
+                throw new IllegalNomeException("pessoa não pode conter mais do que 64 caracteres");
+            }
+            this.nome = pessoa;
+        }
+    }
+    
+    public String setDevolverPetPara() {
+        return this.buscarPetCom;
+    }
     @Override
     public String toString() {
-        return String.format("NOME: %s | TEL: %s | SERV. PRESTA: %s | LOCAL ATUAÇÃO: %s", getNome(), getTelefone(), getServico().getNome(), getLocalAtuacao().toString());
+        return String.format("NOME: %s | ENDERECO: %s | TELEFONE: %s | SERVIÇO SOL.: %s", getNome(), getEndereco().toString(), getTelefone(), getServico().getNome());
     }
 }
