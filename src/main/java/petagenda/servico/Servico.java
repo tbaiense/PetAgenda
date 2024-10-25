@@ -26,6 +26,20 @@ public final class Servico {
         this.id = -1;
     }
     
+    public Servico(String nome, TipoServico tipo, int duracao, double preco) {
+        this(1, nome, tipo, duracao, preco, null);
+        this.id = -1;
+    }
+    
+    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco) {
+        this(id, nome, tipo, duracao, preco, null);
+    }
+    
+    public Servico(String nome, TipoServico tipo, int duracao, double preco, String descricao) {
+        this(1, nome, tipo, duracao, preco, descricao);
+        this.id = -1;
+    }
+    
     public Servico(int id, String nome, TipoServico tipo, int duracao, double preco, String descricao) {
         ArrayList<Throwable> cList = null; // Armazena as cause a serem adicionadas ao construtor
         
@@ -88,19 +102,7 @@ public final class Servico {
         }
     }
     
-    public Servico(int id, String nome, TipoServico tipo, int duracao, double preco) {
-        this(id, nome, tipo, duracao, preco, null);
-    }
     
-    public Servico(String nome, TipoServico tipo, int duracao, double preco, String descricao) {
-        this(1, nome, tipo, duracao, preco, descricao);
-        this.id = -1;
-    }
-    
-    public Servico(String nome, TipoServico tipo, int duracao, double preco) {
-        this(1, nome, tipo, duracao, preco, null);
-        this.id = -1;
-    }
     
     public void setId(int id) {
         if (id < 1) {
