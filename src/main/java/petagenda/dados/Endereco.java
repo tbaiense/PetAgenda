@@ -14,7 +14,7 @@ import petagenda.exception.IllegalCepException;
  *
  * @author Thiago M. Baiense
  */
-public class Endereco {
+public final class Endereco {
     private int id;
     public final String RUA;
     public final String NUMERO;
@@ -188,6 +188,13 @@ public class Endereco {
     
     @Override
     public String toString() {
-        return String.format("%s, %s, %s, %s", RUA, NUMERO, BAIRRO, CIDADE, CEP);
+        StringBuilder endStr = new StringBuilder();
+        
+        endStr.append(String.format("%s, %s, %s, %s", this.RUA, this.NUMERO, this.BAIRRO, this.CIDADE));
+        if (this.CEP != null) {
+            endStr.append(String.format(" (CEP: %s)", this.CEP));
+        };
+        
+        return endStr.toString();
     }
 }

@@ -21,7 +21,7 @@ public final class Pet {
     private String porte;
     private String comportamento;
     private boolean eCastrado;
-    private String cartaoVacinacao;
+    private String caminhoCartaoVacinacao;
     private String estadoSaude;
     
     public static void main(String[] args) {
@@ -223,24 +223,24 @@ public final class Pet {
         return this.comportamento;
     }
     
-    public void setCartaoVacinacao(String caminho) {
+    public void setCaminhoCartaoVacinacao(String caminho) {
         if (caminho == null) {
-//            throw new IllegalNomeException("caminho do cartão de vacinação não pode ser nulo");
-            this.cartaoVacinacao = null;
+//            throw new IllegalCaminhoCartaoVacinacaoException("caminho do cartão de vacinação não pode ser nulo");
+            this.caminhoCartaoVacinacao = null;
         } else {
             caminho = caminho.trim();
             if (caminho.isEmpty()) {
-//                throw new IllegalNomeException("caminho do cartão de vacinação não pode ser vazia");
-                this.cartaoVacinacao = null;
+//                throw new IllegalCaminhoCartaoVacinacaoException("caminho do cartão de vacinação não pode ser vazia");
+                this.caminhoCartaoVacinacao = null;
             } else if (caminho.length() > 255) {
-                throw new IllegalNomeException("caminho do cartão de vacinação não pode conter mais do que 255 caracteres");
+                throw new IllegalCaminhoCartaoVacinacaoException("caminho do cartão de vacinação não pode conter mais do que 255 caracteres");
             }
-            this.cartaoVacinacao = caminho;
+            this.caminhoCartaoVacinacao = caminho;
         }
     }
     
-    public String getCartaoVacinacao() {
-        return this.cartaoVacinacao;
+    public String getCaminhoCartaoVacinacao() {
+        return this.caminhoCartaoVacinacao;
     }
     
     public void setEstadoSaude(String estado) {

@@ -2,6 +2,7 @@ package petagenda.agendamento;
 
 import java.time.LocalTime;
 import petagenda.exception.IllegalAgendamentoException;
+import petagenda.exception.IllegalArgumentsException;
 import petagenda.exception.IllegalHoraAdministrarException;
 import petagenda.exception.IllegalInstrucoesException;
 import petagenda.exception.IllegalNomeException;
@@ -17,8 +18,35 @@ public final class Remedio {
     private String instrucoes;
     
     public Remedio (Agendamento agendamento, String nome, LocalTime horaAdministrar, String instrucoes) {
+        IllegalArgumentsException exs = new IllegalArgumentsException();
     
-    
+        try {
+            setAgendamento(agendamento);
+        } catch (IllegalAgendamentoException ex) {
+            exs.addCause(ex);
+        }
+        
+        try {
+            setNome(nome);
+        } catch (IllegalNomeException ex) {
+            exs.addCause(ex);
+        }
+        
+        try {
+            setHoraAdministrar(horaAdministrar);
+        } catch (IllegalHoraAdministrarException ex) {
+            exs.addCause(ex);
+        }
+        
+        try {
+            setInstrucoes(instrucoes);
+        } catch (IllegalInstrucoesException ex) {
+            exs.addCause(ex);
+        }
+        
+        if (exs.size() > 0) {
+            throw exs;
+        }
     }
     
     public void setAgendamento(Agendamento agendamento) {
