@@ -1,11 +1,14 @@
 package petagenda.agendamento;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import petagenda.Pet;
 import petagenda.Usuario;
 import petagenda.dados.Endereco;
-import petagenda.exception.IllegalEnderecoException;
+import petagenda.exception.*;
 import petagenda.servico.Servico;
+import petagenda.servico.TipoServico;
 
 /**
  *
@@ -20,8 +23,152 @@ public class Agendamento {
     private Usuario funcionarioAgendado;
     private String observacao;
     private PacoteAgendamento pacote;
+    private String buscarPetCom;
+    private String devolverPetPara;
     private int qntPasseios;
     private String localCuidado;
+    private ArrayList<Remedio> remedios;
+    private ArrayList<LocalTime> horariosAlimentacao;
+    
+    public void addHorarioAlimentacao(LocalTime horario) {
+        if (horario == null) {
+            throw new IllegalHorarioAlimentacaoException("horário de alimentação do pet não pode ser nulo");
+        } else {
+            this.horariosAlimentacao.add(horario);
+        }
+    }
+    
+    public void addRemedio(Remedio remedio) {
+        if (remedio == null) {
+            throw new IllegalHorarioAlimentacaoException("remédio não pode ser nulo");
+        } else {
+            this.remedios.add(remedio);
+        }
+    }
+    
+    public void clearHorariosAlimentacao() {
+        this.horariosAlimentacao.clear();
+    }
+    
+    public void clearRemedios() {
+        this.remedios.clear();
+    }
+    
+    public int getId() {
+        return this.id;
+    }
+    
+    public Servico getServico() {
+        return this.servico;
+    }
+    
+    public TipoServico getTipoServico() {
+        return this.getServico().getTipo();
+    }
+    
+    public LocalDateTime getDataHoraMarcada() {
+        return this.dataHoraMarcada;
+    }
+    
+    public Pet getPet() {
+        return this.pet;
+    }
+    
+    public String getEnderecoPet() {
+        return this.enderecoPet;
+    }
+    
+    public Usuario getFuncionarioAgendado() {
+        return this.funcionarioAgendado;
+    }
+    
+    public String getObservacao() {
+        return this.observacao;
+    }
+    
+    public PacoteAgendamento getPacote() {
+        return this.pacote;
+    }
+    
+    public String getBuscarPetCom() {
+        return this.buscarPetCom;
+    }
+    
+    public String getDevolverPetPara() {
+        return this.devolverPetPara;
+    }
+    
+    public int getQntPasseios() {
+        return this.qntPasseios;
+    }
+    
+    public String getLocalCuidado() {
+        return this.localCuidado;
+    }
+    
+    public int getHorariosAlimentacaoCount() {
+        return this.horariosAlimentacao.size();
+    }
+    
+    public LocalTime[] getHorariosAlimentacao() {
+        return this.horariosAlimentacao.toArray(new LocalTime[getHorariosAlimentacaoCount()]);
+    }
+    
+    public LocalTime getHorarioAlimentacao(int index) {
+        return this.horariosAlimentacao.get(index);
+    }
+    
+    public int getRemediosCount() {
+        return this.remedios.size();
+    }
+    
+    public Remedio[] getRemedios() {
+        return this.remedios.toArray(new Remedio[getRemediosCount()]);
+    }
+    
+    public Remedio getRemedio(int index) {
+        return this.remedios.get(index);
+    }
+    
+    public void removeHorarioAlimentacao(int index) {
+        this.horariosAlimentacao.remove(index);
+    }
+    
+    public void removeRemedio(int index) {
+        this.remedios.remove(index);
+    }
+    
+    public void setId(int id) {
+        if (id < 0) {
+            throw new IllegalIdException("id não pode ser inferior a zero");
+        } else {
+            this.id = id;
+        }
+    }
+    
+    public void setServico(Servico servico) {
+        if (servico == null) {
+            throw new IllegalServicoException("serviço agendado não pode ser nulo");
+        } else {
+            this.servico = servico;
+        }
+    }
+    
+    public void setDataHoraMarcada(LocalDateTime dthr) {
+        if (dthr == null) {
+            throw new IllegalDataHoraMarcadaException("data e hora marcada não pode ser nula");
+        } else {
+            this.dataHoraMarcada = dthr;
+        }
+    }
+    
+    public void setPet(Pet pet) {
+        if (pet == null) {
+            throw new IllegalPetException("pet não pode ser nulo");
+        } else {
+            this.pet = pet;
+        }
+    }
     
     public void setEnderecoPet(String enderecoPet) {
         if (enderecoPet == null) {
@@ -46,7 +193,93 @@ public class Agendamento {
         }
     }
     
-    public String getEnderecoPet() {
-        return this.enderecoPet;
+    public void setFuncionarioAgendado(Usuario funcionario) {
+        if (funcionario == null) {
+            throw new IllegalUsuarioException("funcionário não pode ser nulo");
+        } else {
+            this.funcionarioAgendado = funcionario;
+        }
+    }
+    
+    public void setObservacao(String obs) {
+        if (obs != null) {
+            obs = obs.trim();
+            if (obs.length() > 255) {
+                throw new IllegalObservacaoException("observação não pode conter mais do que 255 caracteres.");
+            } else if (obs.isEmpty()) {
+                obs = null;
+            }
+        }
+        this.observacao = obs;
+    }
+    
+    public void setPacote(PacoteAgendamento pac) {
+        this.pacote = pac;
+    }
+    
+    public void setBuscarPetCom(String buscarCom) {
+        if (buscarCom != null) {
+            buscarCom = buscarCom.trim();
+            if (buscarCom.length() > 64) {
+                throw new IllegalBuscarPetComException("informação de busca do Pet não pode conter mais do que 64 caracteres.");
+            } else if (buscarCom.isEmpty()) {
+                buscarCom = null;
+            }
+        }
+        this.buscarPetCom = buscarCom;
+    }
+    
+    public void setDevolverPetPara(String devolverPara) {
+        if (devolverPara != null) {
+            devolverPara = devolverPara.trim();
+            if (devolverPara.length() > 64) {
+                throw new IllegalDevolverPetParaException("informação de devolução do Pet não pode conter mais do que 64 caracteres.");
+            } else if (devolverPara.isEmpty()) {
+                devolverPara = null;
+            }
+        }
+        this.devolverPetPara = devolverPara;
+    }
+    
+    public void setQntPasseios(int passeios) {
+        if (passeios < 0) {
+            throw new IllegalQuantidadePasseiosException("quantidade de passeios não pode ser inferior a zero");
+        } else {
+            this.qntPasseios = passeios;
+        }
+    }
+    
+    public void setLocalCuidado(String local) {
+        if (local != null) {
+            local = local.trim();
+            if (local.length() > 255) {
+                throw new IllegalLocalCuidadoException("local do cuidado do Pet não pode conter mais do que 255 caracteres.");
+            } else if (local.isEmpty()) {
+                local = null;
+            }
+        }
+        this.localCuidado = local;
+    }
+    
+    public void setHorariosAlimentacao(LocalTime... horarios) {
+        this.clearHorariosAlimentacao();
+        if (horarios != null) {
+            for (LocalTime h : horarios) {
+                if (h != null) {
+                    this.addHorarioAlimentacao(h);
+                }
+            }
+        }
+    }
+    
+     public void setRemedios(Remedio... remedios) {
+        this.clearRemedios();
+        if (remedios != null) {
+            for (Remedio r : remedios) {
+                if (r != null) {
+                    this.addRemedio(r);
+                }
+            }
+        }
     }
 }

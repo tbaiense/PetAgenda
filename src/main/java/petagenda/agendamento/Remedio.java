@@ -17,6 +17,10 @@ public final class Remedio {
     private LocalTime horaAdministrar;
     private String instrucoes;
     
+    public Remedio (Agendamento agendamento, String nome, LocalTime horaAdministrar) {
+        this(agendamento, nome, horaAdministrar, null);
+    }
+    
     public Remedio (Agendamento agendamento, String nome, LocalTime horaAdministrar, String instrucoes) {
         IllegalArgumentsException exs = new IllegalArgumentsException();
     
