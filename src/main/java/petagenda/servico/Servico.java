@@ -22,10 +22,6 @@ public final class Servico {
     private double preco;
     private String descricao;
     
-    private Servico() {
-        this.id = -1;
-    }
-    
     public Servico(String nome, TipoServico tipo, int duracao, double preco) {
         this(1, nome, tipo, duracao, preco, null);
         this.id = -1;
@@ -101,8 +97,6 @@ public final class Servico {
             throw new IllegalArgumentsException(tArray);
         }
     }
-    
-    
     
     public void setId(int id) {
         if (id < 1) {

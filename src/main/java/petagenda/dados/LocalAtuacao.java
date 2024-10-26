@@ -100,6 +100,14 @@ public class LocalAtuacao {
         return this.id;
     }
     
+    public static LocalAtuacao valueOf(Endereco endereco) {
+        if (endereco == null) {
+            throw new NullPointerException("endereco não pode ser nulo");
+        } else {
+            return new LocalAtuacao(endereco.BAIRRO, endereco.CIDADE);
+        }
+    }
+    
     @Override
     public String toString() {
         return String.format("%s, %s", this.BAIRRO, this.CIDADE);

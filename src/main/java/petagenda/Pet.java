@@ -146,6 +146,10 @@ public final class Pet {
         return this.cor;
     }
     
+    public Endereco getEndereco() {
+        return this.getDono().getEndereco();
+    }
+    
     public void setRaca(String raca){
         if (raca == null) {
             throw new IllegalNomeException("raça não pode ser nula");

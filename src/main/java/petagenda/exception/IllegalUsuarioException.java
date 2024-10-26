@@ -6,7 +6,7 @@ import java.time.DateTimeException;
  *
  * @author thiago
  */
-public class IllegalUsuarioException extends DateTimeException {
+public class IllegalUsuarioException extends IllegalArgumentException {
     public IllegalUsuarioException() {
         super("usuario inválido");
     }

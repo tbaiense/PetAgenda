@@ -2,10 +2,14 @@ package petagenda.agendamento;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Month;
 import java.util.ArrayList;
+import petagenda.Cliente;
 import petagenda.Pet;
 import petagenda.Usuario;
 import petagenda.dados.Endereco;
+import petagenda.dados.LocalAtuacao;
+import petagenda.dados.Sexo;
 import petagenda.exception.*;
 import petagenda.servico.Servico;
 import petagenda.servico.TipoServico;
@@ -14,7 +18,7 @@ import petagenda.servico.TipoServico;
  *
  * @author thiago
  */
-public class Agendamento {
+public final class Agendamento {
     private int id;
     private Servico servico;
     private LocalDateTime dataHoraMarcada;
@@ -29,6 +33,82 @@ public class Agendamento {
     private String localCuidado;
     private ArrayList<Remedio> remedios;
     private ArrayList<LocalTime> horariosAlimentacao;
+    
+    // Exemplo de uso
+    public static void main(String[] args) {
+        try {
+            TipoServico passeio = new TipoServico("Passeio");
+            Servico dogWalking = new Servico("DogWalking", passeio, 60, 75.99);
+            
+            LocalDateTime hoje = LocalDateTime.of(2024, Month.OCTOBER, 26, 16, 30);
+            
+            Endereco itaparica = new Endereco("Rua Itaparica", "Numero 1", "Itaparica", "Vitória");
+            Cliente maria = new Cliente("Maria", itaparica, "40028922", dogWalking);
+            
+            boolean eCastrado = false;
+            Pet fred = new Pet("Frederico", maria, "Shi-tzu", Sexo.M, eCastrado);
+            Endereco endFred = fred.getEndereco();
+            
+            LocalAtuacao itaparicaVix = LocalAtuacao.valueOf(itaparica);
+            Usuario roberto = new Usuario("Roberto","40028922", dogWalking, itaparicaVix);
+            
+            Agendamento novoAgend = new Agendamento(dogWalking, hoje, fred, endFred.toString(), roberto);
+            System.out.println(novoAgend.toString());
+        } catch (IllegalArgumentsException exs) {
+            for (Throwable c : exs.getCauses()) {
+                System.out.println(c.getMessage());
+            }
+        }
+    }
+    
+    public Agendamento(Servico servico, LocalDateTime dataHoraMarcada, Pet pet, String enderecoPet, Usuario funcionarioAgendado) {
+        this(1, servico, dataHoraMarcada, pet, enderecoPet, funcionarioAgendado);
+        this.id = -1;
+    }
+    
+    public Agendamento(int id, Servico servico, LocalDateTime dataHoraMarcada, Pet pet, String enderecoPet, Usuario funcionarioAgendado) {
+        IllegalArgumentsException exs = new IllegalArgumentsException();
+        
+        try {
+            setId(id);
+        } catch (IllegalIdException ex) {
+            exs.addCause(ex);
+        }
+        
+        try {
+            setServico(servico);
+        } catch (IllegalServicoException ex) {
+            exs.addCause(ex);
+        }
+        
+        try {
+            setDataHoraMarcada(dataHoraMarcada);
+        } catch (IllegalDataHoraMarcadaException ex) {
+            exs.addCause(ex);
+        }
+        
+        try {
+            setPet(pet);
+        } catch (IllegalPetException ex) {
+            exs.addCause(ex);
+        }
+        
+        try {
+            setEnderecoPet(enderecoPet);
+        } catch (IllegalEnderecoException ex) {
+            exs.addCause(ex);
+        }
+        
+        try {
+            setFuncionarioAgendado(funcionarioAgendado);
+        } catch (IllegalUsuarioException ex) {
+            exs.addCause(ex);
+        }
+        
+        if (exs.size() > 0) {
+            throw exs;
+        }
+    }
     
     public void addHorarioAlimentacao(LocalTime horario) {
         if (horario == null) {
@@ -272,7 +352,7 @@ public class Agendamento {
         }
     }
     
-     public void setRemedios(Remedio... remedios) {
+    public void setRemedios(Remedio... remedios) {
         this.clearRemedios();
         if (remedios != null) {
             for (Remedio r : remedios) {
@@ -281,5 +361,12 @@ public class Agendamento {
                 }
             }
         }
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("--- AGENDAMENTO ---\n  TIPO DO SERVICO: %s | SERVIÇO: %s\n  PET: %s | END. PET: %s\n  DT. HR. MARCADA.: %s | FUNCIONARIO AGEND.: %s", 
+                getServico().getTipo().getNome(), getServico().getNome(), getPet().getNome(), getEnderecoPet(), getDataHoraMarcada().toString(), 
+                getFuncionarioAgendado().getNome());
     }
 }

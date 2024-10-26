@@ -6,7 +6,7 @@ import java.time.DateTimeException;
  *
  * @author thiago
  */
-public class IllegalDataHoraMarcadaException extends DateTimeException {
+public class IllegalDataHoraMarcadaException extends IllegalArgumentException {
     public IllegalDataHoraMarcadaException() {
         super("data e hora de agendamento inválida");
     }
