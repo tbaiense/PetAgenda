@@ -365,7 +365,7 @@ public final class Agendamento {
     
     @Override
     public String toString() {
-        return String.format("--- AGENDAMENTO ---\n  TIPO DO SERVICO: %s | SERVIÇO: %s\n  PET: %s | END. PET: %s\n  DT. HR. MARCADA.: %s | FUNCIONARIO AGEND.: %s", 
+        return String.format("--- AGENDAMENTO ---\nTIPO DO SERVICO: %s | SERVIÇO: %s\nPET: %s | END. PET: %s\nDT. HR. MARCADA.: %s | FUNCIONARIO AGEND.: %s", 
                 getServico().getTipo().getNome(), getServico().getNome(), getPet().getNome(), getEnderecoPet(), getDataHoraMarcada().toString(), 
                 getFuncionarioAgendado().getNome());
     }

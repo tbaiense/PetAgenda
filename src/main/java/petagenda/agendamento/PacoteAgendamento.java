@@ -77,6 +77,10 @@ public final class PacoteAgendamento {
         }
     }
     
+    public int getAgendamentoCount() {
+        return this.agendamentos.size();
+    }
+    
     public void addAgendamento(Agendamento agendamento) {
         if (agendamento == null) {
             throw new IllegalAgendamentoException("agendamento não pode ser nulo");
