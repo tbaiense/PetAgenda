@@ -1,11 +1,11 @@
 package petagenda;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 import petagenda.dados.Endereco;
 import petagenda.exception.*;
 import petagenda.dados.Sexo;
-import petagenda.servico.Servico;
-import petagenda.servico.TipoServico;
+//import petagenda.servico.Servico;
+//import petagenda.servico.TipoServico;
 
 /**
  *
@@ -24,20 +24,21 @@ public final class Pet {
     private String caminhoCartaoVacinacao;
     private String estadoSaude;
     
-    public static void main(String[] args) {
-        try {
-            Endereco vitoria = new Endereco("rua vila boa", "numero 100", "itaparica", "vitoria");
-            
-            TipoServico passeio = new TipoServico("Passeio");
-            Servico dogwalker = new Servico("DogWalker", passeio, 60, 100.99);
-            
-            Cliente maria = new Cliente("Maria", vitoria, "40028922", dogwalker);
-            System.out.println(maria.toString());
-        } catch (IllegalArgumentsException exs) {
-            Throwable[] causes = exs.getCauses(); 
-            System.out.println(Arrays.toString(causes));
-        }
-    }
+    // Exemplo de uso
+//    public static void main(String[] args) {
+//        try {
+//            Endereco vitoria = new Endereco("rua vila boa", "numero 100", "itaparica", "vitoria");
+//            
+//            TipoServico passeio = new TipoServico("Passeio");
+//            Servico dogwalker = new Servico("DogWalker", passeio, 60, 100.99);
+//            
+//            Cliente maria = new Cliente("Maria", vitoria, "40028922", dogwalker);
+//            System.out.println(maria.toString());
+//        } catch (IllegalArgumentsException exs) {
+//            Throwable[] causes = exs.getCauses(); 
+//            System.out.println(Arrays.toString(causes));
+//        }
+//    }
     
     public Pet(String nome, Cliente dono, String raca, Sexo sexo, boolean eCastrado) {
         this(1, nome, dono, raca, sexo, eCastrado);

@@ -33,144 +33,90 @@ public final class Endereco {
     }
     
     public Endereco(int id, String rua, String numero, String bairro, String cidade, String cep){
-        ArrayList<Throwable> tList = null;
+        IllegalArgumentsException exs = new IllegalArgumentsException();
         
         // Validação de id
         try {
             setId(id);
         } catch (IllegalIdException ex) {
-            tList = new ArrayList<Throwable>();
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
         // Validação de rua
         if (rua == null) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>();
-            }
-            tList.add(new IllegalRuaException("rua não pode ser nulo"));
+            exs.addCause(new IllegalRuaException("rua não pode ser nulo"));
         } else {
             rua = rua.trim();
-            
             if (rua.isEmpty()) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalRuaException("rua não pode ser vazio")); 
+                exs.addCause(new IllegalRuaException("rua não pode ser vazio")); 
             } else if (rua.length() > 45) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalRuaException("rua não pode mais do que 45 caracteres"));
+                exs.addCause(new IllegalRuaException("rua não pode mais do que 45 caracteres"));
             }
         }
         
         //Validação de numero
         if (numero == null) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>();
-            }
-            tList.add(new IllegalNumeroException("número não pode ser nulo"));
+            exs.addCause(new IllegalNumeroException("número não pode ser nulo"));
         } else {
             numero = numero.trim();
-            
             if (numero.isEmpty()) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalNumeroException("número não pode ser vazio")); 
+                exs.addCause(new IllegalNumeroException("número não pode ser vazio")); 
             } else if (numero.length() > 16) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalNumeroException("número não pode mais do que 16 caracteres"));
+                exs.addCause(new IllegalNumeroException("número não pode mais do que 16 caracteres"));
             }
         }
         
         //Validação de bairro
         if (bairro == null) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>();
-            }
-            tList.add(new IllegalBairroException("bairro não pode ser nulo"));
+            exs.addCause(new IllegalBairroException("bairro não pode ser nulo"));
         } else {
             bairro = bairro.trim();
-            
             if (bairro.isEmpty()) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalBairroException("bairro não pode ser vazio")); 
+                exs.addCause(new IllegalBairroException("bairro não pode ser vazio")); 
             } else if (bairro.length() > 32) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalBairroException("bairro não pode mais do que 32 caracteres"));
+                exs.addCause(new IllegalBairroException("bairro não pode mais do que 32 caracteres"));
             }
         }
         
         
         //Validação de cidade
         if (cidade == null) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>();
-            }
-            tList.add(new IllegalCidadeException("cidade não pode ser nulo"));
+            exs.addCause(new IllegalCidadeException("cidade não pode ser nulo"));
         } else {
             cidade = cidade.trim();
             
             if (cidade.isEmpty()) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalCidadeException("cidade não pode ser vazio")); 
+                exs.addCause(new IllegalCidadeException("cidade não pode ser vazio")); 
             } else if (cidade.length() > 32) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalCidadeException("cidade não pode mais do que 32 caracteres"));
+                exs.addCause(new IllegalCidadeException("cidade não pode mais do que 32 caracteres"));
             }
         }
         
         //Validação de CEP
         if (cep == null) {
-//            if (tList == null) {
-//                tList = new ArrayList<Throwable>();
-//            }
-//            tList.add(new IllegalCepException("CEP não pode ser nulo"));
+//            exs.addCause(new IllegalCepException("CEP não pode ser nulo"));
         } else {
             cep = cep.trim();
             
             if (cep.isEmpty()) {
-//                if (tList == null) {
-//                    tList = new ArrayList<Throwable>();
-//                }
-//                tList.add(new IllegalCepException("CEP não pode ser vazio"));
+//                exs.addCause(new IllegalCepException("CEP não pode ser vazio"));
                 cep = null;
             } else if (cep.length() > 32) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalCepException("CEP não pode conter mais do que 8 caracteres"));
+                exs.addCause(new IllegalCepException("CEP não pode conter mais do que 8 caracteres"));
             } else if (cep.length() < 8) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalCepException("CEP não pode conter menos do que 8 caracteres"));
+                exs.addCause(new IllegalCepException("CEP não pode conter menos do que 8 caracteres"));
             }
         }
         
-        if (tList == null) { // Se nenhum dado foi inválido
+        if (exs.size() > 0) { 
+            throw exs;
+        } else { // Se nenhum dado foi inválido
             this.id = id;
             this.RUA = rua;
             this.BAIRRO = bairro;
             this.NUMERO = numero;
             this.CIDADE = cidade;
             this.CEP = cep;
-        } else {
-            Throwable[] tArray = new Throwable[tList.size()];
-            tList.toArray(tArray);
-            throw new IllegalArgumentsException("um ou mais argumentos fornecidos são inválidos", tArray);
         }
     }
     

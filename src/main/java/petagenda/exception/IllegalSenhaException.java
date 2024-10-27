@@ -4,7 +4,7 @@ package petagenda.exception;
  *
  * @author t.baiense
  */
-public class IllegalSenhaException extends IllegalArgumentsException {
+public class IllegalSenhaException extends IllegalArgumentException {
     public IllegalSenhaException() {
         super("senha inválida");
     }

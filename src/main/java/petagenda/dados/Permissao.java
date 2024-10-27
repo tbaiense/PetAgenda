@@ -9,7 +9,7 @@ import petagenda.exception.IllegalNomeException;
  *
  * @author t.baiense
  */
-public class Permissao {
+public final class Permissao {
     private int id;
     public final String nome;
     
@@ -19,36 +19,27 @@ public class Permissao {
     }
     
     public Permissao(int id, String nome) {
-        ArrayList<Throwable> tList = null;
-        IllegalArgumentsException exs;
+        IllegalArgumentsException exs = new IllegalArgumentsException();
         
         try {
             setId(id);
         } catch (IllegalIdException ex) {
-            tList = new ArrayList<Throwable>();
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
         if (nome == null) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>();
-            }
-            tList.add(new IllegalNomeException("nome não pode ser nulo"));
+            exs.addCause(new IllegalNomeException("nome não pode ser nulo"));
         } else {
             nome = nome.trim();
-            
             if (nome.isEmpty()) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalNomeException("nome não pode ser vazio"));
+                exs.addCause(new IllegalNomeException("nome não pode ser vazio"));
             }
         }
         
-        if (tList == null) {
-            this.nome = nome;
+        if (exs.size() > 0) {
+            throw exs;
         } else {
-            throw new IllegalArgumentsException(tList.toArray(new Throwable[tList.size()]));
+            this.nome = nome;
         }
     }
     

@@ -1,23 +1,10 @@
 package petagenda;
 
-import petagenda.exception.IllegalEnderecoException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import petagenda.dados.CPF;
-import petagenda.dados.Endereco;
-import petagenda.dados.LocalAtuacao;
-import petagenda.dados.Permissao;
-import petagenda.exception.IllegalArgumentsException;
-import petagenda.exception.IllegalCpfException;
-import petagenda.exception.IllegalIdException;
-import petagenda.exception.IllegalLocalAtuacaoException;
-import petagenda.exception.IllegalNomeException;
-import petagenda.exception.IllegalPermissaoException;
-import petagenda.exception.IllegalSenhaException;
-import petagenda.exception.IllegalServicoException;
-import petagenda.exception.IllegalTelefoneException;
-import petagenda.servico.Servico;
-import petagenda.servico.TipoServico;
+//import java.util.Arrays;
+import petagenda.dados.*;
+import petagenda.exception.*;
+import petagenda.servico.*;
 
 /**
  *
@@ -65,88 +52,66 @@ public final class Cliente {
     }
     
     public Cliente(int id, String nome, Endereco endereco, String cpf, String telefone, Servico servicoSolicita, String buscarPetCom, String devolverPetPara) {
-        ArrayList<Throwable> tList = null;
+        IllegalArgumentsException exs = new IllegalArgumentsException();
         
         // Id
         try {
             setId(id);
         } catch (IllegalIdException ex) {
-            tList = new ArrayList<Throwable>();
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
         // Nome
         try {
             setNome(nome);
         } catch (IllegalNomeException ex) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>(); 
-            }
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
         // Endereço
         try {
             setEndereco(endereco);
         } catch (IllegalEnderecoException ex) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>(); 
-            }
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
         // CPF
         try {
             setCpf(cpf);
         } catch (IllegalCpfException ex) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>(); 
-            }
-            tList.add(ex);
+           exs.addCause(ex);
         }
         
         // Telefone
         try {
             setTelefone(telefone);
         } catch (IllegalTelefoneException ex) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>(); 
-            }
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
         // Serviço solicitado
         try {
             setServico(servicoSolicita);
         } catch (IllegalServicoException ex) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>(); 
-            }
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
         // Pessoa com quem buscar o Pet
         try {
             setBuscarPetCom(buscarPetCom);
         } catch (IllegalNomeException ex) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>(); 
-            }
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
         // Pessoa a quem o Pet deve ser devolvido
         try {
             setDevolverPetPara(devolverPetPara);
         } catch (IllegalNomeException ex) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>(); 
-            }
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
-        if (tList != null) { // Alguma exceção ocorreu
-            throw new IllegalArgumentsException(tList.toArray(new Throwable[tList.size()]));
+        if (exs.size() > 0) { // Alguma exceção ocorreu
+            throw exs;
         }
     }
     

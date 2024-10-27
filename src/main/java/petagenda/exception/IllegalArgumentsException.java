@@ -9,9 +9,8 @@ import java.util.ArrayList;
  * @author Thiago M. Baiense
  */
 
-public class IllegalArgumentsException extends IllegalArgumentException {
-    private Throwable cause;
-    private ArrayList<Throwable> causeList = new ArrayList<Throwable>();
+public final class IllegalArgumentsException extends IllegalArgumentException {
+    private final ArrayList<Throwable> causeList = new ArrayList<Throwable>();
     
     public IllegalArgumentsException() {
         super("um ou mais argumentos são inválidos");
@@ -41,22 +40,20 @@ public class IllegalArgumentsException extends IllegalArgumentException {
         this.initCauseList(causes);
     }
     
-    public Throwable initCauseList(Throwable... causes) {
+    public void initCauseList(Throwable... causes) {
         if (causes == null) {
             throw new NullPointerException();
-        }
-        
-        for(Throwable t : causes) {
-            if (t != null) {
-                this.causeList.add(t);
+        } else {
+            for(Throwable t : causes) {
+                if (t != null) {
+                    this.causeList.add(t);
+                }
             }
         }
-        return this;
     }
     
-    public Throwable addCause(IllegalArgumentException cause) {
+    public void addCause(IllegalArgumentException cause) {
         this.causeList.add(cause);
-        return this;
     }
     
     public int size() { // Retorna a quantidade de causes

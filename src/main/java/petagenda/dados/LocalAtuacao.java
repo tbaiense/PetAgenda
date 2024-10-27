@@ -10,7 +10,7 @@ import petagenda.exception.IllegalIdException;
  *
  * @author t.baiense
  */
-public class LocalAtuacao {
+public final class LocalAtuacao {
     
     private int id;
     public final String BAIRRO;
@@ -22,69 +22,45 @@ public class LocalAtuacao {
     }
     
     public LocalAtuacao(int id, String bairro, String cidade) {
-        ArrayList<Throwable> tList = null;
+        IllegalArgumentsException exs = new IllegalArgumentsException();
         
         // Validação de id
         try {
             setId(id);
         } catch (IllegalIdException ex) {
-            tList = new ArrayList<Throwable>();
-            tList.add(ex);
+            exs.addCause(ex);
         }
         
         //Validação de bairro
         if (bairro == null) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>();
-            }
-            tList.add(new IllegalBairroException("bairro não pode ser nulo"));
+            exs.addCause(new IllegalBairroException("bairro não pode ser nulo"));
         } else {
             bairro = bairro.trim();
-            
             if (bairro.isEmpty()) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalBairroException("bairro não pode ser vazio")); 
+                exs.addCause(new IllegalBairroException("bairro não pode ser vazio")); 
             } else if (bairro.length() > 45) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalBairroException("bairro não pode mais do que 32 caracteres"));
+                exs.addCause(new IllegalBairroException("bairro não pode mais do que 32 caracteres"));
             }
         }
-        
         
         //Validação de cidade
         if (cidade == null) {
-            if (tList == null) {
-                tList = new ArrayList<Throwable>();
-            }
-            tList.add(new IllegalCidadeException("cidade não pode ser nulo"));
+            exs.addCause(new IllegalCidadeException("cidade não pode ser nulo"));
         } else {
             cidade = cidade.trim();
-            
             if (cidade.isEmpty()) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalCidadeException("cidade não pode ser vazio")); 
+                exs.addCause(new IllegalCidadeException("cidade não pode ser vazio")); 
             } else if (cidade.length() > 45) {
-                if (tList == null) {
-                    tList = new ArrayList<Throwable>();
-                }
-                tList.add(new IllegalCidadeException("cidade não pode mais do que 32 caracteres"));
+                exs.addCause(new IllegalCidadeException("cidade não pode mais do que 32 caracteres"));
             }
         }
         
-        if (tList == null) { // Se nenhum dado foi inválido
+        if (exs.size() > 0) { 
+            throw exs;
+        } else { // Se nenhum dado foi inválido
             this.id = id;
             this.BAIRRO = bairro;
             this.CIDADE = cidade;
-        } else {
-            Throwable[] tArray = new Throwable[tList.size()];
-            tList.toArray(tArray);
-            throw new IllegalArgumentsException("um ou mais argumentos fornecidos são inválidos", tArray);
         }
     }
     
