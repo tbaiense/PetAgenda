@@ -241,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`incidente` (
   `e_emergencia` BIT(1) NOT NULL DEFAULT b'0',
   `id_pet` INT NOT NULL,
   `id_servico_contratado` INT NOT NULL,
-  `descricao` TEXT NULL,
+  `descricao` TEXT NOT NULL,
   PRIMARY KEY (`id`),
     FOREIGN KEY (`id_pet`)
     REFERENCES `pet_agenda`.`pet` (`id`)
