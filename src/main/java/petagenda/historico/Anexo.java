@@ -12,7 +12,7 @@ import petagenda.exception.IllegalNomeException;
  *
  * @author thiago
  */
-public class Anexo {
+public final class Anexo {
     private HistoricoServico servico;
     private String nome;
     private String caminhoAnexo; // Caminho do caminhoAnexo

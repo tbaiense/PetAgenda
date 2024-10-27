@@ -1,19 +1,19 @@
 package petagenda.historico;
 
 import java.time.LocalDateTime;
-import java.time.Month;
+//import java.time.Month;
 import java.util.ArrayList;
-import petagenda.Cliente;
-import petagenda.Pet;
-import petagenda.Usuario;
+//import petagenda.Cliente;
+//import petagenda.Pet;
+//import petagenda.Usuario;
 import petagenda.agendamento.Agendamento;
-import petagenda.agendamento.Remedio;
-import petagenda.dados.Endereco;
-import petagenda.dados.LocalAtuacao;
-import petagenda.dados.Sexo;
+//import petagenda.agendamento.Remedio;
+//import petagenda.dados.Endereco;
+//import petagenda.dados.LocalAtuacao;
+//import petagenda.dados.Sexo;
 import petagenda.exception.*;
-import petagenda.servico.Servico;
-import petagenda.servico.TipoServico;
+//import petagenda.servico.Servico;
+//import petagenda.servico.TipoServico;
 
 /**
  *
@@ -31,34 +31,34 @@ public final class HistoricoServico {
     private ArrayList<Anexo> anexos = new ArrayList<Anexo>();
     
     // Exemplo de uso
-    public static void main(String[] args) {
-        try {
-            TipoServico passeio = new TipoServico("Passeio");
-            Servico dogWalking = new Servico("DogWalking", passeio, 60, 75.99);
-            
-            LocalDateTime hoje = LocalDateTime.of(2024, Month.OCTOBER, 26, 16, 30);
-            
-            Endereco itaparica = new Endereco("Rua Itaparica", "Numero 1", "Itaparica", "Vitória");
-            Cliente maria = new Cliente("Maria", itaparica, "40028922", dogWalking);
-            
-            boolean eCastrado = false;
-            Pet fred = new Pet("Frederico", maria, "Shi-tzu", Sexo.M, eCastrado);
-            Endereco endFred = fred.getEndereco();
-            
-            LocalAtuacao itaparicaVix = LocalAtuacao.valueOf(itaparica);
-            Usuario roberto = new Usuario("Roberto","40028922", dogWalking, itaparicaVix);
-            
-            Agendamento novoAgend = new Agendamento(dogWalking, hoje, fred, endFred.toString(), roberto);
-            
-            LocalDateTime dtHrFinalizado = hoje.plusMinutes(dogWalking.getDuracao());
-            HistoricoServico servicoFred = new HistoricoServico(novoAgend, dtHrFinalizado);
-            System.out.println(servicoFred.toString());
-        } catch (IllegalArgumentsException exs) {
-            for (Throwable c : exs.getCauses()) {
-                System.out.println(c.getMessage());
-            }
-        }
-    }
+//    public static void main(String[] args) {
+//        try {
+//            TipoServico passeio = new TipoServico("Passeio");
+//            Servico dogWalking = new Servico("DogWalking", passeio, 60, 75.99);
+//            
+//            LocalDateTime hoje = LocalDateTime.of(2024, Month.OCTOBER, 26, 16, 30);
+//            
+//            Endereco itaparica = new Endereco("Rua Itaparica", "Numero 1", "Itaparica", "Vitória");
+//            Cliente maria = new Cliente("Maria", itaparica, "40028922", dogWalking);
+//            
+//            boolean eCastrado = false;
+//            Pet fred = new Pet("Frederico", maria, "Shi-tzu", Sexo.M, eCastrado);
+//            Endereco endFred = fred.getEndereco();
+//            
+//            LocalAtuacao itaparicaVix = LocalAtuacao.valueOf(itaparica);
+//            Usuario roberto = new Usuario("Roberto","40028922", dogWalking, itaparicaVix);
+//            
+//            Agendamento novoAgend = new Agendamento(dogWalking, hoje, fred, endFred.toString(), roberto);
+//            
+//            LocalDateTime dtHrFinalizado = hoje.plusMinutes(dogWalking.getDuracao());
+//            HistoricoServico servicoFred = new HistoricoServico(novoAgend, dtHrFinalizado);
+//            System.out.println(servicoFred.toString());
+//        } catch (IllegalArgumentsException exs) {
+//            for (Throwable c : exs.getCauses()) {
+//                System.out.println(c.getMessage());
+//            }
+//        }
+//    }
     
     public HistoricoServico(Agendamento agendamento, LocalDateTime dataHoraFinalizado) {
         this(agendamento, dataHoraFinalizado, 1);
