@@ -34,21 +34,21 @@ public final class Cliente {
     private String devolverPetPara;
     
     // Exemplo de uso
-    public static void main(String[] args) {
-        Cliente eu;
-        try {
-            TipoServico passeio = new TipoServico("Passeio");
-            Servico servSolicita = new Servico("Dog Walker", passeio, 60, 100.0);
-            Endereco endCliente = new Endereco("Rua Guanabara", "num. 106", "Itaparica", "Vitoria");
-            
-            Cliente cl = new Cliente("Roberto", endCliente, "4002-8922", servSolicita);
-            System.out.println(cl.toString());
-        } catch (IllegalArgumentsException exs) {
-            Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos
-            System.out.println(Arrays.toString(causas)); // Printa as exceções se houver
-        }
-        
-    }
+//    public static void main(String[] args) {
+//        Cliente eu;
+//        try {
+//            TipoServico passeio = new TipoServico("Passeio");
+//            Servico servSolicita = new Servico("Dog Walker", passeio, 60, 100.0);
+//            Endereco endCliente = new Endereco("Rua Guanabara", "num. 106", "Itaparica", "Vitoria");
+//            
+//            Cliente cl = new Cliente("Roberto", endCliente, "4002-8922", servSolicita);
+//            System.out.println(cl.toString());
+//        } catch (IllegalArgumentsException exs) {
+//            Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos
+//            System.out.println(Arrays.toString(causas)); // Printa as exceções se houver
+//        }
+//        
+//    }
     
     public Cliente(int id, String nome, Endereco endereco, String telefone, Servico servicoSolicita) {
         this(id, nome, endereco, null, telefone, servicoSolicita, null, null);
@@ -271,12 +271,12 @@ public final class Cliente {
             } else if (pessoa.length() > 64) {
                 throw new IllegalNomeException("pessoa não pode conter mais do que 64 caracteres");
             }
-            this.nome = pessoa;
+            this.devolverPetPara = pessoa;
         }
     }
     
-    public String setDevolverPetPara() {
-        return this.buscarPetCom;
+    public String getDevolverPetPara() {
+        return this.devolverPetPara;
     }
     @Override
     public String toString() {
