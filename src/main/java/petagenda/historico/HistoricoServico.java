@@ -2,10 +2,12 @@ package petagenda.historico;
 
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.util.ArrayList;
 import petagenda.Cliente;
 import petagenda.Pet;
 import petagenda.Usuario;
 import petagenda.agendamento.Agendamento;
+import petagenda.agendamento.Remedio;
 import petagenda.dados.Endereco;
 import petagenda.dados.LocalAtuacao;
 import petagenda.dados.Sexo;
@@ -18,6 +20,7 @@ import petagenda.servico.TipoServico;
  * @author thiago
  */
 public final class HistoricoServico {
+    private int id;
     private Agendamento agendamento;
     private String descricao;
     private LocalDateTime dataHoraFinalizado;
@@ -25,6 +28,7 @@ public final class HistoricoServico {
     private String observacao;
     private String comportamentoPet;
     private Incidente incidente;
+    private ArrayList<Anexo> anexos = new ArrayList<Anexo>();
     
     // Exemplo de uso
     public static void main(String[] args) {
@@ -61,8 +65,24 @@ public final class HistoricoServico {
         this.setDuracao(agendamento.getServico().getDuracao());
     }
     
+    public HistoricoServico(int id, Agendamento agendamento, LocalDateTime dataHoraFinalizado) {
+        this(id ,agendamento, dataHoraFinalizado, 1);
+        this.setDuracao(agendamento.getServico().getDuracao());
+    }
+    
     public HistoricoServico(Agendamento agendamento, LocalDateTime dataHoraFinalizado, int duracao) {
+        this(1, agendamento, dataHoraFinalizado, duracao);
+        this.id = -1;
+    }
+    
+    public HistoricoServico(int id, Agendamento agendamento, LocalDateTime dataHoraFinalizado, int duracao) {
         IllegalArgumentsException exs = new IllegalArgumentsException();
+        
+        try {
+            setId(id);
+        } catch (IllegalIdException ex) {
+            exs.addCause(ex);
+        }
         
         try {
             setAgendamento(agendamento);
@@ -85,6 +105,18 @@ public final class HistoricoServico {
         if (exs.size() > 0) {
             throw exs;
         }
+    }
+    
+    public void addAnexo(Anexo anexo) {
+        this.anexos.add(anexo);
+    }
+    
+    public void clearAnexos() {
+        this.anexos.clear();
+    }
+    
+    public int getId() {
+        return this.id;
     }
     
     public Agendamento getAgendamento() {
@@ -115,6 +147,35 @@ public final class HistoricoServico {
         return this.incidente;
     }
     
+    public Anexo getAnexo(int index) {
+        return this.anexos.get(index);
+    }
+    
+    
+    public Anexo[] getAnexos() {
+        if (getAnexosCount() > 0) {
+            return this.anexos.toArray(new Anexo[getAnexosCount()]);
+        } else {
+            return null;
+        }
+    }
+    
+    public int getAnexosCount() {
+        return this.anexos.size();
+    }
+    
+    public void setId(int id) {
+        if (id < 0) {
+            throw new IllegalIdException("id não pode ser inferior a zero");
+        } else {
+            this.id = id;
+        }
+    }
+    
+    public void removeAnexo(int index) {
+        this.anexos.remove(index);
+    }
+    
     public void setAgendamento(Agendamento agendamento) {
         if (agendamento == null) {
             throw new IllegalAgendamentoException("agendamento não pode ser nulo");
@@ -122,6 +183,17 @@ public final class HistoricoServico {
             this.agendamento = agendamento;  
         }
 
+    }
+    
+    public void setAnexos(Anexo... anexos) {
+        clearAnexos();
+        if (anexos != null) {
+            for (Anexo a : anexos) {
+                if (a != null) {
+                    addAnexo(a);
+                }
+            }
+        }
     }
     
     public void setDescricao(String descricao) {

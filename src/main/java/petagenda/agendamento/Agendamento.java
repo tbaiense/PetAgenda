@@ -31,8 +31,8 @@ public final class Agendamento {
     private String devolverPetPara;
     private int qntPasseios;
     private String localCuidado;
-    private ArrayList<Remedio> remedios;
-    private ArrayList<LocalTime> horariosAlimentacao;
+    private ArrayList<Remedio> remedios = new ArrayList<Remedio>();
+    private ArrayList<LocalTime> horariosAlimentacao = new ArrayList<LocalTime>();
     
     // Exemplo de uso
     public static void main(String[] args) {
@@ -203,7 +203,11 @@ public final class Agendamento {
     }
     
     public Remedio[] getRemedios() {
-        return this.remedios.toArray(new Remedio[getRemediosCount()]);
+        if (getRemediosCount() > 0) {
+            return this.remedios.toArray(new Remedio[getRemediosCount()]);
+        } else {
+            return null;
+        }
     }
     
     public Remedio getRemedio(int index) {
