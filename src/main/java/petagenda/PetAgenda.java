@@ -6,7 +6,12 @@ import petagenda.dados.*;
 public class PetAgenda {
     
     public static void main(String[] args) {
-       BD.Endereco.insert(new Endereco("Rua clarício Antonio", "151", "Jardim América", "Cariacica", "12345678"));
+        Endereco teste = new Endereco(3, "Rua clarício ", "152", "América", "LKFJALSDJF", "12345673");
+        BD.Endereco.update(teste);
+//        teste.setId(3);
+//        BD.Endereco.delete(teste);
+        
+        
     }
     
 }

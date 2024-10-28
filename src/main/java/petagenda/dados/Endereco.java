@@ -21,10 +21,11 @@ public final class Endereco {
     public final String BAIRRO;
     public final String CIDADE;
     public final String CEP;
+    public static final int NULL_ID = -1;
     
     public Endereco(String rua, String numero, String bairro, String cidade, String cep) {
         this(1, rua, numero, bairro, cidade, cep);
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public Endereco(int id, String rua, String numero, String bairro, String cidade, String cep){

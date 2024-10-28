@@ -94,109 +94,99 @@ public class BD {
             return r;
         }
         
-//        public static petagenda.dados.Endereco selectLast() {
-//            try {
-//                Connection conn = BD.getConnection();
-//                PreparedStatement select = conn.prepareStatement(String.format("SELECT id, nome, login, tipo FROM %s ORDER BY id DESC LIMIT 1", TABLE));
-//
-//                ResultSet rs = select.executeQuery();
-//                petagenda.dados.Endereco[] usuarios = parse(rs);
-//
-//                select.close();
-//                conn.close();
-//
-//                if (usuarios == null) {
-//                    return null;
-//                }
-//
-//                return usuarios[0];
-//            } catch (SQLException e) {
-//                JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de busca", JOptionPane.ERROR_MESSAGE);
-//            }
-//            return null;
-//        }
-//        
-//        public static petagenda.dados.Endereco[] selectAll() {
-//            try {
-//                Connection conn = BD.getConnection();
-//                PreparedStatement select = conn.prepareStatement(String.format("SELECT id, nome, login, tipo FROM %s", TABLE));
-//
-//                ResultSet rs = select.executeQuery();
-//                petagenda.dados.Endereco[] usuarios = parse(rs);
-//
-//                select.close();
-//                conn.close();
-//
-//                if (usuarios == null) {
-//                    return null;
-//                }
-//
-//                return usuarios;
-//            } catch (SQLException e) {
-//                JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de busca", JOptionPane.ERROR_MESSAGE);
-//            }
-//            return null;
-//        }
-//        
-//        public static petagenda.dados.Endereco selectById(int id) {
-//            if (id > 0) {
-//                try {
-//                    Connection conn = BD.getConnection();
-//                    PreparedStatement select = conn.prepareStatement(String.format("SELECT id, nome, login, tipo FROM %s WHERE id = ?", TABLE));
-//                    select.setInt(1, id);
-//                    
-//                    ResultSet rs = select.executeQuery();
-//                    petagenda.dados.Endereco[] usuarios = parse(rs);
-//                    
-//                    select.close();
-//                    conn.close();
-//                    
-//                    if (usuarios == null) {
-//                        return null;
-//                    }
-//                    
-//                    return usuarios[0];
-//                } catch (SQLException e) {
-//                    JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de busca", JOptionPane.ERROR_MESSAGE);
-//                }
-//            }
-//            return null;
-//        }
-//        
-//        public static petagenda.dados.Endereco[] parse(ResultSet rs) {
-//            ArrayList<petagenda.dados.Endereco> uList = new ArrayList<petagenda.dados.Endereco>();
-//            
-//            try {
-//                while (rs.next()) {
-//                    int id;
-//                    String nome, login;
-//                    petagenda.dados.Endereco.Tipo tipo;
-//                    petagenda.dados.Endereco usuario;
-//                    
-//                    id = rs.getInt(1);
-//                    nome = rs.getString(2);
-//                    login = rs.getString(3);
-//                    tipo = petagenda.dados.Endereco.getTipo(rs.getString(4));
-//                    
-//                    usuario = new petagenda.dados.Endereco(id, nome, login, tipo);
-//                    
-//                    uList.add(usuario);
-//                }
-//                
-//                if (uList.isEmpty()) {
-//                    return null;
-//                }
-//                
-//                petagenda.dados.Endereco[] usuarios = new petagenda.dados.Endereco[uList.size()];
-//                uList.toArray(usuarios);
-//                
-//                return usuarios;
-//            } catch (SQLException e) {
-//                JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de parse", JOptionPane.ERROR_MESSAGE);
-//            }
-//            
-//            return null;
-//        }
+        public static int delete(petagenda.dados.Endereco endereco) {
+            int r = 0;
+            
+            if (endereco == null ) {
+                throw new NullPointerException("Endereço não pode ser nulo");
+            } else if (endereco.getId() != petagenda.dados.Endereco.NULL_ID){ // Só inicia conexão de Endereco informado possuir id válido
+                Connection conn = BD.getConnection();
+                if (conn == null) { // Se banco for inacessível
+                    return r;
+                } else {
+                    // Criação do statement
+                    PreparedStatement insert = null;
+                    try {    
+                        insert = conn.prepareStatement(
+                            String.format("DELETE FROM %s WHERE id = ?", TABLE));
+                        insert.setInt(1, endereco.getId());
+                        
+                        r = insert.executeUpdate();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de criação do PreparedStatement", JOptionPane.ERROR_MESSAGE);
+                        r = -1;
+                    } 
+                    
+                    if (insert != null) { // Se preparedStatement não falhou
+                        try {
+                            insert.close();
+                        } catch (SQLException e) {
+                            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+                        } finally {
+                            insert = null;
+                        }
+                    }
+                    
+                    try {
+                        conn.close();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        conn = null;
+                    }
+                }
+            }
+            return r;
+        }
+        
+        public static int update(petagenda.dados.Endereco endereco) {
+            int r = 0;
+
+            if (endereco == null ) {
+                throw new NullPointerException("Endereço não pode ser nulo");
+            } else if (endereco.getId() != petagenda.dados.Endereco.NULL_ID){ // Só inicia conexão de Endereco informado possuir id válido
+                Connection conn = BD.getConnection();
+                if (conn == null) { // Se banco for inacessível
+                    return r;
+                } else {
+                    // Criação do statement
+                    PreparedStatement insert = null;
+                    try {    
+                        insert = conn.prepareStatement(
+                            String.format("UPDATE %s SET rua = ?, numero = ?, bairro = ?, cidade = ? WHERE id = ?", TABLE));
+                        insert.setString(1, endereco.RUA);
+                        insert.setString(2, endereco.NUMERO);
+                        insert.setString(3, endereco.BAIRRO);
+                        insert.setString(4, endereco.CIDADE);
+                        insert.setInt(5, endereco.getId());
+
+                        r = insert.executeUpdate();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de criação do PreparedStatement", JOptionPane.ERROR_MESSAGE);
+                        r = -1;
+                    } 
+
+                    if (insert != null) { // Se preparedStatement não falhou
+                        try {
+                            insert.close();
+                        } catch (SQLException e) {
+                            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+                        } finally {
+                            insert = null;
+                        }
+                    }
+
+                    try {
+                        conn.close();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        conn = null;
+                    }
+                }
+            }
+            return r;
+        }
     }
     
     static public class TipoServico {
