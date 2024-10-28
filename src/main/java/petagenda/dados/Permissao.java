@@ -13,9 +13,11 @@ public final class Permissao {
     private int id;
     public final String nome;
     
+    public static final int NULL_ID = -1;
+    
     public Permissao(String nome) {
         this(1, nome);
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public Permissao(int id, String nome) {

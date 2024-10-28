@@ -19,6 +19,8 @@ public class TipoServico {
     public static final TipoServico CUIDADO_ESPECIAL = new TipoServico();
     public static final TipoServico PASSEIO = new TipoServico();
     
+    public static final int NULL_ID = -1;
+    
     private String nome;
     private int id;
     
@@ -55,12 +57,12 @@ public class TipoServico {
     }
     
     private TipoServico() {
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public TipoServico(String nome) {
         this(1, nome);
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public TipoServico(int id, String nome) {

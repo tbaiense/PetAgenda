@@ -22,9 +22,11 @@ public final class Servico {
     private double preco;
     private String descricao;
     
+    public static final int NULL_ID = -1;
+    
     public Servico(String nome, TipoServico tipo, int duracao, double preco) {
         this(1, nome, tipo, duracao, preco, null);
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public Servico(int id, String nome, TipoServico tipo, int duracao, double preco) {
@@ -33,7 +35,7 @@ public final class Servico {
     
     public Servico(String nome, TipoServico tipo, int duracao, double preco, String descricao) {
         this(1, nome, tipo, duracao, preco, descricao);
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public Servico(int id, String nome, TipoServico tipo, int duracao, double preco, String descricao) {

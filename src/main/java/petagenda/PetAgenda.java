@@ -3,6 +3,8 @@ package petagenda;
 import java.util.Arrays;
 import petagenda.bd.BD;
 import petagenda.dados.*;
+import petagenda.servico.Servico;
+import petagenda.servico.TipoServico;
 
 public class PetAgenda {
     
@@ -20,10 +22,20 @@ public class PetAgenda {
 //        BD.LocalAtuacao.insert(local);
 
 //        LocalAtuacao novoLocal = new LocalAtuacao("Itaparica", "Vitória");
-        LocalAtuacao localExistente = BD.LocalAtuacao.selectById(2);
-        LocalAtuacao localExAlterado = new LocalAtuacao(localExistente.getId(), "Jardim Camburi", localExistente.CIDADE);
-        BD.LocalAtuacao.update(localExAlterado);
-        System.out.print(BD.LocalAtuacao.selectById(localExAlterado.getId()));
+//        LocalAtuacao localExistente = BD.LocalAtuacao.selectById(2);
+//        LocalAtuacao localExAlterado = new LocalAtuacao(localExistente.getId(), "Jardim Camburi", localExistente.CIDADE);
+//        BD.LocalAtuacao.update(localExAlterado);
+//        System.out.print(BD.LocalAtuacao.selectById(localExAlterado.getId()));
+
+
+//        TipoServico passeio = BD.TipoServico.selectById(2);
+//        Servico servicoPresta = new Servico("Dog Petting", passeio, 60, 100.0);
+//        BD.Servico.insert(servicoPresta);
+//
+//        System.out.println(BD.Servico.selectLast());
+
+        Servico last = BD.Servico.selectLast();
+        System.out.println(last.getTipo().toString());
     }
     
 }
