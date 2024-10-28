@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`tipo_servico` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`tipo_servico` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
