@@ -24,7 +24,7 @@ USE `pet_agenda` ;
 DROP TABLE IF EXISTS `pet_agenda`.`endereco` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`endereco` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `rua` VARCHAR(45) NOT NULL,
   `numero` VARCHAR(16) NOT NULL,
   `bairro` VARCHAR(32) NOT NULL,
@@ -52,7 +52,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`servico_disponivel` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`servico_disponivel` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `id_tipo_servico` INT NOT NULL,
   `duracao` INT NOT NULL COMMENT 'Duração em minutos necessária para realização do serviço',
@@ -69,7 +69,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`cliente` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`cliente` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `id_endereco` INT NOT NULL,
   `nome` VARCHAR(64) NOT NULL,
   `cpf` CHAR(11) NULL COMMENT 'CPF do cliente no formato numérico, exemplo: 12345678912',
@@ -90,7 +90,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`permissao` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`permissao` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(32) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -102,7 +102,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`local_atuacao` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`local_atuacao` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `bairro` VARCHAR(45) NOT NULL,
   `cidade` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
@@ -115,7 +115,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`usuario` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`usuario` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(64) NOT NULL,
   `id_endereco` INT NULL,
   `cpf` CHAR(11) NULL,
@@ -141,7 +141,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`pet` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`pet` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `id_cliente_dono` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `cor` VARCHAR(16) NULL,
@@ -163,7 +163,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`pacote_agendamento` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`pacote_agendamento` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -174,7 +174,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`agendamento` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`agendamento` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `id_servico` INT NOT NULL,
   `id_tipo_servico` INT NOT NULL,
   `dt_hr_marcada` DATETIME NOT NULL,
@@ -206,7 +206,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`remedio_agend` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`remedio_agend` (
-  `id_agendamento` INT NOT NULL,
+  `id_agendamento` INT NOT NULL AUTO_INCREMENT,
   `remedio` VARCHAR(64) NOT NULL,
   `hr_administrar` TIME NOT NULL,
   `instrucoes` VARCHAR(120) NULL,
@@ -222,7 +222,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`hr_alim_agend` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`hr_alim_agend` (
-  `id_agendamento` INT NOT NULL,
+  `id_agendamento` INT NOT NULL AUTO_INCREMENT,
   `hr_alimentacao` TIME NOT NULL,
   PRIMARY KEY (`id_agendamento`, `hr_alimentacao`),
     FOREIGN KEY (`id_agendamento`)
@@ -236,7 +236,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`incidente` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`incidente` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `data_hora` DATETIME NOT NULL,
   `e_emergencia` BIT(1) NOT NULL DEFAULT b'0',
   `id_pet` INT NOT NULL,
@@ -284,7 +284,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `pet_agenda`.`anexo_historico` ;
 
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`anexo_historico` (
-  `id_historico_servico` INT NOT NULL,
+  `id_historico_servico` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(64) NOT NULL,
   `caminho_anexo` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id_historico_servico`, `caminho_anexo`),
