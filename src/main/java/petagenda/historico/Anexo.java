@@ -1,8 +1,8 @@
 package petagenda.historico;
 
-import petagenda.agendamento.Agendamento;
-import petagenda.exception.IllegalAgendamentoException;
-import petagenda.exception.IllegalAnexoException;
+//import petagenda.agendamento.Agendamento;
+//import petagenda.exception.IllegalAgendamentoException;
+//import petagenda.exception.IllegalAnexoException;
 import petagenda.exception.IllegalArgumentsException;
 import petagenda.exception.IllegalCaminhoAnexoException;
 import petagenda.exception.IllegalHistoricoServicoException;

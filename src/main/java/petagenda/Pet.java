@@ -27,7 +27,7 @@ public final class Pet {
     // Exemplo de uso
 //    public static void main(String[] args) {
 //        try {
-//            Endereco vitoria = new Endereco("rua vila boa", "numero 100", "itaparica", "vitoria");
+//            Endereco vitoria = new Endereco("rua vila boa", "numero 100", "itaparica", "vitoria", "12345678");
 //            
 //            TipoServico passeio = new TipoServico("Passeio");
 //            Servico dogwalker = new Servico("DogWalker", passeio, 60, 100.99);

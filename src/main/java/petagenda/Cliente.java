@@ -26,7 +26,7 @@ public final class Cliente {
 //        try {
 //            TipoServico passeio = new TipoServico("Passeio");
 //            Servico servSolicita = new Servico("Dog Walker", passeio, 60, 100.0);
-//            Endereco endCliente = new Endereco("Rua Guanabara", "num. 106", "Itaparica", "Vitoria");
+//            Endereco endCliente = new Endereco("Rua Guanabara", "num. 106", "Itaparica", "Vitoria", "12345678");
 //            
 //            Cliente cl = new Cliente("Roberto", endCliente, "4002-8922", servSolicita);
 //            System.out.println(cl.toString());

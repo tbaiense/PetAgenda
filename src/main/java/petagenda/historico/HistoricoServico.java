@@ -38,7 +38,7 @@ public final class HistoricoServico {
 //            
 //            LocalDateTime hoje = LocalDateTime.of(2024, Month.OCTOBER, 26, 16, 30);
 //            
-//            Endereco itaparica = new Endereco("Rua Itaparica", "Numero 1", "Itaparica", "Vitória");
+//            Endereco itaparica = new Endereco("Rua Itaparica", "Numero 1", "Itaparica", "Vitória", "12345678");
 //            Cliente maria = new Cliente("Maria", itaparica, "40028922", dogWalking);
 //            
 //            boolean eCastrado = false;

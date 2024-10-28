@@ -22,11 +22,6 @@ public final class Endereco {
     public final String CIDADE;
     public final String CEP;
     
-    public Endereco(String rua, String numero, String bairro, String cidade) {
-        this(1, rua, numero, bairro, cidade, null);
-        this.id = -1;
-    }
-    
     public Endereco(String rua, String numero, String bairro, String cidade, String cep) {
         this(1, rua, numero, bairro, cidade, cep);
         this.id = -1;
@@ -94,12 +89,12 @@ public final class Endereco {
         
         //Validação de CEP
         if (cep == null) {
-//            exs.addCause(new IllegalCepException("CEP não pode ser nulo"));
+            exs.addCause(new IllegalCepException("CEP não pode ser nulo"));
         } else {
             cep = cep.trim();
             
             if (cep.isEmpty()) {
-//                exs.addCause(new IllegalCepException("CEP não pode ser vazio"));
+                exs.addCause(new IllegalCepException("CEP não pode ser vazio"));
                 cep = null;
             } else if (cep.length() > 32) {
                 exs.addCause(new IllegalCepException("CEP não pode conter mais do que 8 caracteres"));
