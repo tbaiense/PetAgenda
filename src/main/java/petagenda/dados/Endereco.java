@@ -97,7 +97,7 @@ public final class Endereco {
             if (cep.isEmpty()) {
                 exs.addCause(new IllegalCepException("CEP não pode ser vazio"));
                 cep = null;
-            } else if (cep.length() > 32) {
+            } else if (cep.length() > 8) {
                 exs.addCause(new IllegalCepException("CEP não pode conter mais do que 8 caracteres"));
             } else if (cep.length() < 8) {
                 exs.addCause(new IllegalCepException("CEP não pode conter menos do que 8 caracteres"));

@@ -15,10 +15,10 @@ public final class LocalAtuacao {
     private int id;
     public final String BAIRRO;
     public final String CIDADE;
-    
+    public static final int NULL_ID = -1;
     public LocalAtuacao(String bairro, String cidade) {
         this(1, bairro, cidade);
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public LocalAtuacao(int id, String bairro, String cidade) {
