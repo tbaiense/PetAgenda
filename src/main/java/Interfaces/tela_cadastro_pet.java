@@ -62,6 +62,8 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         jtxtArea_Saude = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jbtn_cadastrarPet = new javax.swing.JButton();
+        lbl_Vacinas1 = new javax.swing.JLabel();
+        jbtn_AddVacinas1 = new javax.swing.JButton();
         jlbl_background_cadastro_pet = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -336,25 +338,25 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         field_telefone.setBorder(new RoundedCornerBorder(50));
         field_telefone.setCaretColor(new java.awt.Color(0, 0, 0));
         field_telefone.setMinimumSize(new java.awt.Dimension(250, 50));
-        field_telefone.setPreferredSize(new java.awt.Dimension(250, 50));
+        field_telefone.setPreferredSize(new java.awt.Dimension(166, 50));
         jPanel1.add(field_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 201, -1, -1));
 
         label_cor.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         label_cor.setForeground(new java.awt.Color(0, 0, 0));
         label_cor.setText("Cor:");
-        jPanel1.add(label_cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 182, -1, -1));
+        jPanel1.add(label_cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 182, -1, -1));
 
         field_Cor.setBackground(new java.awt.Color(217, 217, 217));
         field_Cor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         field_Cor.setBorder(new RoundedCornerBorder(50));
         field_Cor.setCaretColor(new java.awt.Color(0, 0, 0));
         field_Cor.setPreferredSize(new java.awt.Dimension(200, 50));
-        jPanel1.add(field_Cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 201, -1, -1));
+        jPanel1.add(field_Cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 201, -1, -1));
 
         label_sexo.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         label_sexo.setForeground(new java.awt.Color(0, 0, 0));
         label_sexo.setText("Sexo:");
-        jPanel1.add(label_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, -1, -1));
+        jPanel1.add(label_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 180, -1, -1));
 
         jcmbBx_Sexo.setBackground(new java.awt.Color(217, 217, 217));
         jcmbBx_Sexo.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
@@ -362,8 +364,8 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         jcmbBx_Sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "Fêmea", "Macho" }));
         jcmbBx_Sexo.setBorder(new RoundedCornerBorder(50));
         jcmbBx_Sexo.setMinimumSize(new java.awt.Dimension(200, 50));
-        jcmbBx_Sexo.setPreferredSize(new java.awt.Dimension(200, 50));
-        jPanel1.add(jcmbBx_Sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, -1, -1));
+        jcmbBx_Sexo.setPreferredSize(new java.awt.Dimension(150, 50));
+        jPanel1.add(jcmbBx_Sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 201, -1, -1));
 
         label_comportamento_do_pet.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         label_comportamento_do_pet.setForeground(new java.awt.Color(0, 0, 0));
@@ -425,6 +427,26 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         // Aplicando a UI personalizada
         jbtn_cadastrarPet.setUI(new RoundedCornerButtonUI());
         jPanel1.add(jbtn_cadastrarPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 530, 240, 50));
+
+        lbl_Vacinas1.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
+        lbl_Vacinas1.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_Vacinas1.setText("Foto do Pet:");
+        jPanel1.add(lbl_Vacinas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, -1, -1));
+
+        jbtn_AddVacinas1.setBackground(new java.awt.Color(217, 217, 217));
+        jbtn_AddVacinas1.setFont(new java.awt.Font("Merriweather", 0, 12)); // NOI18N
+        jbtn_AddVacinas1.setForeground(new java.awt.Color(0, 0, 0));
+        jbtn_AddVacinas1.setText("ADICIONAR");
+        jbtn_AddVacinas1.setBorder(new RoundedCornerBorder(16));
+        jbtn_AddVacinas1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_AddVacinas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_AddVacinas1ActionPerformed(evt);
+            }
+        });
+        // Aplicando a UI personalizada
+        jbtn_cadastrarPet.setUI(new RoundedCornerButtonUI());
+        jPanel1.add(jbtn_AddVacinas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 122, 19));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
@@ -489,6 +511,10 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btn_sairActionPerformed
 
+    private void jbtn_AddVacinas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_AddVacinas1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtn_AddVacinas1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -543,6 +569,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JButton jbtn_AddVacinas;
+    private javax.swing.JButton jbtn_AddVacinas1;
     private javax.swing.JButton jbtn_cadastrarPet;
     private javax.swing.JComboBox<String> jcmbBx_Sexo;
     private javax.swing.JLabel jlbl_background_cadastro_pet;
@@ -557,6 +584,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Castrado;
     private javax.swing.JLabel lbl_Saude;
     private javax.swing.JLabel lbl_Vacinas;
+    private javax.swing.JLabel lbl_Vacinas1;
     private javax.swing.JTextField txtf_Raca;
     // End of variables declaration//GEN-END:variables
 }
