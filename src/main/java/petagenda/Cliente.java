@@ -1,7 +1,8 @@
 package petagenda;
 
+import petagenda.bd.BD;
 import java.util.ArrayList;
-//import java.util.Arrays;
+import java.util.Arrays;
 import petagenda.dados.*;
 import petagenda.exception.*;
 import petagenda.servico.*;
@@ -23,21 +24,42 @@ public final class Cliente {
     public static final int NULL_ID = -1;
     
     // Exemplo de uso
-//    public static void main(String[] args) {
-//        Cliente eu;
-//        try {
+    public static void main(String[] args) {
+        Cliente eu;
+        try {
 //            TipoServico passeio = new TipoServico("Passeio");
 //            Servico servSolicita = new Servico("Dog Walker", passeio, 60, 100.0);
 //            Endereco endCliente = new Endereco("Rua Guanabara", "num. 106", "Itaparica", "Vitoria", "12345678");
-//            
+            
 //            Cliente cl = new Cliente("Roberto", endCliente, "4002-8922", servSolicita);
-//            System.out.println(cl.toString());
-//        } catch (IllegalArgumentsException exs) {
-//            Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos
-//            System.out.println(Arrays.toString(causas)); // Printa as exceções se houver
-//        }
-//        
-//    }
+//            
+            // Inserindo novo Cliente no banco
+//            Endereco endCliente = new Endereco("Rua Guanabara", "num. 106", "Itaparica", "Vitoria", "12345678");
+//            Servico servDogWalking = BD.Servico.selectById(4);
+//            Cliente cl = new Cliente("Roberto", endCliente, "4002-8922", servDogWalking);
+//            BD.Cliente.insert(cl);
+//            System.out.println(BD.Cliente.selectById(BD.Cliente.selectLast().getId()).toString());
+
+            // Alterando Cliente no banco
+//            Cliente cl = BD.Cliente.selectLast();
+//            Endereco novoEndCliente = new Endereco("Rua nova", "num. novo", "Bairro novo", "Cidade nova", "12345999");
+//            Servico novoServCliente = BD.Servico.selectById(1);
+//            cl.setEndereco(novoEndCliente);
+//            cl.setServico(novoServCliente);
+//            
+//            BD.Cliente.update(cl);
+//            System.out.println(BD.Cliente.selectById(BD.Cliente.selectLast().getId()).toString());
+
+            // Apagando Cliente no banco
+            Cliente lastClDelete = BD.Cliente.selectLast();
+            System.out.println(BD.Cliente.delete(lastClDelete));
+
+        } catch (IllegalArgumentsException exs) {
+            Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos
+            System.out.println(Arrays.toString(causas)); // Printa as exceções se houver
+        }
+        
+    }
     
     public Cliente(int id, String nome, Endereco endereco, String telefone, Servico servicoSolicita) {
         this(id, nome, endereco, null, telefone, servicoSolicita, null, null);
