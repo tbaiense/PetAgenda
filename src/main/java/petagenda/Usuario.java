@@ -139,8 +139,8 @@ public final class Usuario {
     
     public void setEndereco(Endereco endereco) {
         if (endereco == null) {
-//            throw new IllegalEnderecoException("Endereço não pode ser nulo");
-            this.endereco = null;
+            throw new IllegalEnderecoException("Endereço não pode ser nulo");
+//            this.endereco = null;
         } else {
             this.endereco = endereco;
         }
