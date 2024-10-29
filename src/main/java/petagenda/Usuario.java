@@ -31,7 +31,8 @@ public final class Usuario {
 //            TipoServico passeio = new TipoServico("Passeio");
 //            Servico servicoPresta = new Servico("Dog Walking", passeio, 60, 100.0);
 //            LocalAtuacao local = new LocalAtuacao("Itaparica", "Vitória");
-//            eu = new Usuario("Thiago", "123456789121", servicoPresta, local);
+//            Endereco end = new Endereco("Rua tal", "numero 5", "Bairro legal", "Cidade bacana");
+//            eu = new Usuario("Thiago", end, "887.844.490-12", "40028922", servicoPresta, local);
 //            System.out.println(eu);
 //        } catch (IllegalArgumentsException exs) {
 //            Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos
@@ -40,10 +41,6 @@ public final class Usuario {
 //        
 //    }
     
-    public Usuario(String nome, String telefone, Servico servicoPresta, LocalAtuacao localAtuacao) {
-        this(1, nome, null, null, telefone, servicoPresta, localAtuacao );
-        this.id = NULL_ID;
-    }
     
     public Usuario(String nome, Endereco endereco, String cpf, String telefone, Servico servicoPresta, LocalAtuacao localAtuacao) {
         this(1, nome, endereco, cpf, telefone, servicoPresta, localAtuacao );
@@ -163,8 +160,8 @@ public final class Usuario {
     
     public void setCpf(CPF cpf) {
         if (cpf == null) {
-//            throw new IllegalCpfException("CPF não pode ser nulo");
-            this.cpf = null;
+            throw new IllegalCpfException("CPF não pode ser nulo");
+//            this.cpf = null;
         } else {
             this.cpf = cpf;
         }

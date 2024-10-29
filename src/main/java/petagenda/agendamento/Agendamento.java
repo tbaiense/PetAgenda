@@ -50,7 +50,7 @@ public final class Agendamento {
 //            Endereco endFred = fred.getEndereco();
 //            
 //            LocalAtuacao itaparicaVix = LocalAtuacao.valueOf(itaparica);
-//            Usuario roberto = new Usuario("Roberto","40028922", dogWalking, itaparicaVix);
+//            Usuario roberto = new Usuario("Roberto", itaparica, "887.844.490-12", "40028922", dogWalking, itaparicaVix);
 //            
 //            Agendamento novoAgend = new Agendamento(dogWalking, hoje, fred, endFred.toString(), roberto);
 //            System.out.println(novoAgend.toString());
