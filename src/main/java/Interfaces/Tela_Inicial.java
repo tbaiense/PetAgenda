@@ -36,14 +36,14 @@ public class Tela_Inicial extends javax.swing.JFrame {
         btn_config = new javax.swing.JButton();
         btn_sair = new javax.swing.JButton();
         jPanel_Menu_layout = new javax.swing.JPanel();
-        jPanel_PainelFuncinarios = new javax.swing.JPanel();
-        jPanel_PainelAgenda = new javax.swing.JPanel();
-        jPanel_PainelFinanceiro = new javax.swing.JPanel();
-        jPanel_PainelListaPet = new javax.swing.JPanel();
-        jPanel_PainelConfig = new javax.swing.JPanel();
-        jPanel_ExitButton = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel_BGpadrao = new javax.swing.JLabel();
+        jButton_Cliente = new javax.swing.JButton();
+        jButton_Funcionarios = new javax.swing.JButton();
+        jButton_Agenda = new javax.swing.JButton();
+        jButton_Financeiro = new javax.swing.JButton();
+        jButton_ListaPets = new javax.swing.JButton();
+        jButton_Configs = new javax.swing.JButton();
+        jButton_Sair = new javax.swing.JButton();
+        jLabel_BackgroundPadrao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -220,100 +220,81 @@ public class Tela_Inicial extends javax.swing.JFrame {
         jPanel_Menu_layout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jPanel_Menu_layout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel_PainelFuncinariosLayout = new javax.swing.GroupLayout(jPanel_PainelFuncinarios);
-        jPanel_PainelFuncinarios.setLayout(jPanel_PainelFuncinariosLayout);
-        jPanel_PainelFuncinariosLayout.setHorizontalGroup(
-            jPanel_PainelFuncinariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 117, Short.MAX_VALUE)
-        );
-        jPanel_PainelFuncinariosLayout.setVerticalGroup(
-            jPanel_PainelFuncinariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel_Menu_layout.add(jPanel_PainelFuncinarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 51, -1, -1));
-
-        javax.swing.GroupLayout jPanel_PainelAgendaLayout = new javax.swing.GroupLayout(jPanel_PainelAgenda);
-        jPanel_PainelAgenda.setLayout(jPanel_PainelAgendaLayout);
-        jPanel_PainelAgendaLayout.setHorizontalGroup(
-            jPanel_PainelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 117, Short.MAX_VALUE)
-        );
-        jPanel_PainelAgendaLayout.setVerticalGroup(
-            jPanel_PainelAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel_Menu_layout.add(jPanel_PainelAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 51, -1, -1));
-
-        javax.swing.GroupLayout jPanel_PainelFinanceiroLayout = new javax.swing.GroupLayout(jPanel_PainelFinanceiro);
-        jPanel_PainelFinanceiro.setLayout(jPanel_PainelFinanceiroLayout);
-        jPanel_PainelFinanceiroLayout.setHorizontalGroup(
-            jPanel_PainelFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel_PainelFinanceiroLayout.setVerticalGroup(
-            jPanel_PainelFinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel_Menu_layout.add(jPanel_PainelFinanceiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 267, 117, -1));
-
-        javax.swing.GroupLayout jPanel_PainelListaPetLayout = new javax.swing.GroupLayout(jPanel_PainelListaPet);
-        jPanel_PainelListaPet.setLayout(jPanel_PainelListaPetLayout);
-        jPanel_PainelListaPetLayout.setHorizontalGroup(
-            jPanel_PainelListaPetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel_PainelListaPetLayout.setVerticalGroup(
-            jPanel_PainelListaPetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel_Menu_layout.add(jPanel_PainelListaPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 267, 117, -1));
-
-        javax.swing.GroupLayout jPanel_PainelConfigLayout = new javax.swing.GroupLayout(jPanel_PainelConfig);
-        jPanel_PainelConfig.setLayout(jPanel_PainelConfigLayout);
-        jPanel_PainelConfigLayout.setHorizontalGroup(
-            jPanel_PainelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel_PainelConfigLayout.setVerticalGroup(
-            jPanel_PainelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel_Menu_layout.add(jPanel_PainelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 267, 117, -1));
-
-        javax.swing.GroupLayout jPanel_ExitButtonLayout = new javax.swing.GroupLayout(jPanel_ExitButton);
-        jPanel_ExitButton.setLayout(jPanel_ExitButtonLayout);
-        jPanel_ExitButtonLayout.setHorizontalGroup(
-            jPanel_ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 131, Short.MAX_VALUE)
-        );
-        jPanel_ExitButtonLayout.setVerticalGroup(
-            jPanel_ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 46, Short.MAX_VALUE)
-        );
-
-        jPanel_Menu_layout.add(jPanel_ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(531, 400, -1, -1));
-
-        jButton1.setBackground(new java.awt.Color(124, 115, 101));
-        jButton1.setForeground(new java.awt.Color(124, 115, 101));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_clientes.png"))); // NOI18N
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton_Cliente.setBackground(new java.awt.Color(124, 115, 101));
+        jButton_Cliente.setForeground(new java.awt.Color(124, 115, 101));
+        jButton_Cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_clientes.png"))); // NOI18N
+        jButton_Cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton_Cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_Cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton_ClienteActionPerformed(evt);
             }
         });
-        jPanel_Menu_layout.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 51, 117, 100));
+        jPanel_Menu_layout.add(jButton_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 53, 120, 100));
+
+        jButton_Funcionarios.setBackground(new java.awt.Color(124, 115, 101));
+        jButton_Funcionarios.setForeground(new java.awt.Color(124, 115, 101));
+        jButton_Funcionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_funcionario.png"))); // NOI18N
+        jButton_Funcionarios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton_Funcionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_FuncionariosActionPerformed(evt);
+            }
+        });
+        jPanel_Menu_layout.add(jButton_Funcionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 53, 120, 100));
+
+        jButton_Agenda.setBackground(new java.awt.Color(124, 115, 101));
+        jButton_Agenda.setForeground(new java.awt.Color(124, 115, 101));
+        jButton_Agenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_agenda.png"))); // NOI18N
+        jButton_Agenda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel_Menu_layout.add(jButton_Agenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 53, 120, 100));
+
+        jButton_Financeiro.setBackground(new java.awt.Color(124, 115, 101));
+        jButton_Financeiro.setForeground(new java.awt.Color(124, 115, 101));
+        jButton_Financeiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_financeiro.png"))); // NOI18N
+        jButton_Financeiro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton_Financeiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_FinanceiroActionPerformed(evt);
+            }
+        });
+        jPanel_Menu_layout.add(jButton_Financeiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 275, 120, 100));
+
+        jButton_ListaPets.setBackground(new java.awt.Color(124, 115, 101));
+        jButton_ListaPets.setForeground(new java.awt.Color(124, 115, 101));
+        jButton_ListaPets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_pets.png"))); // NOI18N
+        jButton_ListaPets.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton_ListaPets.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ListaPetsActionPerformed(evt);
+            }
+        });
+        jPanel_Menu_layout.add(jButton_ListaPets, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 275, 120, 100));
+
+        jButton_Configs.setBackground(new java.awt.Color(124, 115, 101));
+        jButton_Configs.setForeground(new java.awt.Color(124, 115, 101));
+        jButton_Configs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_configuracoes.png"))); // NOI18N
+        jButton_Configs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton_Configs.setMaximumSize(new java.awt.Dimension(51, 45));
+        jButton_Configs.setMinimumSize(new java.awt.Dimension(51, 45));
+        jButton_Configs.setPreferredSize(new java.awt.Dimension(51, 45));
+        jPanel_Menu_layout.add(jButton_Configs, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 275, 120, 100));
+
+        jButton_Sair.setBackground(new java.awt.Color(124, 115, 101));
+        jButton_Sair.setForeground(new java.awt.Color(124, 115, 101));
+        jButton_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_sair.png"))); // NOI18N
+        jButton_Sair.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_SairActionPerformed(evt);
+            }
+        });
+        jPanel_Menu_layout.add(jButton_Sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(522, 386, 140, 60));
 
         getContentPane().add(jPanel_Menu_layout, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 125, 664, 448));
 
-        jLabel_BGpadrao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
-        getContentPane().add(jLabel_BGpadrao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel_BackgroundPadrao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        getContentPane().add(jLabel_BackgroundPadrao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -358,9 +339,25 @@ public class Tela_Inicial extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btn_sairActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton_ClienteActionPerformed
+
+    private void jButton_FuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_FuncionariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_FuncionariosActionPerformed
+
+    private void jButton_FinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_FinanceiroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_FinanceiroActionPerformed
+
+    private void jButton_ListaPetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ListaPetsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_ListaPetsActionPerformed
+
+    private void jButton_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SairActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_SairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,15 +403,15 @@ public class Tela_Inicial extends javax.swing.JFrame {
     private javax.swing.JButton btn_funcionarios;
     private javax.swing.JButton btn_pets;
     private javax.swing.JButton btn_sair;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel_BGpadrao;
-    private javax.swing.JPanel jPanel_ExitButton;
+    private javax.swing.JButton jButton_Agenda;
+    private javax.swing.JButton jButton_Cliente;
+    private javax.swing.JButton jButton_Configs;
+    private javax.swing.JButton jButton_Financeiro;
+    private javax.swing.JButton jButton_Funcionarios;
+    private javax.swing.JButton jButton_ListaPets;
+    private javax.swing.JButton jButton_Sair;
+    private javax.swing.JLabel jLabel_BackgroundPadrao;
     private javax.swing.JPanel jPanel_Menu_layout;
-    private javax.swing.JPanel jPanel_PainelAgenda;
-    private javax.swing.JPanel jPanel_PainelConfig;
-    private javax.swing.JPanel jPanel_PainelFinanceiro;
-    private javax.swing.JPanel jPanel_PainelFuncinarios;
-    private javax.swing.JPanel jPanel_PainelListaPet;
     private javax.swing.JPanel jPanel_menu;
     // End of variables declaration//GEN-END:variables
 }

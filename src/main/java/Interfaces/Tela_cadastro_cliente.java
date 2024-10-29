@@ -247,6 +247,7 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
         jtxtf_campo_nome_cliente.setBorder(new RoundedCornerBorder(50));
         jtxtf_campo_nome_cliente.setCaretColor(new java.awt.Color(255, 255, 255));
         jtxtf_campo_nome_cliente.setMinimumSize(new java.awt.Dimension(550, 50));
+        jtxtf_campo_nome_cliente.setOpaque(true);
         jtxtf_campo_nome_cliente.setPreferredSize(new java.awt.Dimension(550, 50));
         jPanel1.add(jtxtf_campo_nome_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 106, -1, 52));
 
@@ -294,6 +295,11 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
         jcbox_Selecao_servico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "DogWalker", "PetSitting", "DogWalker e PetSitting", "Cuidados Especiais" }));
         jcbox_Selecao_servico.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jcbox_Selecao_servico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jcbox_Selecao_servico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbox_Selecao_servicoActionPerformed(evt);
+            }
+        });
         jPanel1.add(jcbox_Selecao_servico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 284, 250, 50));
 
         jtxtf_campo_cep.setBackground(new java.awt.Color(217, 217, 217));
@@ -437,6 +443,10 @@ public class Tela_cadastro_cliente extends javax.swing.JFrame {
         telaVisualizaMes.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_agendaActionPerformed
+
+    private void jcbox_Selecao_servicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbox_Selecao_servicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbox_Selecao_servicoActionPerformed
     
     
     /**
