@@ -100,6 +100,10 @@ public final class Servico {
         }
     }
     
+    public boolean isNew() {
+        return this.getId() == NULL_ID;
+    }
+    
     public void setId(int id) {
         if (id < 1) {
             throw new IllegalIdException();

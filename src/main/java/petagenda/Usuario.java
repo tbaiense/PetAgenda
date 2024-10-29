@@ -22,6 +22,8 @@ public final class Usuario {
     private Permissao permissao;
     private LocalAtuacao localAtuacao;
     
+    public static final int NULL_ID = -1;
+    
     // Exemplo de uso
 //    public static void main(String[] args) {
 //        Usuario eu;
@@ -40,12 +42,12 @@ public final class Usuario {
     
     public Usuario(String nome, String telefone, Servico servicoPresta, LocalAtuacao localAtuacao) {
         this(1, nome, null, null, telefone, servicoPresta, localAtuacao );
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public Usuario(String nome, Endereco endereco, String cpf, String telefone, Servico servicoPresta, LocalAtuacao localAtuacao) {
         this(1, nome, endereco, cpf, telefone, servicoPresta, localAtuacao );
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public Usuario(int id, String nome, Endereco endereco, String cpf, String telefone, Servico servicoPresta, LocalAtuacao localAtuacao) {
@@ -103,6 +105,10 @@ public final class Usuario {
         if (exs.size() > 0) { // Alguma exceção ocorreu
             throw exs;
         }
+    }
+    
+    public boolean isNew() {
+        return this.getId() == NULL_ID;
     }
     
     public void setId(int id) {

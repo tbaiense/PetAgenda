@@ -20,6 +20,8 @@ public final class Cliente {
     private String buscarPetCom;
     private String devolverPetPara;
     
+    public static final int NULL_ID = -1;
+    
     // Exemplo de uso
 //    public static void main(String[] args) {
 //        Cliente eu;
@@ -43,12 +45,12 @@ public final class Cliente {
     
     public Cliente(String nome, Endereco endereco, String telefone, Servico servicoSolicita) {
         this(1, nome, endereco, null, telefone, servicoSolicita, null, null);
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public Cliente(String nome, Endereco endereco, String cpf, String telefone, Servico servicoSolicita, String buscarPetCom, String devolverPetPara) {
         this(1, nome, endereco, cpf, telefone, servicoSolicita, buscarPetCom, devolverPetPara);
-        this.id = -1;
+        this.id = NULL_ID;
     }
     
     public Cliente(int id, String nome, Endereco endereco, String cpf, String telefone, Servico servicoSolicita, String buscarPetCom, String devolverPetPara) {
@@ -113,6 +115,10 @@ public final class Cliente {
         if (exs.size() > 0) { // Alguma exceção ocorreu
             throw exs;
         }
+    }
+    
+    public boolean isNew() {
+        return this.getId() == NULL_ID;
     }
     
     public void setId(int id) {

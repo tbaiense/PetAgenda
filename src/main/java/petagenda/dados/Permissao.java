@@ -45,6 +45,10 @@ public final class Permissao {
         }
     }
     
+    public boolean isNew() {
+        return this.getId() == NULL_ID;
+    }
+    
     public void setId(int id) {
         if (id < 0) {
             throw new IllegalIdException("id não pode ser inferior a 0");

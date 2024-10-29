@@ -44,6 +44,375 @@ public class BD {
         }
     }
     
+    static public class Cliente {
+        public static final String TABLE = "cliente";
+        
+        public static int insert(petagenda.Cliente cliente) {
+            int r = 0;
+            
+            if (cliente == null ) {
+                throw new NullPointerException("Serviço não pode ser nulo");
+            } else if (!cliente.getServico().isNew()){ // Servico solicitado precisa associado precisa estar cadastrado
+                throw new IllegalServicoException("Serviço solicitado não pode conter um tipo de serviço ainda não cadastrado");
+            } else {
+                Connection conn = BD.getConnection();
+                if (conn == null) { // Se banco for inacessível
+                    return r;
+                } else {
+                    // Criação do statement
+                    PreparedStatement insert = null;
+                    try {    
+                        insert = conn.prepareStatement(
+                            String.format("INSERT INTO %s(id_endereco, nome, cpf, telefone, id_servico_solicita, buscar_com, devolver_para) VALUES (?, ?, ?, ?, ?, ?, ?)", TABLE));
+                        petagenda.dados.Endereco endereco = cliente.getEndereco();
+                        int id_endereco;
+                        
+                        if (endereco.isNew()) {
+                            BD.Endereco.insert(endereco);
+                            id_endereco = BD.Endereco.selectLast().getId();
+                        } else {
+                            id_endereco = endereco.getId();
+                        }
+                        
+                        insert.setInt(1, id_endereco);
+                        insert.setString(2, cliente.getNome());
+                        petagenda.dados.CPF cpf = cliente.getCpf();
+                        String strCpf;
+                        if (cpf == null) {
+                            strCpf = null;
+                        } else {
+                            strCpf = cpf.toString();
+                        }
+                        insert.setString(3, strCpf);
+                        insert.setString(4, cliente.getTelefone());
+                        insert.setInt(5, cliente.getServico().getId());
+                        insert.setString(6, cliente.getBuscarPetCom());
+                        insert.setString(7, cliente.getDevolverPetPara());
+                        
+                        r = insert.executeUpdate();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de execução do insert", JOptionPane.ERROR_MESSAGE);
+                        r = -1;
+                    } 
+                    
+                    if (insert != null) { // Se preparedStatement não falhou
+                        try {
+                            insert.close();
+                        } catch (SQLException e) {
+                            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+                        } finally {
+                            insert = null;
+                        }
+                    }
+                    
+                    try {
+                        conn.close();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        conn = null;
+                    }
+                }
+            }
+            return r;
+        }
+        
+        public static int delete(petagenda.Cliente cliente) {
+            int r = 0;
+            
+            if (cliente == null ) {
+                throw new NullPointerException("Local de atuação não pode ser nulo");
+            } else if (!cliente.isNew() && !cliente.getEndereco().isNew()){ // Só inicia conexão se Cliente e Endereco for cadastrado
+                Connection conn = BD.getConnection();
+                if (conn == null) { // Se banco for inacessível
+                    return r;
+                } else {
+                    
+                    // Criação do statement
+                    PreparedStatement insert = null;
+                    try {    
+                        insert = conn.prepareStatement(
+                            String.format("DELETE FROM %s WHERE id = ?", TABLE));
+                        insert.setInt(1, cliente.getId());
+                        
+                        r = insert.executeUpdate();
+                        
+                        // Deleção do endereço associado;
+                        BD.Endereco.delete(cliente.getEndereco());
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de execução do delete", JOptionPane.ERROR_MESSAGE);
+                        r = -1;
+                    } 
+                    
+                    if (insert != null) { // Se preparedStatement não falhou
+                        try {
+                            insert.close();
+                        } catch (SQLException e) {
+                            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+                        } finally {
+                            insert = null;
+                        }
+                    }
+                    
+                    try {
+                        conn.close();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        conn = null;
+                    }
+                }
+            }
+            return r;
+        }
+
+        public static int update(petagenda.Cliente cliente) {
+            int r = 0;
+
+            if (cliente == null ) {
+                throw new NullPointerException("Local de atuação não pode ser nulo");
+            } else if (!cliente.isNew() && !cliente.getEndereco().isNew() && !cliente.getServico().isNew()){ // Só inicia conexão se Cliente informado possuir id válido e o Servico for cadastrado e endereço já estiver cadastrado
+                Connection conn = BD.getConnection();
+                if (conn == null) { // Se banco for inacessível
+                    return r;
+                } else {
+                    // Criação do statement
+                    PreparedStatement insert = null;
+                    try {    
+                        insert = conn.prepareStatement(
+                            String.format("UPDATE %s SET id_endereco = ?, nome = ?, cpf = ?, telefone = ?, id_servico_solicita = ?, buscar_com = ?, devolver_para = ? WHERE id = ?", TABLE));
+                        
+                        petagenda.dados.Endereco enderecoCliente = cliente.getEndereco();
+                        
+                        // Atualização do endereco do cliente se mudou
+                        petagenda.Cliente clienteCadastrado = BD.Cliente.selectById(cliente.getId());
+                        petagenda.dados.Endereco enderecoCadastrado = clienteCadastrado.getEndereco();
+                        int id_endereco_cadastrado = enderecoCadastrado.getId();
+                        
+                        // Verificação se Endereco do objeto difere do recebido do banco
+                        if (!enderecoCliente.deepEquals(enderecoCadastrado)) { // Se Endereco do objeto difere do cadastrado no cliente do banco
+                            cliente.getEndereco().setId(id_endereco_cadastrado);
+                            BD.Endereco.update(enderecoCliente);
+                        }
+                        
+                        insert.setInt(1, id_endereco_cadastrado);
+                        insert.setString(2, cliente.getNome());
+                        petagenda.dados.CPF cpf = cliente.getCpf();
+                        String strCpf;
+                        if (cpf == null) {
+                            strCpf = null;
+                        } else {
+                            strCpf = cpf.toString();
+                        }
+                        insert.setString(3, strCpf);
+                        insert.setString(4, cliente.getTelefone());
+                        insert.setInt(5, cliente.getServico().getId());
+                        insert.setString(6, cliente.getBuscarPetCom());
+                        insert.setString(7, cliente.getDevolverPetPara());
+                        
+                        r = insert.executeUpdate();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de execução do update", JOptionPane.ERROR_MESSAGE);
+                        r = -1;
+                    } 
+
+                    if (insert != null) { // Se preparedStatement não falhou
+                        try {
+                            insert.close();
+                        } catch (SQLException e) {
+                            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+                        } finally {
+                            insert = null;
+                        }
+                    }
+
+                    try {
+                        conn.close();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        conn = null;
+                    }
+                }
+            }
+            return r;
+        }
+//        
+//        public static petagenda.Cliente selectById(int id) {
+//            petagenda.servico.Servico servico = null;
+//            
+//            if (id != petagenda.servico.Servico.NULL_ID) {
+//                Connection conn = BD.getConnection();
+//                if (conn != null) { // Se banco for acessível
+//                    // Criação do statement
+//                    PreparedStatement select = null;
+//                    try {    
+//                        select = conn.prepareStatement(
+//                            String.format("SELECT id, nome, id_tipo_servico, duracao, preco, descricao FROM %s WHERE id = ?", TABLE));
+//                        select.setInt(1, id);
+//
+//                        ResultSet rs = select.executeQuery();
+//                        petagenda.servico.Servico[] selected = parse(rs);
+//                        
+//                        if (selected != null) {
+//                            servico = selected[0];
+//                        }
+//                    } catch (SQLException e) {
+//                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro na execução da query", JOptionPane.ERROR_MESSAGE);
+//                    } 
+//
+//                    if (select != null) { // Se preparedStatement não falhou
+//                        try {
+//                            select.close();
+//                        } catch (SQLException e) {
+//                            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+//                        } finally {
+//                            select = null;
+//                        }
+//                    }
+//
+//                    try {
+//                        conn.close();
+//                    } catch (SQLException e) {
+//                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+//                    } finally {
+//                        conn = null;
+//                    }
+//                }
+//            }
+//            return servico;
+//        } 
+//        
+//        public static petagenda.Cliente[] selectAll() {
+//            petagenda.servico.Servico[] servicos = null;
+//            
+//            Connection conn = BD.getConnection();
+//            if (conn != null) { // Se banco for acessível
+//                // Criação do statement
+//                PreparedStatement select = null;
+//                try {    
+//                    select = conn.prepareStatement(
+//                        String.format("SELECT id, nome, id_tipo_servico, duracao, preco, descricao FROM %s", TABLE));
+//
+//                    ResultSet rs = select.executeQuery();
+//                    servicos = parse(rs);
+//                } catch (SQLException e) {
+//                    JOptionPane.showMessageDialog(null, e.getMessage(), "Erro na execução da query", JOptionPane.ERROR_MESSAGE);
+//                } 
+//
+//                if (select != null) { // Se preparedStatement não falhou
+//                    try {
+//                        select.close();
+//                    } catch (SQLException e) {
+//                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+//                    } finally {
+//                        select = null;
+//                    }
+//                }
+//
+//                try {
+//                    conn.close();
+//                } catch (SQLException e) {
+//                    JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+//                } finally {
+//                    conn = null;
+//                }
+//            }
+//            return servicos;
+//        }
+//        
+//        public static petagenda.Cliente selectLast() {
+//            petagenda.servico.Servico servico = null;
+//            
+//            Connection conn = BD.getConnection();
+//            if (conn != null) { // Se banco for acessível
+//                // Criação do statement
+//                PreparedStatement select = null;
+//                try {    
+//                    select = conn.prepareStatement(
+//                        String.format("SELECT id, nome, id_tipo_servico, duracao, preco, descricao FROM %s ORDER BY id DESC LIMIT 1", TABLE));
+//
+//                    ResultSet rs = select.executeQuery();
+//                    petagenda.servico.Servico[] selected = parse(rs);
+//
+//                    if (selected != null) {
+//                        servico = selected[0];
+//                    }
+//                } catch (SQLException e) {
+//                    JOptionPane.showMessageDialog(null, e.getMessage(), "Erro na execução da query", JOptionPane.ERROR_MESSAGE);
+//                } 
+//
+//                if (select != null) { // Se preparedStatement não falhou
+//                    try {
+//                        select.close();
+//                    } catch (SQLException e) {
+//                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+//                    } finally {
+//                        select = null;
+//                    }
+//                }
+//
+//                try {
+//                    conn.close();
+//                } catch (SQLException e) {
+//                    JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+//                } finally {
+//                    conn = null;
+//                }
+//            }
+//
+//            return servico;
+//        }
+//        
+//        public static petagenda.Cliente[] parse(ResultSet rs) {
+//            if (rs == null) {
+//                throw new NullPointerException("ResultSet não pode ser nulo");
+//            } else {
+//                ArrayList<petagenda.servico.Servico> sList = new ArrayList<petagenda.servico.Servico>();
+//                petagenda.servico.Servico[] sArray = null;
+//                
+//                try {
+//                    while(rs.next()) {
+//                        petagenda.servico.Servico s;
+//                        int id = -1, id_tipo_servico, duracao;
+//                        String nome, descricao;
+//                        double preco;
+//                        petagenda.servico.TipoServico tipo;
+//                        
+//                        id = rs.getInt("id");
+//                        nome = rs.getString("nome");
+//                        id_tipo_servico = rs.getInt("id_tipo_servico");
+//                        tipo = BD.TipoServico.selectById(id_tipo_servico);
+//                        duracao = rs.getInt("duracao");
+//                        preco = rs.getDouble("preco");
+//                        descricao = rs.getString("descricao");
+//                        
+//                        // Verificação dos dados e criação do objeto
+//                        try {
+//                            s = new petagenda.servico.Servico(id, nome, tipo, duracao, preco, descricao);
+//                            sList.add(s);
+//                        } catch (IllegalArgumentsException exs) {
+//                            StringBuilder strEx = new StringBuilder(String.format("Erro ao receber Servico (id= %d):\n", id));
+//                            for (Throwable c : exs.getCauses()) {
+//                                strEx.append(c.getMessage());
+//                                strEx.append("\n");
+//                            }
+//                            System.out.println(strEx.toString());
+//                        }
+//                    }
+//                    if (!sList.isEmpty()) {
+//                        sArray = new petagenda.servico.Servico[sList.size()];
+//                        sArray = sList.toArray(sArray);
+//                    }
+//                } catch (SQLException e) {
+//                    System.out.printf("Erro ao fazer parse de ResultSet contendo Servico: %s", e.getMessage());
+//                }
+//                
+//                return sArray;
+//            }
+//        }
+    }
+    
     static public class Permissao {
         static final String TABLE = "permissao";
         
@@ -375,6 +744,49 @@ public class BD {
             return endereco;
         }
         
+          public static petagenda.dados.Endereco selectLast() {
+            petagenda.dados.Endereco endereco = null;
+            
+            Connection conn = BD.getConnection();
+            if (conn != null) { // Se banco for acessível
+                // Criação do statement
+                PreparedStatement select = null;
+                try {    
+                    select = conn.prepareStatement(
+                        String.format("SELECT id, rua, numero, bairro, cidade, cep FROM %s ORDER BY id DESC LIMIT 1", TABLE));
+
+                    ResultSet rs = select.executeQuery();
+                    petagenda.dados.Endereco[] selected = parse(rs);
+
+                    if (selected != null) {
+                        endereco = selected[0];
+                    }
+                } catch (SQLException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage(), "Erro na execução da query", JOptionPane.ERROR_MESSAGE);
+                } 
+
+                if (select != null) { // Se preparedStatement não falhou
+                    try {
+                        select.close();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        select = null;
+                    }
+                }
+
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+                } finally {
+                    conn = null;
+                }
+            }
+            
+            return endereco;
+        }
+        
         public static petagenda.dados.Endereco[] parse(ResultSet rs) {
             if (rs == null) {
                 throw new NullPointerException("ResultSet não pode ser nulo");
@@ -693,7 +1105,7 @@ public class BD {
     static public class Servico {
         public static final String TABLE = "servico_disponivel";
         
-         public static int insert(petagenda.servico.Servico servico) {
+        public static int insert(petagenda.servico.Servico servico) {
             int r = 0;
             
             if (servico == null ) {
@@ -838,7 +1250,6 @@ public class BD {
             }
             return r;
         }
-    
         
         public static petagenda.servico.Servico selectById(int id) {
             petagenda.servico.Servico servico = null;

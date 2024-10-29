@@ -116,6 +116,10 @@ public final class Endereco {
         }
     }
     
+    public boolean isNew() {
+        return this.getId() == NULL_ID;
+    }
+    
     public void setId(int id) {
         if (id < 0) {
             throw new IllegalIdException("id não pode ser inferior a 0");
@@ -126,6 +130,10 @@ public final class Endereco {
     
     public int getId() {
         return this.id;
+    }
+    
+    public boolean deepEquals(Endereco endereco) {
+        return this.RUA.equals(endereco.RUA)  && this.NUMERO.equals(endereco.NUMERO) && this.CIDADE.equals(endereco.CIDADE) && this.CEP.equals(endereco.CEP);
     }
     
     @Override
