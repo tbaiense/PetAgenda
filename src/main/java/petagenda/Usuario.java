@@ -41,6 +41,10 @@ public final class Usuario {
 //        
 //    }
     
+    public Usuario(String nome, Endereco endereco, String cpf, String telefone, Servico servicoPresta) {
+        this(1, nome, endereco, cpf, telefone, servicoPresta, LocalAtuacao.valueOf(endereco) );
+        this.id = NULL_ID;
+    }
     
     public Usuario(String nome, Endereco endereco, String cpf, String telefone, Servico servicoPresta, LocalAtuacao localAtuacao) {
         this(1, nome, endereco, cpf, telefone, servicoPresta, localAtuacao );

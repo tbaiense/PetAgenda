@@ -16,6 +16,7 @@ public final class LocalAtuacao {
     public final String BAIRRO;
     public final String CIDADE;
     public static final int NULL_ID = -1;
+    
     public LocalAtuacao(String bairro, String cidade) {
         this(1, bairro, cidade);
         this.id = NULL_ID;
@@ -62,6 +63,10 @@ public final class LocalAtuacao {
             this.BAIRRO = bairro;
             this.CIDADE = cidade;
         }
+    }
+    
+    public boolean isNew() {
+        return this.getId() == NULL_ID;
     }
     
     public void setId(int id) {
