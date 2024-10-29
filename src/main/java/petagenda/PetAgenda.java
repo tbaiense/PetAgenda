@@ -34,13 +34,15 @@ public class PetAgenda {
 //
 //        System.out.println(BD.Servico.selectLast());
 
-        Servico lastServ = BD.Servico.selectLast();
+//        Servico lastServ = BD.Servico.selectLast();
 //        Endereco end = new Endereco("Rua sdgsdfg", "g. 1", "fadsff Bonito", "asdfasdf do Povo", "13245678");
-        Endereco lastEnd = BD.Endereco.selectLast();
+//        Endereco lastEnd = BD.Endereco.selectLast();
 //        Cliente thiago = new Cliente("Maria", lastEnd, "40028922", lastServ);
 //        BD.Cliente.insert(thiago);
 
-        BD.Cliente.delete(new Cliente(2, "Maria", lastEnd, "40028922", lastServ));
+//        BD.Cliente.delete(new Cliente(2, "Maria", lastEnd, "40028922", lastServ));
+
+        System.out.println(BD.Usuario.selectById(7));
     }
     
 }

@@ -1,11 +1,11 @@
 package petagenda;
 
 import java.util.ArrayList;
-//import java.util.Arrays;
+import java.util.Arrays;
+import petagenda.bd.BD;
 import petagenda.dados.*;
 import petagenda.exception.*;
-import petagenda.servico.Servico;
-//import petagenda.servico.TipoServico;
+import petagenda.servico.*;
 
 /**
  *
@@ -25,21 +25,46 @@ public final class Usuario {
     public static final int NULL_ID = -1;
     
     // Exemplo de uso
-//    public static void main(String[] args) {
-//        Usuario eu;
-//        try {
+    public static void main(String[] args) {
+        Usuario eu;
+        try {
 //            TipoServico passeio = new TipoServico("Passeio");
 //            Servico servicoPresta = new Servico("Dog Walking", passeio, 60, 100.0);
+            // Cadastrando no banco
 //            LocalAtuacao local = new LocalAtuacao("Itaparica", "Vitória");
-//            Endereco end = new Endereco("Rua tal", "numero 5", "Bairro legal", "Cidade bacana");
-//            eu = new Usuario("Thiago", end, "887.844.490-12", "40028922", servicoPresta, local);
-//            System.out.println(eu);
-//        } catch (IllegalArgumentsException exs) {
-//            Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos
-//            System.out.println(Arrays.toString(causas)); // Printa as exceções se houver
-//        }
-//        
-//    }
+//            Endereco end = new Endereco("Rua Majestade", "231", "Cariacica", "Carne seca", "33343278");
+//            Servico servDogWalking = BD.Servico.selectLast();
+//            eu = new Usuario("Antônio", end, "887.844.490-12", "33365759", BD.Servico.selectById(1), BD.LocalAtuacao.selectLast());
+//            BD.Usuario.insert(eu);
+//            System.out.println(BD.Usuario.selectLast().toString());
+
+            // Editando no banco
+//            Usuario altUsuario = BD.Usuario.selectById(4);
+//            altUsuario.setNome("Rosemary");
+//            LocalAtuacao novoLocal = new LocalAtuacao("Aeroporto", "Guarapari");
+//            LocalAtuacao localTucum = BD.LocalAtuacao.selectById(5);
+//            altUsuario.setLocalAtuacao(localTucum);
+//            BD.Usuario.update(altUsuario);
+            
+//            // Apagando do banco
+//            Usuario lastUsuario = BD.Usuario.selectLast();
+//            BD.Usuario.delete(lastUsuario);
+
+            // Listando todos
+            Usuario[] todos = BD.Usuario.selectAll();
+            if (todos != null) {
+                for(Usuario u : todos) {
+                    if (u != null) {
+                        System.out.println(u.toString());
+                    }
+                }
+            }
+        } catch (IllegalArgumentsException exs) {
+            Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos
+            System.out.println(Arrays.toString(causas)); // Printa as exceções se houver
+        }
+        
+    }
     
     public Usuario(String nome, Endereco endereco, String cpf, String telefone, Servico servicoPresta) {
         this(1, nome, endereco, cpf, telefone, servicoPresta, LocalAtuacao.valueOf(endereco) );
@@ -252,6 +277,6 @@ public final class Usuario {
     
     @Override
     public String toString() {
-        return String.format("NOME: %s | TEL: %s | SERV. PRESTA: %s | LOCAL ATUAÇÃO: %s", getNome(), getTelefone(), getServico().getNome(), getLocalAtuacao().toString());
+        return String.format("NOME: %-16s | TEL: %-10s | SERV. PRESTA: %-16s | LOCAL ATUAÇÃO: %s", getNome(), getTelefone(), getServico().getNome(), getLocalAtuacao().toString());
     }
 }

@@ -89,6 +89,10 @@ public final class LocalAtuacao {
         }
     }
     
+    public boolean deepEquals(LocalAtuacao localAtuacao) {
+        return this.BAIRRO == localAtuacao.BAIRRO && this.CIDADE == localAtuacao.CIDADE;
+    }
+    
     @Override
     public String toString() {
         return String.format("%s, %s", this.BAIRRO, this.CIDADE);
