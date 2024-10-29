@@ -117,8 +117,8 @@ DROP TABLE IF EXISTS `pet_agenda`.`usuario` ;
 CREATE TABLE IF NOT EXISTS `pet_agenda`.`usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(64) NOT NULL,
-  `id_endereco` INT NULL,
-  `cpf` CHAR(11) NULL,
+  `id_endereco` INT NOT NULL,
+  `cpf` CHAR(11) NOT NULL,
   `telefone` VARCHAR(12) NOT NULL COMMENT 'Número de telefone do usuário no formato numérico, exemplo: 27123456789',
   `senha` VARCHAR(32) NULL,
   `id_servico_presta` INT NOT NULL,
