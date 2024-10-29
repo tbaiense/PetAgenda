@@ -34,12 +34,22 @@ public final class Cliente {
 //            Cliente cl = new Cliente("Roberto", endCliente, "4002-8922", servSolicita);
 //            
             // Inserindo novo Cliente no banco
-//            Endereco endCliente = new Endereco("Rua Guanabara", "num. 106", "Itaparica", "Vitoria", "12345678");
-//            Servico servDogWalking = BD.Servico.selectById(4);
-//            Cliente cl = new Cliente("Roberto", endCliente, "4002-8922", servDogWalking);
-//            BD.Cliente.insert(cl);
-//            System.out.println(BD.Cliente.selectById(BD.Cliente.selectLast().getId()).toString());
+            Endereco endCliente = new Endereco("Rua Vitória", "num. 106", "Itaparica", "Vitoria", "12345678");
+//            endCliente.setId(BD.Endereco.selectLast().getId());
+            Servico servDogWalking = BD.Servico.selectById(4);
+            Cliente cl = new Cliente("Mariazinha", endCliente, "4002-8922", servDogWalking);
+            BD.Cliente.insert(cl);
+            System.out.println("Último cliente inserido:\n" + BD.Cliente.selectById(BD.Cliente.selectLast().getId()).toString());
 
+            // Buscando todos clientes cadastrados
+            System.out.println("--- TODOS CLIENTES CADASTRADOS ---\n");
+            Cliente[] clientes = BD.Cliente.selectAll();
+            for (Cliente c : clientes) {
+                if (c != null) {
+                    System.out.println(c.toString());
+                }
+            }
+            
             // Alterando Cliente no banco
 //            Cliente cl = BD.Cliente.selectLast();
 //            Endereco novoEndCliente = new Endereco("Rua nova", "num. novo", "Bairro novo", "Cidade nova", "12345999");
@@ -51,8 +61,8 @@ public final class Cliente {
 //            System.out.println(BD.Cliente.selectById(BD.Cliente.selectLast().getId()).toString());
 
             // Apagando Cliente no banco
-            Cliente lastClDelete = BD.Cliente.selectLast();
-            System.out.println(BD.Cliente.delete(lastClDelete));
+//            Cliente lastClDelete = BD.Cliente.selectLast();
+//            System.out.println(BD.Cliente.delete(lastClDelete));
 
         } catch (IllegalArgumentsException exs) {
             Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos

@@ -67,12 +67,12 @@ public class BD {
                         petagenda.dados.Endereco endereco = cliente.getEndereco();
                         int id_endereco;
                         
-                        if (endereco.isNew()) {
+//                        if (endereco.isNew()) {
                             BD.Endereco.insert(endereco);
                             id_endereco = BD.Endereco.selectLast().getId();
-                        } else {
-                            id_endereco = endereco.getId();
-                        }
+//                        } else {
+//                            id_endereco = endereco.getId();
+//                        }
                         
                         insert.setInt(1, id_endereco);
                         insert.setString(2, cliente.getNome());
