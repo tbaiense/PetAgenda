@@ -5,6 +5,7 @@
 package Interfaces;
 
 import javax.swing.JOptionPane;
+import javax.swing.JScrollBar;
 import ui.custom.RoundedCornerBorder;
 import ui.custom.RoundedCornerButtonUI;
 
@@ -19,6 +20,7 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
      */
     public Tela_visualizacao_pet() {
         initComponents();
+        configurarLayout();
     }
 
     /**
@@ -30,6 +32,8 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel6 = new javax.swing.JPanel();
+        jScrollBar1 = new javax.swing.JScrollBar();
         jPanel_menu = new javax.swing.JPanel();
         btn_Home = new javax.swing.JToggleButton();
         btn_agenda = new javax.swing.JButton();
@@ -40,7 +44,6 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         btn_config = new javax.swing.JButton();
         btn_sair = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jlbl_imgPet = new javax.swing.JLabel();
         jlbl_nomePet = new javax.swing.JLabel();
         jlbl_nomePetCadast = new javax.swing.JLabel();
         jlbl_raca = new javax.swing.JLabel();
@@ -57,7 +60,6 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jlbl_saudeCadast = new javax.swing.JLabel();
         jbtn_visualizarHistorico = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jlbl_imgPet1 = new javax.swing.JLabel();
         jlbl_nomePet1 = new javax.swing.JLabel();
         jlbl_nomePetCadast1 = new javax.swing.JLabel();
         jlbl_raca1 = new javax.swing.JLabel();
@@ -74,7 +76,6 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jlbl_saudeCadast1 = new javax.swing.JLabel();
         jbtn_visualizarHistorico1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jlbl_imgPet2 = new javax.swing.JLabel();
         jlbl_nomePet2 = new javax.swing.JLabel();
         jlbl_nomePetCadast2 = new javax.swing.JLabel();
         jlbl_raca2 = new javax.swing.JLabel();
@@ -91,7 +92,6 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jlbl_saudeCadast2 = new javax.swing.JLabel();
         jbtn_visualizarHistorico2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jlbl_imgPet3 = new javax.swing.JLabel();
         jlbl_nomePet3 = new javax.swing.JLabel();
         jlbl_nomePetCadast3 = new javax.swing.JLabel();
         jlbl_raca3 = new javax.swing.JLabel();
@@ -107,12 +107,34 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jlbl_saude3 = new javax.swing.JLabel();
         jlbl_saudeCadast3 = new javax.swing.JLabel();
         jbtn_visualizarHistorico3 = new javax.swing.JButton();
-        jlbl_background_cadastro_funcionario = new javax.swing.JLabel();
+        jlbl_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 768));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setMinimumSize(new java.awt.Dimension(905, 560));
+        jPanel6.setOpaque(false);
+        jPanel6.setPreferredSize(new java.awt.Dimension(905, 560));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(0, 2)); // 0 significa que o número de linhas será ajustado automaticamente
+
+        // Criação de sub-painéis
+        for (int i = 0; i < 10; i++) { // Altere 10 para o número total de subpainéis que deseja criar
+            javax.swing.JPanel subPanel = new javax.swing.JPanel();
+            subPanel.setBackground(new java.awt.Color(255, 255, 255));
+            subPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 1));
+            subPanel.add(new javax.swing.JLabel("Sub-painel " + (i + 1))); // Exemplo de adição de um componente
+
+            jPanel6.add(subPanel); // Adicionando o sub-painel ao jPanel6
+        }
+
+        jScrollBar1.setOrientation(JScrollBar.VERTICAL);
+        jPanel6.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(889, 0, -1, 560));
+
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 51, -1, -1));
 
         jPanel_menu.setBackground(new java.awt.Color(124, 115, 101));
         jPanel_menu.setForeground(new java.awt.Color(124, 115, 101));
@@ -287,20 +309,15 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 250));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlbl_imgPet.setText("<insert>");
-        jlbl_imgPet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jlbl_imgPet.setPreferredSize(new java.awt.Dimension(100, 74));
-        jPanel1.add(jlbl_imgPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
-
         jlbl_nomePet.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_nomePet.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_nomePet.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_nomePet.setText("Nome do pet:");
         jlbl_nomePet.setPreferredSize(new java.awt.Dimension(165, 20));
-        jPanel1.add(jlbl_nomePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 8, 110, 20));
+        jPanel1.add(jlbl_nomePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, -1));
 
         jlbl_nomePetCadast.setText("<insert>");
-        jPanel1.add(jlbl_nomePetCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 8, -1, -1));
+        jPanel1.add(jlbl_nomePetCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         jlbl_raca.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_raca.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
@@ -309,55 +326,55 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jlbl_raca.setMaximumSize(new java.awt.Dimension(71, 20));
         jlbl_raca.setMinimumSize(new java.awt.Dimension(71, 20));
         jlbl_raca.setPreferredSize(new java.awt.Dimension(71, 20));
-        jPanel1.add(jlbl_raca, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 32, 50, -1));
+        jPanel1.add(jlbl_raca, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 50, -1));
 
         jlbl_racaCadastr.setText("<insert>");
-        jPanel1.add(jlbl_racaCadastr, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 32, -1, -1));
+        jPanel1.add(jlbl_racaCadastr, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jlbl_porte.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_porte.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_porte.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_porte.setText("Porte:");
-        jPanel1.add(jlbl_porte, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 56, -1, -1));
+        jPanel1.add(jlbl_porte, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         jlbl_porteCadast.setText("<insert>");
-        jPanel1.add(jlbl_porteCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 56, -1, -1));
+        jPanel1.add(jlbl_porteCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         jlbl_cor.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_cor.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_cor.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_cor.setText("Cor:");
-        jPanel1.add(jlbl_cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 80, -1, -1));
+        jPanel1.add(jlbl_cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         lbl_corCadast.setText("<insert>");
-        jPanel1.add(lbl_corCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
+        jPanel1.add(lbl_corCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jlbl_sexo.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_sexo.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_sexo.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_sexo.setText("Sexo:");
-        jPanel1.add(jlbl_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 104, -1, -1));
+        jPanel1.add(jlbl_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         jlbl_sexoCadast.setText("<insert>");
-        jPanel1.add(jlbl_sexoCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 104, -1, -1));
+        jPanel1.add(jlbl_sexoCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         jlbl_descricaoComport.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_descricaoComport.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_descricaoComport.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_descricaoComport.setText("Descrição do comportamento:");
-        jPanel1.add(jlbl_descricaoComport, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 124, -1, -1));
+        jPanel1.add(jlbl_descricaoComport, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jlbl_descricaoCadast.setText("<insert>");
-        jPanel1.add(jlbl_descricaoCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 124, -1, -1));
+        jPanel1.add(jlbl_descricaoCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
         jlbl_saude.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_saude.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_saude.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_saude.setText("Saúde do pet:");
-        jPanel1.add(jlbl_saude, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 148, -1, -1));
+        jPanel1.add(jlbl_saude, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jlbl_saudeCadast.setText("<insert>");
-        jPanel1.add(jlbl_saudeCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 148, -1, -1));
+        jPanel1.add(jlbl_saudeCadast, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
         jbtn_visualizarHistorico.setBackground(new java.awt.Color(217, 217, 217));
         jbtn_visualizarHistorico.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
@@ -383,20 +400,15 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 250));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlbl_imgPet1.setText("<insert>");
-        jlbl_imgPet1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jlbl_imgPet1.setPreferredSize(new java.awt.Dimension(100, 74));
-        jPanel2.add(jlbl_imgPet1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
-
         jlbl_nomePet1.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_nomePet1.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_nomePet1.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_nomePet1.setText("Nome do pet:");
         jlbl_nomePet1.setPreferredSize(new java.awt.Dimension(165, 20));
-        jPanel2.add(jlbl_nomePet1, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 8, 110, 20));
+        jPanel2.add(jlbl_nomePet1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, 20));
 
         jlbl_nomePetCadast1.setText("<insert>");
-        jPanel2.add(jlbl_nomePetCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 8, -1, -1));
+        jPanel2.add(jlbl_nomePetCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         jlbl_raca1.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_raca1.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
@@ -405,55 +417,55 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jlbl_raca1.setMaximumSize(new java.awt.Dimension(71, 20));
         jlbl_raca1.setMinimumSize(new java.awt.Dimension(71, 20));
         jlbl_raca1.setPreferredSize(new java.awt.Dimension(71, 20));
-        jPanel2.add(jlbl_raca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 32, 50, -1));
+        jPanel2.add(jlbl_raca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 50, -1));
 
         jlbl_racaCadastr1.setText("<insert>");
-        jPanel2.add(jlbl_racaCadastr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 32, -1, -1));
+        jPanel2.add(jlbl_racaCadastr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jlbl_porte1.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_porte1.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_porte1.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_porte1.setText("Porte:");
-        jPanel2.add(jlbl_porte1, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 56, -1, -1));
+        jPanel2.add(jlbl_porte1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         jlbl_porteCadast1.setText("<insert>");
-        jPanel2.add(jlbl_porteCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 56, -1, -1));
+        jPanel2.add(jlbl_porteCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         jlbl_cor1.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_cor1.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_cor1.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_cor1.setText("Cor:");
-        jPanel2.add(jlbl_cor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 80, -1, -1));
+        jPanel2.add(jlbl_cor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         lbl_corCadast1.setText("<insert>");
-        jPanel2.add(lbl_corCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
+        jPanel2.add(lbl_corCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jlbl_sexo1.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_sexo1.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_sexo1.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_sexo1.setText("Sexo:");
-        jPanel2.add(jlbl_sexo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 104, -1, -1));
+        jPanel2.add(jlbl_sexo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         lbl_sexoCadast1.setText("<insert>");
-        jPanel2.add(lbl_sexoCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 104, -1, -1));
+        jPanel2.add(lbl_sexoCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         jlbl_descricaoComport1.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_descricaoComport1.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_descricaoComport1.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_descricaoComport1.setText("Descrição do comportamento:");
-        jPanel2.add(jlbl_descricaoComport1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 124, -1, -1));
+        jPanel2.add(jlbl_descricaoComport1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jlbl_descricaoCadast1.setText("<insert>");
-        jPanel2.add(jlbl_descricaoCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 124, -1, -1));
+        jPanel2.add(jlbl_descricaoCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
         jlbl_saude1.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_saude1.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_saude1.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_saude1.setText("Saúde do pet:");
-        jPanel2.add(jlbl_saude1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 148, -1, -1));
+        jPanel2.add(jlbl_saude1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jlbl_saudeCadast1.setText("<insert>");
-        jPanel2.add(jlbl_saudeCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 148, -1, -1));
+        jPanel2.add(jlbl_saudeCadast1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
         jbtn_visualizarHistorico1.setBackground(new java.awt.Color(217, 217, 217));
         jbtn_visualizarHistorico1.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
@@ -468,7 +480,7 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
             }
         });
         // Aplicando a UI personalizada
-        jbtn_visualizarHistorico.setUI(new RoundedCornerButtonUI());
+        jbtn_visualizarHistorico1.setUI(new RoundedCornerButtonUI());
         jPanel2.add(jbtn_visualizarHistorico1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 211, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 50, -1, -1));
@@ -479,20 +491,15 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(400, 250));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlbl_imgPet2.setText("<insert>");
-        jlbl_imgPet2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jlbl_imgPet2.setPreferredSize(new java.awt.Dimension(100, 74));
-        jPanel3.add(jlbl_imgPet2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
-
         jlbl_nomePet2.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_nomePet2.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_nomePet2.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_nomePet2.setText("Nome do pet:");
         jlbl_nomePet2.setPreferredSize(new java.awt.Dimension(165, 20));
-        jPanel3.add(jlbl_nomePet2, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 8, 110, 20));
+        jPanel3.add(jlbl_nomePet2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, 20));
 
         jlbl_nomePetCadast2.setText("<insert>");
-        jPanel3.add(jlbl_nomePetCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 8, -1, -1));
+        jPanel3.add(jlbl_nomePetCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         jlbl_raca2.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_raca2.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
@@ -501,55 +508,55 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jlbl_raca2.setMaximumSize(new java.awt.Dimension(71, 20));
         jlbl_raca2.setMinimumSize(new java.awt.Dimension(71, 20));
         jlbl_raca2.setPreferredSize(new java.awt.Dimension(71, 20));
-        jPanel3.add(jlbl_raca2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 32, 50, -1));
+        jPanel3.add(jlbl_raca2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 50, -1));
 
         jlbl_racaCadastr2.setText("<insert>");
-        jPanel3.add(jlbl_racaCadastr2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 32, -1, -1));
+        jPanel3.add(jlbl_racaCadastr2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jlbl_porte2.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_porte2.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_porte2.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_porte2.setText("Porte:");
-        jPanel3.add(jlbl_porte2, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 56, -1, -1));
+        jPanel3.add(jlbl_porte2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         jlbl_porteCadast2.setText("<insert>");
-        jPanel3.add(jlbl_porteCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 56, -1, -1));
+        jPanel3.add(jlbl_porteCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         jlbl_cor2.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_cor2.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_cor2.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_cor2.setText("Cor:");
-        jPanel3.add(jlbl_cor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 80, -1, -1));
+        jPanel3.add(jlbl_cor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         lbl_corCadast2.setText("<insert>");
-        jPanel3.add(lbl_corCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
+        jPanel3.add(lbl_corCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jlbl_sexo2.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_sexo2.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_sexo2.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_sexo2.setText("Sexo:");
-        jPanel3.add(jlbl_sexo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 104, -1, -1));
+        jPanel3.add(jlbl_sexo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         lbl_sexoCadast2.setText("<insert>");
-        jPanel3.add(lbl_sexoCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 104, -1, -1));
+        jPanel3.add(lbl_sexoCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         jlbl_descricaoComport2.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_descricaoComport2.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_descricaoComport2.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_descricaoComport2.setText("Descrição do comportamento:");
-        jPanel3.add(jlbl_descricaoComport2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 124, -1, -1));
+        jPanel3.add(jlbl_descricaoComport2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jlbl_descricaoCadast2.setText("<insert>");
-        jPanel3.add(jlbl_descricaoCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 124, -1, -1));
+        jPanel3.add(jlbl_descricaoCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
         jlbl_saude2.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_saude2.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_saude2.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_saude2.setText("Saúde do pet:");
-        jPanel3.add(jlbl_saude2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 148, -1, -1));
+        jPanel3.add(jlbl_saude2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jlbl_saudeCadast2.setText("<insert>");
-        jPanel3.add(jlbl_saudeCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 148, -1, -1));
+        jPanel3.add(jlbl_saudeCadast2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
         jbtn_visualizarHistorico2.setBackground(new java.awt.Color(217, 217, 217));
         jbtn_visualizarHistorico2.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
@@ -564,7 +571,7 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
             }
         });
         // Aplicando a UI personalizada
-        jbtn_visualizarHistorico.setUI(new RoundedCornerButtonUI());
+        jbtn_visualizarHistorico2.setUI(new RoundedCornerButtonUI());
         jPanel3.add(jbtn_visualizarHistorico2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 211, -1, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 361, -1, -1));
@@ -575,20 +582,15 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jPanel4.setPreferredSize(new java.awt.Dimension(400, 250));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlbl_imgPet3.setText("<insert>");
-        jlbl_imgPet3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jlbl_imgPet3.setPreferredSize(new java.awt.Dimension(100, 74));
-        jPanel4.add(jlbl_imgPet3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
-
         jlbl_nomePet3.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_nomePet3.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_nomePet3.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_nomePet3.setText("Nome do pet:");
         jlbl_nomePet3.setPreferredSize(new java.awt.Dimension(165, 20));
-        jPanel4.add(jlbl_nomePet3, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 8, 110, 20));
+        jPanel4.add(jlbl_nomePet3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, 20));
 
         jlbl_nomePetCadast3.setText("<insert>");
-        jPanel4.add(jlbl_nomePetCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 8, -1, -1));
+        jPanel4.add(jlbl_nomePetCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         jlbl_raca3.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_raca3.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
@@ -597,55 +599,55 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jlbl_raca3.setMaximumSize(new java.awt.Dimension(71, 20));
         jlbl_raca3.setMinimumSize(new java.awt.Dimension(71, 20));
         jlbl_raca3.setPreferredSize(new java.awt.Dimension(71, 20));
-        jPanel4.add(jlbl_raca3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 32, 50, -1));
+        jPanel4.add(jlbl_raca3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 50, -1));
 
         jlbl_racaCadastr3.setText("<insert>");
-        jPanel4.add(jlbl_racaCadastr3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 32, -1, -1));
+        jPanel4.add(jlbl_racaCadastr3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jlbl_porte3.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_porte3.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_porte3.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_porte3.setText("Porte:");
-        jPanel4.add(jlbl_porte3, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 56, -1, -1));
+        jPanel4.add(jlbl_porte3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         jlbl_porteCadast3.setText("<insert>");
-        jPanel4.add(jlbl_porteCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 56, -1, -1));
+        jPanel4.add(jlbl_porteCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         jlbl_cor3.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_cor3.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_cor3.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_cor3.setText("Cor:");
-        jPanel4.add(jlbl_cor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 80, -1, -1));
+        jPanel4.add(jlbl_cor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         lbl_corCadast3.setText("<insert>");
-        jPanel4.add(lbl_corCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
+        jPanel4.add(lbl_corCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jlbl_sexo3.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_sexo3.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_sexo3.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_sexo3.setText("Sexo:");
-        jPanel4.add(jlbl_sexo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 104, -1, -1));
+        jPanel4.add(jlbl_sexo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         lbl_sexoCadast3.setText("<insert>");
-        jPanel4.add(lbl_sexoCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 104, -1, -1));
+        jPanel4.add(lbl_sexoCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         jlbl_descricaoComport3.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_descricaoComport3.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_descricaoComport3.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_descricaoComport3.setText("Descrição do comportamento:");
-        jPanel4.add(jlbl_descricaoComport3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 124, -1, -1));
+        jPanel4.add(jlbl_descricaoComport3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jlbl_descricaoCadast3.setText("<insert>");
-        jPanel4.add(jlbl_descricaoCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 124, -1, -1));
+        jPanel4.add(jlbl_descricaoCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
         jlbl_saude3.setBackground(new java.awt.Color(255, 255, 255));
         jlbl_saude3.setFont(new java.awt.Font("Merriweather", 1, 15)); // NOI18N
         jlbl_saude3.setForeground(new java.awt.Color(0, 0, 0));
         jlbl_saude3.setText("Saúde do pet:");
-        jPanel4.add(jlbl_saude3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 148, -1, -1));
+        jPanel4.add(jlbl_saude3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jlbl_saudeCadast3.setText("<insert>");
-        jPanel4.add(jlbl_saudeCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 148, -1, -1));
+        jPanel4.add(jlbl_saudeCadast3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
         jbtn_visualizarHistorico3.setBackground(new java.awt.Color(217, 217, 217));
         jbtn_visualizarHistorico3.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
@@ -660,17 +662,17 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
             }
         });
         // Aplicando a UI personalizada
-        jbtn_visualizarHistorico.setUI(new RoundedCornerButtonUI());
+        jbtn_visualizarHistorico3.setUI(new RoundedCornerButtonUI());
         jPanel4.add(jbtn_visualizarHistorico3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 211, -1, -1));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 361, -1, -1));
 
-        jlbl_background_cadastro_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
-        jlbl_background_cadastro_funcionario.setText("   ");
-        jlbl_background_cadastro_funcionario.setMaximumSize(new java.awt.Dimension(1366, 768));
-        jlbl_background_cadastro_funcionario.setMinimumSize(new java.awt.Dimension(1366, 768));
-        jlbl_background_cadastro_funcionario.setPreferredSize(new java.awt.Dimension(1366, 768));
-        getContentPane().add(jlbl_background_cadastro_funcionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jlbl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        jlbl_background.setText(" ");
+        jlbl_background.setMaximumSize(new java.awt.Dimension(1366, 768));
+        jlbl_background.setMinimumSize(new java.awt.Dimension(1366, 768));
+        jlbl_background.setPreferredSize(new java.awt.Dimension(1366, 768));
+        getContentPane().add(jlbl_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -781,12 +783,14 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel_menu;
+    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JButton jbtn_visualizarHistorico;
     private javax.swing.JButton jbtn_visualizarHistorico1;
     private javax.swing.JButton jbtn_visualizarHistorico2;
     private javax.swing.JButton jbtn_visualizarHistorico3;
-    private javax.swing.JLabel jlbl_background_cadastro_funcionario;
+    private javax.swing.JLabel jlbl_background;
     private javax.swing.JLabel jlbl_cor;
     private javax.swing.JLabel jlbl_cor1;
     private javax.swing.JLabel jlbl_cor2;
@@ -799,10 +803,6 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
     private javax.swing.JLabel jlbl_descricaoComport1;
     private javax.swing.JLabel jlbl_descricaoComport2;
     private javax.swing.JLabel jlbl_descricaoComport3;
-    private javax.swing.JLabel jlbl_imgPet;
-    private javax.swing.JLabel jlbl_imgPet1;
-    private javax.swing.JLabel jlbl_imgPet2;
-    private javax.swing.JLabel jlbl_imgPet3;
     private javax.swing.JLabel jlbl_nomePet;
     private javax.swing.JLabel jlbl_nomePet1;
     private javax.swing.JLabel jlbl_nomePet2;
@@ -848,4 +848,8 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_sexoCadast2;
     private javax.swing.JLabel lbl_sexoCadast3;
     // End of variables declaration//GEN-END:variables
+
+    private void configurarLayout() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

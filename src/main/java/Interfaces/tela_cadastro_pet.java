@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import ui.custom.RoundedCornerBorder;
 import ui.custom.RoundedCornerButtonUI;
 
@@ -62,7 +64,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         jtxtArea_Saude = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jbtn_cadastrarPet = new javax.swing.JButton();
-        jlbl_background_cadastro_pet = new javax.swing.JLabel();
+        jlbl_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PetAgenda - Cadastrar Pets");
@@ -255,10 +257,9 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
 
         txtf_nome_Pet.setBackground(new java.awt.Color(217, 217, 217));
         txtf_nome_Pet.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtf_nome_Pet.setBorder(new RoundedCornerBorder(50));
+        txtf_nome_Pet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         txtf_nome_Pet.setCaretColor(new java.awt.Color(0, 0, 0));
         txtf_nome_Pet.setMinimumSize(new java.awt.Dimension(250, 50));
-        txtf_nome_Pet.setOpaque(false);
         txtf_nome_Pet.setPreferredSize(new java.awt.Dimension(250, 50));
         txtf_nome_Pet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,7 +276,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         txtf_Raca.setBackground(new java.awt.Color(217, 217, 217));
         txtf_Raca.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtf_Raca.setForeground(new java.awt.Color(0, 0, 0));
-        txtf_Raca.setBorder(new RoundedCornerBorder(50));
+        txtf_Raca.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         txtf_Raca.setCaretColor(new java.awt.Color(0, 0, 0));
         txtf_Raca.setMinimumSize(new java.awt.Dimension(200, 50));
         txtf_Raca.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -339,7 +340,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
 
         txtf_telefone.setBackground(new java.awt.Color(217, 217, 217));
         txtf_telefone.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtf_telefone.setBorder(new RoundedCornerBorder(50));
+        txtf_telefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         txtf_telefone.setCaretColor(new java.awt.Color(0, 0, 0));
         txtf_telefone.setMinimumSize(new java.awt.Dimension(250, 50));
         txtf_telefone.setPreferredSize(new java.awt.Dimension(166, 50));
@@ -352,7 +353,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
 
         txtf_Cor.setBackground(new java.awt.Color(217, 217, 217));
         txtf_Cor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtf_Cor.setBorder(new RoundedCornerBorder(50));
+        txtf_Cor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         txtf_Cor.setCaretColor(new java.awt.Color(0, 0, 0));
         txtf_Cor.setPreferredSize(new java.awt.Dimension(250, 50));
         jPanel1.add(txtf_Cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 201, -1, -1));
@@ -366,7 +367,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         jcmbBx_Sexo.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jcmbBx_Sexo.setForeground(new java.awt.Color(0, 0, 0));
         jcmbBx_Sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "Fêmea", "Macho" }));
-        jcmbBx_Sexo.setBorder(new RoundedCornerBorder(50));
+        jcmbBx_Sexo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jcmbBx_Sexo.setMinimumSize(new java.awt.Dimension(232, 50));
         jcmbBx_Sexo.setPreferredSize(new java.awt.Dimension(232, 50));
         jPanel1.add(jcmbBx_Sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 201, -1, -1));
@@ -379,17 +380,20 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         jtxtArea_Comportamento.setBackground(new java.awt.Color(217, 217, 217));
         jtxtArea_Comportamento.setBorder(null);
         jtxtArea_Comportamento.setForeground(new java.awt.Color(0, 0, 0));
-        jtxtArea_Comportamento.setMinimumSize(new java.awt.Dimension(810, 90));
-        jtxtArea_Comportamento.setPreferredSize(new java.awt.Dimension(810, 90));
+        jtxtArea_Comportamento.setMinimumSize(new java.awt.Dimension(800, 80));
+        jtxtArea_Comportamento.setPreferredSize(new java.awt.Dimension(800, 80));
+        jtxtArea_Comportamento.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        jtxtArea_Comportamento.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
         jTextArea1.setBackground(new java.awt.Color(217, 217, 217));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(new RoundedCornerBorder(50));
+        jTextArea1.setRows(0);
+        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jTextArea1.setCaretColor(new java.awt.Color(0, 0, 0));
-        jTextArea1.setPreferredSize(new java.awt.Dimension(800, 80));
+        jTextArea1.setOpaque(false);
+        jTextArea1.setPreferredSize(null);
         jtxtArea_Comportamento.setViewportView(jTextArea1);
 
         jPanel1.add(jtxtArea_Comportamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
@@ -402,17 +406,20 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         jtxtArea_Saude.setBackground(new java.awt.Color(217, 217, 217));
         jtxtArea_Saude.setBorder(null);
         jtxtArea_Saude.setForeground(new java.awt.Color(0, 0, 0));
-        jtxtArea_Saude.setMinimumSize(new java.awt.Dimension(810, 90));
-        jtxtArea_Saude.setPreferredSize(new java.awt.Dimension(810, 90));
+        jtxtArea_Saude.setMinimumSize(new java.awt.Dimension(800, 80));
+        jtxtArea_Saude.setPreferredSize(new java.awt.Dimension(800, 80));
+        jtxtArea_Saude.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        jtxtArea_Saude.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
         jTextArea2.setBackground(new java.awt.Color(217, 217, 217));
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea2.setRows(5);
-        jTextArea2.setBorder(new RoundedCornerBorder(50));
+        jTextArea2.setRows(0);
+        jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jTextArea2.setCaretColor(new java.awt.Color(0, 0, 0));
-        jTextArea2.setPreferredSize(new java.awt.Dimension(800, 80));
+        jTextArea2.setOpaque(false);
+        jTextArea2.setPreferredSize(null);
         jtxtArea_Saude.setViewportView(jTextArea2);
 
         jPanel1.add(jtxtArea_Saude, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 409, -1, -1));
@@ -434,8 +441,8 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
-        jlbl_background_cadastro_pet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
-        getContentPane().add(jlbl_background_cadastro_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jlbl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        getContentPane().add(jlbl_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -471,6 +478,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
 
     private void jbtn_cadastrarPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cadastrarPetActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
     }//GEN-LAST:event_jbtn_cadastrarPetActionPerformed
 
     private void chkBx_SimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkBx_SimActionPerformed
@@ -552,7 +560,7 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
     private javax.swing.JButton jbtn_AddVacinas;
     private javax.swing.JButton jbtn_cadastrarPet;
     private javax.swing.JComboBox<String> jcmbBx_Sexo;
-    private javax.swing.JLabel jlbl_background_cadastro_pet;
+    private javax.swing.JLabel jlbl_background;
     private javax.swing.JScrollPane jtxtArea_Comportamento;
     private javax.swing.JScrollPane jtxtArea_Saude;
     private javax.swing.JLabel label_comportamento_do_pet;

@@ -50,7 +50,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         lbl_Senha = new javax.swing.JLabel();
         jtxt_senha = new javax.swing.JTextField();
         jbtn_CadastrarUsuario = new javax.swing.JButton();
-        jlbl_background_cadastro_usuario = new javax.swing.JLabel();
+        jlbl_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -259,7 +259,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jtxt_nome.setBackground(new java.awt.Color(217, 217, 217));
         jtxt_nome.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jtxt_nome.setForeground(new java.awt.Color(0, 0, 0));
-        jtxt_nome.setBorder(new RoundedCornerBorder(50));
+        jtxt_nome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxt_nome.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxt_nome.setMinimumSize(new java.awt.Dimension(550, 50));
         jtxt_nome.setPreferredSize(new java.awt.Dimension(550, 50));
@@ -273,7 +273,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jtxt_CPF.setBackground(new java.awt.Color(217, 217, 217));
         jtxt_CPF.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jtxt_CPF.setForeground(new java.awt.Color(0, 0, 0));
-        jtxt_CPF.setBorder(new RoundedCornerBorder(50));
+        jtxt_CPF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxt_CPF.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxt_CPF.setMinimumSize(new java.awt.Dimension(464, 42));
         jtxt_CPF.setPreferredSize(new java.awt.Dimension(550, 50));
@@ -292,7 +292,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
         jtxt_senha.setBackground(new java.awt.Color(217, 217, 217));
         jtxt_senha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jtxt_senha.setForeground(new java.awt.Color(0, 0, 0));
-        jtxt_senha.setBorder(new RoundedCornerBorder(50));
+        jtxt_senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxt_senha.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxt_senha.setMinimumSize(new java.awt.Dimension(464, 42));
         jtxt_senha.setPreferredSize(new java.awt.Dimension(550, 50));
@@ -321,10 +321,10 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 120, 643, 451));
 
-        jlbl_background_cadastro_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
-        jlbl_background_cadastro_usuario.setLabelFor(jlbl_background_cadastro_usuario);
-        jlbl_background_cadastro_usuario.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
-        getContentPane().add(jlbl_background_cadastro_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jlbl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        jlbl_background.setLabelFor(jlbl_background);
+        jlbl_background.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        getContentPane().add(jlbl_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -437,7 +437,7 @@ public class TELA_CADASTRO_USUARIO extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel_menu;
     private javax.swing.JButton jbtn_CadastrarUsuario;
-    private javax.swing.JLabel jlbl_background_cadastro_usuario;
+    private javax.swing.JLabel jlbl_background;
     private javax.swing.JLabel jlbl_cadastrarUsuario;
     private javax.swing.JLabel jlbl_nome;
     private javax.swing.JTextField jtxt_CPF;

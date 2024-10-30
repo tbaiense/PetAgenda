@@ -22,8 +22,8 @@ public class RoundedCornerButtonUI extends BasicButtonUI {
     private static final float archeight = 40.0f;  // Raio vertical dos cantos
     protected static final int focusstroke = 2;
     protected final Color fc = new Color(71, 120, 63);  // Cor para foco
-    protected final Color ac = new Color(77, 230, 63);           // Cor aumentada em 50% de brilho
-    protected final Color rc = new Color(71, 140, 63);                    // Cor para rollover
+    protected final Color ac = new Color(77, 230, 63);  // Cor aumentada em 50% de brilho
+    protected final Color rc = new Color(71, 140, 63);  // Cor para rollover
     protected Shape shape;
     protected Shape base;
 

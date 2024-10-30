@@ -61,7 +61,7 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         txt_login.setForeground(new java.awt.Color(30, 30, 30));
         txt_login.setText("TheMasterOfTheMasterAdmin");
         txt_login.setBorder(null);
-        txt_login.setBorder(new RoundedCornerBorder(50));
+        txt_login.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         txt_login.setMinimumSize(new java.awt.Dimension(550, 50));
         txt_login.setPreferredSize(new java.awt.Dimension(550, 50));
         txt_login.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +79,7 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         txt_senha.setBackground(new java.awt.Color(152, 141, 124));
         txt_senha.setForeground(new java.awt.Color(0, 0, 0));
         txt_senha.setText("jPasswordField1");
-        txt_senha.setBorder(new RoundedCornerBorder(45));
+        txt_senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         txt_senha.setMinimumSize(new java.awt.Dimension(550, 50));
         txt_senha.setPreferredSize(new java.awt.Dimension(552, 50));
         txt_senha.addActionListener(new java.awt.event.ActionListener() {

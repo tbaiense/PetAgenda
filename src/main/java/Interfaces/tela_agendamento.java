@@ -89,7 +89,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jlbl_btn_removerRemedio = new javax.swing.JLabel();
         jlbl_passeios = new javax.swing.JLabel();
         jspn_passeios = new javax.swing.JSpinner();
-        jlbl_background_cadastro_pet = new javax.swing.JLabel();
+        jlbl_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PetAgenda - Cadastrar agendamento");
@@ -297,7 +297,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_nomePet.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_nomePet.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_nomePet.setBorder(new RoundedCornerBorder(50));
+        jtxtf_nomePet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_nomePet.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_nomePet.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_nomePet.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -317,7 +317,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jcmb_tipoServico.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jcmb_tipoServico.setForeground(new java.awt.Color(0, 0, 0));
         jcmb_tipoServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "Atendimento doméstico", "Cuidado especial", "Passeio" }));
-        jcmb_tipoServico.setBorder(new RoundedCornerBorder(50));
+        jcmb_tipoServico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jcmb_tipoServico.setMinimumSize(new java.awt.Dimension(200, 50));
         jcmb_tipoServico.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel1.add(jcmb_tipoServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 310, -1));
@@ -338,7 +338,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jtxta_observacao.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jtxta_observacao.setForeground(new java.awt.Color(0, 0, 0));
         jtxta_observacao.setRows(5);
-        jtxta_observacao.setBorder(new RoundedCornerBorder(50));
+        jtxta_observacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxta_observacao.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxta_observacao.setMargin(new java.awt.Insets(16, 16, 16, 16));
         jtxta_observacao.setMaximumSize(new java.awt.Dimension(1200, 600));
@@ -365,7 +365,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_dtEncerramentoPacote.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_dtEncerramentoPacote.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_dtEncerramentoPacote.setBorder(new RoundedCornerBorder(50));
+        jtxtf_dtEncerramentoPacote.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_dtEncerramentoPacote.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_dtEncerramentoPacote.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_dtEncerramentoPacote.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -388,7 +388,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_enderecoPet.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_enderecoPet.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_enderecoPet.setBorder(new RoundedCornerBorder(50));
+        jtxtf_enderecoPet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_enderecoPet.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_enderecoPet.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_enderecoPet.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -406,7 +406,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_dtInicioPacote.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_dtInicioPacote.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_dtInicioPacote.setBorder(new RoundedCornerBorder(50));
+        jtxtf_dtInicioPacote.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_dtInicioPacote.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_dtInicioPacote.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_dtInicioPacote.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -419,7 +419,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_dtAgendada.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_dtAgendada.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_dtAgendada.setBorder(new RoundedCornerBorder(50));
+        jtxtf_dtAgendada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_dtAgendada.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_dtAgendada.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_dtAgendada.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -442,7 +442,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_hrAgendada.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_hrAgendada.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_hrAgendada.setBorder(new RoundedCornerBorder(50));
+        jtxtf_hrAgendada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_hrAgendada.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_hrAgendada.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_hrAgendada.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -462,7 +462,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jcmb_servicoAgendado.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jcmb_servicoAgendado.setForeground(new java.awt.Color(0, 0, 0));
         jcmb_servicoAgendado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "Dog Walking", "Pet Sitting", "Consulta veterinária", "Vacina" }));
-        jcmb_servicoAgendado.setBorder(new RoundedCornerBorder(50));
+        jcmb_servicoAgendado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jcmb_servicoAgendado.setMinimumSize(new java.awt.Dimension(200, 50));
         jcmb_servicoAgendado.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel1.add(jcmb_servicoAgendado, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 320, -1));
@@ -471,7 +471,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jcmb_quantidadePacote.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jcmb_quantidadePacote.setForeground(new java.awt.Color(0, 0, 0));
         jcmb_quantidadePacote.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "1 Semana", "2 Semanas", "1 Mes", "3 Meses", "6 Meses", "1 Ano" }));
-        jcmb_quantidadePacote.setBorder(new RoundedCornerBorder(50));
+        jcmb_quantidadePacote.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jcmb_quantidadePacote.setMinimumSize(new java.awt.Dimension(200, 50));
         jcmb_quantidadePacote.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel1.add(jcmb_quantidadePacote, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 560, 270, -1));
@@ -484,7 +484,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jcmb_remediosAdicionados.setBackground(new java.awt.Color(217, 217, 217));
         jcmb_remediosAdicionados.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jcmb_remediosAdicionados.setForeground(new java.awt.Color(0, 0, 0));
-        jcmb_remediosAdicionados.setBorder(new RoundedCornerBorder(50));
+        jcmb_remediosAdicionados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jcmb_remediosAdicionados.setMinimumSize(new java.awt.Dimension(200, 50));
         jcmb_remediosAdicionados.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel1.add(jcmb_remediosAdicionados, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 930, 330, -1));
@@ -501,7 +501,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_remedio.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_remedio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_remedio.setBorder(new RoundedCornerBorder(50));
+        jtxtf_remedio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_remedio.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_remedio.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_remedio.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -519,7 +519,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_intrucaoAdministracao.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_intrucaoAdministracao.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_intrucaoAdministracao.setBorder(new RoundedCornerBorder(50));
+        jtxtf_intrucaoAdministracao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_intrucaoAdministracao.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_intrucaoAdministracao.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_intrucaoAdministracao.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -532,7 +532,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_buscarCom.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_buscarCom.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_buscarCom.setBorder(new RoundedCornerBorder(50));
+        jtxtf_buscarCom.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_buscarCom.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_buscarCom.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_buscarCom.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -555,7 +555,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_devolverPara.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_devolverPara.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_devolverPara.setBorder(new RoundedCornerBorder(50));
+        jtxtf_devolverPara.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_devolverPara.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_devolverPara.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_devolverPara.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -575,7 +575,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jcmb_funcionarioAgendado.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jcmb_funcionarioAgendado.setForeground(new java.awt.Color(0, 0, 0));
         jcmb_funcionarioAgendado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "Roberto Antônio (35 anos)", "Silvia Rosimary da Costa (28 anos)" }));
-        jcmb_funcionarioAgendado.setBorder(new RoundedCornerBorder(50));
+        jcmb_funcionarioAgendado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jcmb_funcionarioAgendado.setMinimumSize(new java.awt.Dimension(200, 50));
         jcmb_funcionarioAgendado.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel1.add(jcmb_funcionarioAgendado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 690, 370, -1));
@@ -587,7 +587,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_donoPet.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_donoPet.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_donoPet.setBorder(new RoundedCornerBorder(50));
+        jtxtf_donoPet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_donoPet.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_donoPet.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_donoPet.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -605,7 +605,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_localCuidado.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_localCuidado.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_localCuidado.setBorder(new RoundedCornerBorder(50));
+        jtxtf_localCuidado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_localCuidado.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_localCuidado.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_localCuidado.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -625,7 +625,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jcmb_tipoAgendamento.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jcmb_tipoAgendamento.setForeground(new java.awt.Color(0, 0, 0));
         jcmb_tipoAgendamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "Único", "Pacote mensal", "Pacote semanal" }));
-        jcmb_tipoAgendamento.setBorder(new RoundedCornerBorder(50));
+        jcmb_tipoAgendamento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jcmb_tipoAgendamento.setMinimumSize(new java.awt.Dimension(200, 50));
         jcmb_tipoAgendamento.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel1.add(jcmb_tipoAgendamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, 270, -1));
@@ -637,7 +637,7 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         jtxtf_horarioRemedio.setBackground(new java.awt.Color(217, 217, 217));
         jtxtf_horarioRemedio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtxtf_horarioRemedio.setBorder(new RoundedCornerBorder(50));
+        jtxtf_horarioRemedio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jtxtf_horarioRemedio.setCaretColor(new java.awt.Color(0, 0, 0));
         jtxtf_horarioRemedio.setMinimumSize(new java.awt.Dimension(250, 50));
         jtxtf_horarioRemedio.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -652,7 +652,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jcmb_intervalo.setFont(new java.awt.Font("Merriweather", 0, 15)); // NOI18N
         jcmb_intervalo.setForeground(new java.awt.Color(0, 0, 0));
         jcmb_intervalo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "Dias na semana", "Dias no mês", "Semanas no mês" }));
-        jcmb_intervalo.setBorder(new RoundedCornerBorder(50));
+        jcmb_intervalo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jcmb_intervalo.setMinimumSize(new java.awt.Dimension(200, 50));
         jcmb_intervalo.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel1.add(jcmb_intervalo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 470, 280, -1));
@@ -662,7 +662,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jlbl_aCada.setText("A cada");
         jPanel1.add(jlbl_aCada, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, 50, -1));
 
-        jspn_aCada.setBorder(new RoundedCornerBorder(50));
+        jspn_aCada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(jspn_aCada, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, 90, 50));
 
         jlbl_img_adicionarRemedio.setFont(new java.awt.Font("Merriweather", 0, 45)); // NOI18N
@@ -732,7 +732,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         jlbl_passeios.setText("Passeios");
         jPanel1.add(jlbl_passeios, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, 70, -1));
 
-        jspn_passeios.setBorder(new RoundedCornerBorder(50));
+        jspn_passeios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(jspn_passeios, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 90, 50));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 1653));
@@ -741,8 +741,8 @@ public class tela_agendamento extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 46, 880, 690));
 
-        jlbl_background_cadastro_pet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
-        getContentPane().add(jlbl_background_cadastro_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jlbl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        getContentPane().add(jlbl_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_HomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_HomeMousePressed
@@ -897,7 +897,7 @@ public class tela_agendamento extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jcmb_tipoAgendamento;
     private javax.swing.JComboBox<String> jcmb_tipoServico;
     private javax.swing.JLabel jlbl_aCada;
-    private javax.swing.JLabel jlbl_background_cadastro_pet;
+    private javax.swing.JLabel jlbl_background;
     private javax.swing.JLabel jlbl_btnBuscar;
     private javax.swing.JLabel jlbl_btnLimparPet;
     private javax.swing.JLabel jlbl_btn_adicionarRemedio;

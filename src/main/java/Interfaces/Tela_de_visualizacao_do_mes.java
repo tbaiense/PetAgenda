@@ -65,7 +65,7 @@ public class Tela_de_visualizacao_do_mes extends javax.swing.JFrame {
         jPanel77 = new javax.swing.JPanel();
         jPanel70 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
-        jlbl_background_visualizao_mes = new javax.swing.JLabel();
+        jlbl_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -713,8 +713,8 @@ public class Tela_de_visualizacao_do_mes extends javax.swing.JFrame {
 
         getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 231, -1, -1));
 
-        jlbl_background_visualizao_mes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
-        getContentPane().add(jlbl_background_visualizao_mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
+        jlbl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        getContentPane().add(jlbl_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
         pack();
         setLocationRelativeTo(null);
@@ -829,6 +829,6 @@ public class Tela_de_visualizacao_do_mes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel76;
     private javax.swing.JPanel jPanel77;
     private javax.swing.JPanel jPanel_menu;
-    private javax.swing.JLabel jlbl_background_visualizao_mes;
+    private javax.swing.JLabel jlbl_background;
     // End of variables declaration//GEN-END:variables
 }

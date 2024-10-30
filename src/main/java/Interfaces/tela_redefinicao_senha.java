@@ -236,7 +236,8 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
 
         jfield_cpf.setBackground(new java.awt.Color(217, 217, 217));
         jfield_cpf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jfield_cpf.setBorder(new RoundedCornerBorder(50));
+        jfield_cpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jfield_cpf.setMinimumSize(new java.awt.Dimension(550, 50));
         jfield_cpf.setPreferredSize(new java.awt.Dimension(550, 50));
         jfield_cpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,7 +253,8 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
 
         jfield_nova_senha.setBackground(new java.awt.Color(217, 217, 217));
         jfield_nova_senha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jfield_nova_senha.setBorder(new RoundedCornerBorder(50));
+        jfield_nova_senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jfield_nova_senha.setMinimumSize(new java.awt.Dimension(550, 50));
         jfield_nova_senha.setPreferredSize(new java.awt.Dimension(550, 50));
         jPanel1.add(jfield_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 207, -1, -1));
 
@@ -263,7 +265,8 @@ public class tela_redefinicao_senha extends javax.swing.JFrame {
 
         jfield_confirmacao_nova_senha.setBackground(new java.awt.Color(217, 217, 217));
         jfield_confirmacao_nova_senha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jfield_confirmacao_nova_senha.setBorder(new RoundedCornerBorder(50));
+        jfield_confirmacao_nova_senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jfield_confirmacao_nova_senha.setMinimumSize(new java.awt.Dimension(550, 50));
         jfield_confirmacao_nova_senha.setPreferredSize(new java.awt.Dimension(550, 50));
         jPanel1.add(jfield_confirmacao_nova_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 298, -1, -1));
 

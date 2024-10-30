@@ -43,7 +43,7 @@ public class Tela_Inicial extends javax.swing.JFrame {
         jButton_ListaPets = new javax.swing.JButton();
         jButton_Configs = new javax.swing.JButton();
         jButton_Sair = new javax.swing.JButton();
-        jLabel_BackgroundPadrao = new javax.swing.JLabel();
+        jlbl_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -293,8 +293,8 @@ public class Tela_Inicial extends javax.swing.JFrame {
 
         getContentPane().add(jPanel_Menu_layout, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 125, 664, 448));
 
-        jLabel_BackgroundPadrao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
-        getContentPane().add(jLabel_BackgroundPadrao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jlbl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BG_PADRAO.png"))); // NOI18N
+        getContentPane().add(jlbl_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -410,8 +410,8 @@ public class Tela_Inicial extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Funcionarios;
     private javax.swing.JButton jButton_ListaPets;
     private javax.swing.JButton jButton_Sair;
-    private javax.swing.JLabel jLabel_BackgroundPadrao;
     private javax.swing.JPanel jPanel_Menu_layout;
     private javax.swing.JPanel jPanel_menu;
+    private javax.swing.JLabel jlbl_background;
     // End of variables declaration//GEN-END:variables
 }
