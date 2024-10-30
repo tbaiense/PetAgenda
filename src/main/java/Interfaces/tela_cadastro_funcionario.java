@@ -5,6 +5,12 @@
 package Interfaces;
 
 import javax.swing.JOptionPane;
+import petagenda.Usuario;
+import petagenda.bd.BD;
+import petagenda.dados.Endereco;
+import petagenda.dados.LocalAtuacao;
+import petagenda.exception.IllegalArgumentsException;
+import petagenda.servico.Servico;
 import ui.custom.RoundedCornerBorder;
 import ui.custom.RoundedCornerButtonUI;
 
@@ -19,7 +25,75 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
      */
     public tela_cadastro_funcionario() {
         initComponents();
+    Servico[] servicosCadastrados = BD.Servico.selectAll();
+        if (servicosCadastrados != null) {
+            for (Servico s : servicosCadastrados) {
+                jcbox_Selecao_servico.addItem(s);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Nenhum Serviço disponível recebido do banco de dados.");
+        }
     }
+
+    private Usuario getFieldsInfo() {
+        Usuario novoUsuario = null;
+        String nome, cpf, telefone, cep, numero, rua, bairro, cidade;
+        Servico servicoPresta;
+        
+        nome = field_nome_funcionario.getText();
+        cpf = field_cpf.getText();
+        telefone = field_telefone.getText();
+        servicoPresta = (Servico)jcbox_Selecao_servico.getSelectedItem();
+        cep = field_cep.getText();
+        numero = field_numero.getText();
+        rua = field_rua.getText();
+        bairro = field_bairro.getText();
+        cidade = field_cidade.getText();
+        
+        // Criação do objeto do endereco;
+        Endereco endereco = null;
+        Throwable[] causesEndereco = null;
+        try {
+            endereco = new Endereco(rua, numero, bairro, cidade, cep);
+        } catch (IllegalArgumentsException exs) {
+            causesEndereco = exs.getCauses();
+        }
+        
+        Throwable[] causesUsuario = null;
+        if (endereco != null) { // Endereco foi válido
+            causesUsuario = null;
+            try {
+                novoUsuario = new Usuario(nome, endereco, cpf, telefone, servicoPresta, LocalAtuacao.valueOf(endereco));
+            } catch (IllegalArgumentsException exs) {
+                causesUsuario = exs.getCauses();
+            }
+        }
+        
+        Throwable[] todasCauses;
+        if (causesEndereco != null || causesUsuario != null) {
+            StringBuilder erros = new StringBuilder();
+            if (causesEndereco != null) {
+                for (Throwable c : causesEndereco) {
+                    if (c != null) {
+                        erros.append(c.getMessage() + "\n");
+                    }
+                }
+            }
+            
+            if (causesUsuario != null) {
+                for (Throwable c : causesUsuario) {
+                    if (c != null) {
+                        erros.append(c.getMessage() + "\n");
+                    }
+                }
+            }
+            
+            JOptionPane.showMessageDialog(null, erros.toString(), "Campos inválidos", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        return novoUsuario;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -254,7 +328,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
 
         field_nome_funcionario.setBackground(new java.awt.Color(217, 217, 217));
         field_nome_funcionario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        field_nome_funcionario.setBorder(new RoundedCornerBorder(50));
         field_nome_funcionario.setMinimumSize(new java.awt.Dimension(550, 50));
         field_nome_funcionario.setPreferredSize(new java.awt.Dimension(550, 50));
         field_nome_funcionario.addActionListener(new java.awt.event.ActionListener() {
@@ -270,7 +343,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 174, -1, -1));
 
         field_cpf.setBackground(new java.awt.Color(217, 217, 217));
-        field_cpf.setBorder(new RoundedCornerBorder(50));
         field_cpf.setMinimumSize(new java.awt.Dimension(250, 50));
         field_cpf.setPreferredSize(new java.awt.Dimension(250, 50));
         jPanel1.add(field_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 193, -1, -1));
@@ -284,7 +356,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 174, -1, -1));
 
         field_telefone.setBackground(new java.awt.Color(217, 217, 217));
-        field_telefone.setBorder(new RoundedCornerBorder(50));
         field_telefone.setMinimumSize(new java.awt.Dimension(250, 50));
         field_telefone.setPreferredSize(new java.awt.Dimension(250, 50));
         field_telefone.addActionListener(new java.awt.event.ActionListener() {
@@ -302,8 +373,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jcbox_Selecao_servico.setBackground(new java.awt.Color(217, 217, 217));
         jcbox_Selecao_servico.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
         jcbox_Selecao_servico.setForeground(new java.awt.Color(217, 217, 217));
-        jcbox_Selecao_servico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "DogWalker", "PetSitting", "DogWalker e PetSitting", "Cuidados Especiais" }));
-        jcbox_Selecao_servico.setBorder(new RoundedCornerBorder(50));
         jcbox_Selecao_servico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jcbox_Selecao_servico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 284, 250, 50));
 
@@ -313,7 +382,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_cep, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 263, -1, -1));
 
         field_cep.setBackground(new java.awt.Color(217, 217, 217));
-        field_cep.setBorder(new RoundedCornerBorder(50));
         field_cep.setMinimumSize(new java.awt.Dimension(150, 50));
         field_cep.setPreferredSize(new java.awt.Dimension(150, 50));
         jPanel1.add(field_cep, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 282, -1, -1));
@@ -324,7 +392,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 263, -1, -1));
 
         field_numero.setBackground(new java.awt.Color(217, 217, 217));
-        field_numero.setBorder(new RoundedCornerBorder(50));
         field_numero.setPreferredSize(new java.awt.Dimension(90, 50));
         jPanel1.add(field_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 282, -1, -1));
 
@@ -334,7 +401,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_rua, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 350, -1, -1));
 
         field_rua.setBackground(new java.awt.Color(217, 217, 217));
-        field_rua.setBorder(new RoundedCornerBorder(50));
         field_rua.setMinimumSize(new java.awt.Dimension(550, 50));
         field_rua.setPreferredSize(new java.awt.Dimension(550, 50));
         field_rua.addActionListener(new java.awt.event.ActionListener() {
@@ -350,7 +416,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_bairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 443, -1, -1));
 
         field_bairro.setBackground(new java.awt.Color(217, 217, 217));
-        field_bairro.setBorder(new RoundedCornerBorder(50));
         field_bairro.setMinimumSize(new java.awt.Dimension(270, 50));
         field_bairro.setPreferredSize(new java.awt.Dimension(270, 50));
         jPanel1.add(field_bairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 462, -1, -1));
@@ -361,7 +426,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 443, -1, -1));
 
         field_cidade.setBackground(new java.awt.Color(217, 217, 217));
-        field_cidade.setBorder(new RoundedCornerBorder(50));
         field_cidade.setMinimumSize(new java.awt.Dimension(250, 50));
         field_cidade.setPreferredSize(new java.awt.Dimension(250, 50));
         jPanel1.add(field_cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 462, -1, -1));
@@ -432,7 +496,7 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
 
     private void jbtn_cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cadastrarFuncionarioActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
+        Usuario cadastrar = getFieldsInfo();
     }//GEN-LAST:event_jbtn_cadastrarFuncionarioActionPerformed
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
@@ -505,7 +569,7 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel_menu;
     private javax.swing.JButton jbtn_cadastrarFuncionario;
-    private javax.swing.JComboBox<String> jcbox_Selecao_servico;
+    private javax.swing.JComboBox<petagenda.servico.Servico> jcbox_Selecao_servico;
     private javax.swing.JLabel jlbl_background_cadastro_funcionario;
     private javax.swing.JLabel jlbl_bairro;
     private javax.swing.JLabel jlbl_cep;

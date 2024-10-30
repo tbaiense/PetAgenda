@@ -10,7 +10,12 @@ package Interfaces;
  */
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import ui.custom.RoundedCornerBorder;
+import petagenda.dados.CPF;
+import petagenda.Usuario;
+import petagenda.bd.BD;
+import petagenda.exception.IllegalCpfException;
 
 public class TELA_LOGIN extends javax.swing.JFrame {
 
@@ -20,7 +25,7 @@ public class TELA_LOGIN extends javax.swing.JFrame {
     public TELA_LOGIN() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,11 +64,10 @@ public class TELA_LOGIN extends javax.swing.JFrame {
         txt_login.setOpaque(false);
         txt_login.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         txt_login.setForeground(new java.awt.Color(30, 30, 30));
-        txt_login.setText("TheMasterOfTheMasterAdmin");
         txt_login.setBorder(null);
-        txt_login.setBorder(new RoundedCornerBorder(50));
+        txt_login.setMargin(new java.awt.Insets(10, 10, 10, 10));
         txt_login.setMinimumSize(new java.awt.Dimension(550, 50));
-        txt_login.setPreferredSize(new java.awt.Dimension(550, 50));
+        txt_login.setPreferredSize(new java.awt.Dimension(552, 50));
         txt_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_loginActionPerformed(evt);
@@ -78,8 +82,7 @@ public class TELA_LOGIN extends javax.swing.JFrame {
 
         txt_senha.setBackground(new java.awt.Color(152, 141, 124));
         txt_senha.setForeground(new java.awt.Color(0, 0, 0));
-        txt_senha.setText("jPasswordField1");
-        txt_senha.setBorder(new RoundedCornerBorder(45));
+        txt_senha.setMargin(new java.awt.Insets(10, 10, 10, 10));
         txt_senha.setMinimumSize(new java.awt.Dimension(550, 50));
         txt_senha.setPreferredSize(new java.awt.Dimension(552, 50));
         txt_senha.addActionListener(new java.awt.event.ActionListener() {
@@ -113,10 +116,37 @@ public class TELA_LOGIN extends javax.swing.JFrame {
     private void jButton_ENTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ENTRARActionPerformed
         // TODO add your handling code here:
         //Adicionar conexão com o banco de dados
+        Usuario recebido;
+        String login = txt_login.getText();
+        String senha = txt_senha.getText();
         
-        tela_redefinicao_senha telaSenha = new tela_redefinicao_senha();
-        telaSenha.setVisible(true);
-        this.dispose();
+        if (login != null && senha != null) {
+            try {
+                CPF cpf = new CPF(login.trim());
+                
+                senha = senha.trim();
+            
+                recebido = BD.Usuario.login(cpf.toString(), senha);
+                if (recebido != null) {
+                    Usuario.setAtual(recebido);
+                    Tela_Inicial frame = new Tela_Inicial();
+                    frame.setVisible(true);
+                    this.dispose();
+    //                JOptionPane.showMessageDialog(this, "Sucesso no login. Prossiga para tela inicial", "Logado com sucesso", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Credenciais de acesso inválidas.", "Login falhou", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (IllegalCpfException e) {
+                JOptionPane.showMessageDialog(this, "Formato inválido de CPF", "CPF inválido", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            
+        }
+        
+        
+//        tela_redefinicao_senha telaSenha = new tela_redefinicao_senha();
+//        telaSenha.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_jButton_ENTRARActionPerformed
 
     private void txt_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_senhaActionPerformed

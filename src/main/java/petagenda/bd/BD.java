@@ -48,6 +48,51 @@ public class BD {
     static public class Usuario {
         public static final String TABLE = "usuario";
         
+        public static petagenda.Usuario login(String login, String senha) {
+            petagenda.Usuario recebido = null;
+            
+            if (login != null && senha != null) {
+                Connection conn = BD.getConnection();
+                if (conn != null) { // Se banco for acessível
+                    // Criação do statement
+                    PreparedStatement select = null;
+                    try {    
+                        select = conn.prepareStatement(
+                            String.format("SELECT id, nome, id_endereco, cpf, telefone, senha, id_servico_presta, id_permissao, id_local_atuacao FROM %s WHERE cpf = ? AND senha = ?", TABLE));
+                        select.setString(1, login);
+                        select.setString(2, senha);
+                        ResultSet rs = select.executeQuery();
+                        petagenda.Usuario[] selected = parse(rs);
+                        
+                        if (selected != null) {
+                            recebido = selected[0];
+                        }
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro na execução da query de login", JOptionPane.ERROR_MESSAGE);
+                    } 
+
+                    if (select != null) { // Se preparedStatement não falhou
+                        try {
+                            select.close();
+                        } catch (SQLException e) {
+                            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de PreparedStatement", JOptionPane.ERROR_MESSAGE);
+                        } finally {
+                            select = null;
+                        }
+                    }
+
+                    try {
+                        conn.close();
+                    } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de fechamento de conexão", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        conn = null;
+                    }
+                }
+            }
+            return recebido;
+        }
+        
         public static int insert(petagenda.Usuario usuario) {
             int r = 0;
             

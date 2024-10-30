@@ -12,6 +12,7 @@ import petagenda.servico.*;
  * @author t.baiense
  */
 public final class Usuario {
+    private static Usuario atual;
     private int id;
     private String nome;
     private Endereco endereco;
@@ -51,14 +52,18 @@ public final class Usuario {
 //            BD.Usuario.delete(lastUsuario);
 
             // Listando todos
-            Usuario[] todos = BD.Usuario.selectAll();
-            if (todos != null) {
-                for(Usuario u : todos) {
-                    if (u != null) {
-                        System.out.println(u.toString());
-                    }
-                }
-            }
+//            Usuario[] todos = BD.Usuario.selectAll();
+//            if (todos != null) {
+//                for(Usuario u : todos) {
+//                    if (u != null) {
+//                        System.out.println(u.toString());
+//                    }
+//                }
+//            }
+
+            // Teste de login
+            Usuario logado = BD.Usuario.login("78772967030", "124");
+            System.out.println(logado);
         } catch (IllegalArgumentsException exs) {
             Throwable[] causas = exs.getCauses(); // Exceções geradas pelo construtor por conta de argumentos inválidos
             System.out.println(Arrays.toString(causas)); // Printa as exceções se houver
@@ -135,6 +140,12 @@ public final class Usuario {
     
     public boolean isNew() {
         return this.getId() == NULL_ID;
+    }
+    
+    public static void setAtual(Usuario usuario) {
+        if (usuario != null && usuario.getSenha() != null) {
+            atual = usuario;
+        }
     }
     
     public void setId(int id) {

@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `pet_agenda`.`pet` (
   `cor` VARCHAR(16) NULL,
   `raca` VARCHAR(45) NOT NULL,
   `sexo` ENUM("M", "F") NOT NULL,
-  `porte` VARCHAR(20) NULL,
+  `porte` ENUM("Pequeno", "Médio", "Grande") NOT NULL,
   `comportamento` VARCHAR(80) NULL,
   `e_castrado` BIT(1) NOT NULL,
   `caminho_cartao_vacinacao` VARCHAR(255) NULL,

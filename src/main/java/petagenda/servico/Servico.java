@@ -193,4 +193,9 @@ public final class Servico {
     public String getDescricao() {
         return this.descricao;
     }
+    
+    @Override
+    public String toString() {
+        return this.getNome();
+    }
 }

@@ -1,7 +1,9 @@
 package petagenda;
 
 //import java.util.Arrays;
+import petagenda.exception.IllegalPorteException;
 import petagenda.dados.Endereco;
+import petagenda.dados.Porte;
 import petagenda.exception.*;
 import petagenda.dados.Sexo;
 //import petagenda.servico.Servico;
@@ -18,34 +20,19 @@ public final class Pet {
     private String cor;
     private String raca;
     private Sexo sexo;
-    private String porte;
+    private Porte porte;
     private String comportamento;
     private boolean eCastrado;
     private String caminhoCartaoVacinacao;
     private String estadoSaude;
     
-    // Exemplo de uso
-//    public static void main(String[] args) {
-//        try {
-//            Endereco vitoria = new Endereco("rua vila boa", "numero 100", "itaparica", "vitoria", "12345678");
-//            
-//            TipoServico passeio = new TipoServico("Passeio");
-//            Servico dogwalker = new Servico("DogWalker", passeio, 60, 100.99);
-//            
-//            Cliente maria = new Cliente("Maria", vitoria, "40028922", dogwalker);
-//            System.out.println(maria.toString());
-//        } catch (IllegalArgumentsException exs) {
-//            Throwable[] causes = exs.getCauses(); 
-//            System.out.println(Arrays.toString(causes));
-//        }
-//    }
     
-    public Pet(String nome, Cliente dono, String raca, Sexo sexo, boolean eCastrado) {
-        this(1, nome, dono, raca, sexo, eCastrado);
+    public Pet(String nome, Cliente dono, String raca, Sexo sexo, Porte porte, boolean eCastrado) {
+        this(1, nome, dono, raca, sexo, porte, eCastrado);
         this.id = -1;
     }
     
-    public Pet(int id, String nome, Cliente dono, String raca, Sexo sexo, boolean eCastrado) {
+    public Pet(int id, String nome, Cliente dono, String raca, Sexo sexo, Porte porte, boolean eCastrado) {
         IllegalArgumentsException exs = new IllegalArgumentsException();
         
         try {
@@ -75,6 +62,12 @@ public final class Pet {
         try {
             setSexo(sexo);
         } catch (IllegalSexoException ex) {
+            exs.addCause(ex);
+        }
+        
+        try {
+            setPorte(porte);
+        } catch (IllegalPorteException ex) {
             exs.addCause(ex);
         }
         
@@ -188,24 +181,36 @@ public final class Pet {
         return this.eCastrado;
     }
     
-    public void setPorte(String porte) {
+    public void setPorte(Porte porte) {
         if (porte == null) {
-//            throw new IllegalNomeException("porte não pode ser nulo");
-            this.porte = null;
+            throw new IllegalPorteException("porte não pode ser nulo");
         } else {
-            porte = porte.trim();
-            if (porte.isEmpty()) {
-//                throw new IllegalNomeException("porte não pode ser vazia");
-                this.porte = null;
-            } else if (porte.length() > 16) {
-                throw new IllegalNomeException("porte não pode conter mais do que 20 caracteres");
-            }
             this.porte = porte;
         }
     }
     
-    public String getPorte() {
+//    public void setPorte(String porte) {
+//        if (porte == null) {
+////            throw new IllegalPorteException("porte não pode ser nulo");
+//            this.porte = null;
+//        } else {
+//            porte = porte.trim();
+//            if (porte.isEmpty()) {
+////                throw new IllegalNomeException("porte não pode ser vazia");
+//                this.porte = null;
+//            } else if (porte.length() > 16) {
+//                throw new IllegalNomeException("porte não pode conter mais do que 20 caracteres");
+//            }
+//            this.porte = porte;
+//        }
+//    }
+    
+    public Porte getPorte() {
         return this.porte;
+    }
+    
+    public String getPorteTexto() {
+        return this.porte.getTexto();
     }
     
     public void setComportamento(String comportamento) {

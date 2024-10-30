@@ -159,6 +159,11 @@ public class Tela_Inicial extends javax.swing.JFrame {
         btn_funcionarios.setMaximumSize(new java.awt.Dimension(205, 50));
         btn_funcionarios.setMinimumSize(new java.awt.Dimension(205, 50));
         btn_funcionarios.setPreferredSize(new java.awt.Dimension(205, 60));
+        btn_funcionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_funcionariosActionPerformed(evt);
+            }
+        });
         jPanel_menu.add(btn_funcionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 428, -1, -1));
 
         btn_pets.setBackground(new java.awt.Color(124, 115, 101));
@@ -361,6 +366,12 @@ public class Tela_Inicial extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btn_funcionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_funcionariosActionPerformed
+        tela_cadastro_funcionario frame = new tela_cadastro_funcionario();
+        frame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_funcionariosActionPerformed
 
     /**
      * @param args the command line arguments

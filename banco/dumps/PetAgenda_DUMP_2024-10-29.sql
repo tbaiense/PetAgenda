@@ -330,7 +330,7 @@ CREATE TABLE `pet` (
   `cor` varchar(16) DEFAULT NULL,
   `raca` varchar(45) NOT NULL,
   `sexo` enum('M','F') NOT NULL,
-  `porte` varchar(20) DEFAULT NULL,
+  `porte` ENUM("Pequeno", "Médio", "Grande") NOT NULL,
   `comportamento` varchar(80) DEFAULT NULL,
   `e_castrado` bit(1) NOT NULL,
   `caminho_cartao_vacinacao` varchar(255) DEFAULT NULL,
