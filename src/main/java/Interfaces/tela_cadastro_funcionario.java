@@ -9,7 +9,7 @@ import petagenda.Usuario;
 import petagenda.bd.BD;
 import petagenda.dados.Endereco;
 import petagenda.dados.LocalAtuacao;
-import petagenda.exception.IllegalArgumentsException;
+import petagenda.exception.*;
 import petagenda.servico.Servico;
 import ui.custom.RoundedCornerBorder;
 import ui.custom.RoundedCornerButtonUI;
@@ -50,41 +50,34 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         bairro = field_bairro.getText();
         cidade = field_cidade.getText();
         
+        IllegalArgumentsException exsCadastro = new IllegalArgumentsException();
         // Criação do objeto do endereco;
         Endereco endereco = null;
-        Throwable[] causesEndereco = null;
         try {
             endereco = new Endereco(rua, numero, bairro, cidade, cep);
         } catch (IllegalArgumentsException exs) {
-            causesEndereco = exs.getCauses();
+            exsCadastro.addCause(exs.getCauses());
         }
         
-        Throwable[] causesUsuario = null;
-        if (endereco != null) { // Endereco foi válido
-            causesUsuario = null;
-            try {
-                novoUsuario = new Usuario(nome, endereco, cpf, telefone, servicoPresta, LocalAtuacao.valueOf(endereco));
-            } catch (IllegalArgumentsException exs) {
-                causesUsuario = exs.getCauses();
-            }
+        LocalAtuacao localAtuacao = null;
+        try {
+            localAtuacao = LocalAtuacao.valueOf(endereco);
+        } catch (NullPointerException ex) {
+            exsCadastro.addCause(ex);
         }
         
-        Throwable[] todasCauses;
-        if (causesEndereco != null || causesUsuario != null) {
-            StringBuilder erros = new StringBuilder();
-            if (causesEndereco != null) {
-                for (Throwable c : causesEndereco) {
-                    if (c != null) {
-                        erros.append(c.getMessage() + "\n");
-                    }
-                }
-            }
+        try {
+            novoUsuario = new Usuario(nome, endereco, cpf, telefone, servicoPresta, localAtuacao);
+        } catch (IllegalArgumentsException exs) {
+            exsCadastro.addCause(exs.getCauses());
+        }
             
-            if (causesUsuario != null) {
-                for (Throwable c : causesUsuario) {
-                    if (c != null) {
-                        erros.append(c.getMessage() + "\n");
-                    }
+        if (exsCadastro.size() > 0) {
+            Throwable[] todasCauses = exsCadastro.getCauses();
+            StringBuilder erros = new StringBuilder();
+            for (Throwable c : todasCauses) {
+                if (c != null) {
+                    erros.append(c.getMessage() + "\n");
                 }
             }
             
@@ -497,6 +490,10 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     private void jbtn_cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cadastrarFuncionarioActionPerformed
         // TODO add your handling code here:
         Usuario cadastrar = getFieldsInfo();
+        if (cadastrar != null) {
+            BD.Usuario.insert(cadastrar);
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+        }
     }//GEN-LAST:event_jbtn_cadastrarFuncionarioActionPerformed
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed

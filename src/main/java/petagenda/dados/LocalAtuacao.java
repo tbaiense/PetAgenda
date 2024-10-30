@@ -83,7 +83,7 @@ public final class LocalAtuacao {
     
     public static LocalAtuacao valueOf(Endereco endereco) {
         if (endereco == null) {
-            throw new NullPointerException("endereco não pode ser nulo");
+            throw new NullPointerException("Endereco não pode ser nulo");
         } else {
             return new LocalAtuacao(endereco.BAIRRO, endereco.CIDADE);
         }

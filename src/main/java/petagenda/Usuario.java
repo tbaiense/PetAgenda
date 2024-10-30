@@ -150,7 +150,7 @@ public final class Usuario {
     
     public void setId(int id) {
         if (id < 0) {
-            throw new IllegalIdException("id não pode ser inferior a zero");
+            throw new IllegalIdException("Id não pode ser inferior a zero");
         } else {
             this.id = id;
         }
@@ -162,13 +162,13 @@ public final class Usuario {
     
     public void setNome(String nome) {
         if (nome == null) {
-            throw new IllegalNomeException("nome não pode ser nulo");
+            throw new IllegalNomeException("Nome não pode ser nulo");
         }
         nome = nome.trim();
         if (nome.isEmpty()) {
-            throw new IllegalNomeException("nome não pode ser vazio");
+            throw new IllegalNomeException("Nome não pode ser vazio");
         } else if (nome.length() > 64) {
-            throw new IllegalNomeException("nome não pode conter mais do que 64 caracteres");
+            throw new IllegalNomeException("Nome não pode conter mais do que 64 caracteres");
         }
         this.nome = nome;
     }
@@ -209,13 +209,13 @@ public final class Usuario {
     
     public void setTelefone(String tel) {
         if (tel == null) {
-            throw new IllegalTelefoneException("telefone não pode ser nulo");
+            throw new IllegalTelefoneException("Telefone não pode ser nulo");
         }
         tel = tel.trim();
         if (tel.isEmpty()) {
-            throw new IllegalTelefoneException("telefone não pode ser vazio");
+            throw new IllegalTelefoneException("Telefone não pode ser vazio");
         } else if (tel.length() > 12) {
-            throw new IllegalTelefoneException("telefone não pode conter mais do que 12 caracteres");
+            throw new IllegalTelefoneException("Telefone não pode conter mais do que 12 caracteres");
         }
         this.telefone = tel;
     }
@@ -239,16 +239,16 @@ public final class Usuario {
     
     public void setSenha(String senha) {
         if (senha == null) {
-            throw new IllegalSenhaException("senha não pode ser nula");
+            throw new IllegalSenhaException("Senha não pode ser nula");
         }
         senha = senha.trim();
 
         if (senha.isEmpty()) {
-            throw new IllegalSenhaException("senha não pode ser vazia");
+            throw new IllegalSenhaException("Senha não pode ser vazia");
         } 
         
         if (senha.length() > 32) {
-            throw new IllegalSenhaException("senha não pode conter mais do que 32 caracteres");
+            throw new IllegalSenhaException("Senha não pode conter mais do que 32 caracteres");
         }
         
         this.senha = senha;
@@ -264,7 +264,7 @@ public final class Usuario {
     
     public void setServico(Servico servico) {
         if (servico == null) {
-            throw new IllegalServicoException("serviço não pode ser nulo");
+            throw new IllegalServicoException("Serviço não pode ser nulo");
         } else {
             this.servicoPresta = servico;
         }
@@ -276,7 +276,7 @@ public final class Usuario {
     
     public void setLocalAtuacao(LocalAtuacao local) {
         if (local == null) {
-            throw new IllegalLocalAtuacaoException("local de atuação não pode ser nulo");
+            throw new IllegalLocalAtuacaoException("Local de atuação não pode ser nulo");
         } else {
             this.localAtuacao = local;
         }

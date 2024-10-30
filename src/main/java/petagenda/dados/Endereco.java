@@ -40,51 +40,51 @@ public final class Endereco {
         
         // Validação de rua
         if (rua == null) {
-            exs.addCause(new IllegalRuaException("rua não pode ser nulo"));
+            exs.addCause(new IllegalRuaException("Rua não pode ser nulo"));
         } else {
             rua = rua.trim();
             if (rua.isEmpty()) {
-                exs.addCause(new IllegalRuaException("rua não pode ser vazio")); 
+                exs.addCause(new IllegalRuaException("Rua não pode ser vazia")); 
             } else if (rua.length() > 45) {
-                exs.addCause(new IllegalRuaException("rua não pode mais do que 45 caracteres"));
+                exs.addCause(new IllegalRuaException("Rua não pode conter mais do que 45 caracteres"));
             }
         }
         
         //Validação de numero
         if (numero == null) {
-            exs.addCause(new IllegalNumeroException("número não pode ser nulo"));
+            exs.addCause(new IllegalNumeroException("Número não pode ser nulo"));
         } else {
             numero = numero.trim();
             if (numero.isEmpty()) {
-                exs.addCause(new IllegalNumeroException("número não pode ser vazio")); 
+                exs.addCause(new IllegalNumeroException("Número não pode ser vazio")); 
             } else if (numero.length() > 16) {
-                exs.addCause(new IllegalNumeroException("número não pode mais do que 16 caracteres"));
+                exs.addCause(new IllegalNumeroException("Número não pode conter mais do que 16 caracteres"));
             }
         }
         
         //Validação de bairro
         if (bairro == null) {
-            exs.addCause(new IllegalBairroException("bairro não pode ser nulo"));
+            exs.addCause(new IllegalBairroException("Bairro não pode ser nulo"));
         } else {
             bairro = bairro.trim();
             if (bairro.isEmpty()) {
-                exs.addCause(new IllegalBairroException("bairro não pode ser vazio")); 
+                exs.addCause(new IllegalBairroException("Bairro não pode ser vazio")); 
             } else if (bairro.length() > 32) {
-                exs.addCause(new IllegalBairroException("bairro não pode mais do que 32 caracteres"));
+                exs.addCause(new IllegalBairroException("Bairro não pode conter mais do que 32 caracteres"));
             }
         }
         
         
         //Validação de cidade
         if (cidade == null) {
-            exs.addCause(new IllegalCidadeException("cidade não pode ser nulo"));
+            exs.addCause(new IllegalCidadeException("Cidade não pode ser nula"));
         } else {
             cidade = cidade.trim();
             
             if (cidade.isEmpty()) {
-                exs.addCause(new IllegalCidadeException("cidade não pode ser vazio")); 
+                exs.addCause(new IllegalCidadeException("Cidade não pode ser vazio")); 
             } else if (cidade.length() > 32) {
-                exs.addCause(new IllegalCidadeException("cidade não pode mais do que 32 caracteres"));
+                exs.addCause(new IllegalCidadeException("Cidade não pode conter mais do que 32 caracteres"));
             }
         }
         
@@ -122,7 +122,7 @@ public final class Endereco {
     
     public void setId(int id) {
         if (id < 0) {
-            throw new IllegalIdException("id não pode ser inferior a 0");
+            throw new IllegalIdException("Id não pode ser inferior a 0");
         } else {
             this.id = id;
         }

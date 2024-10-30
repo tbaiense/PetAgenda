@@ -52,8 +52,14 @@ public final class IllegalArgumentsException extends IllegalArgumentException {
         }
     }
     
-    public void addCause(IllegalArgumentException cause) {
-        this.causeList.add(cause);
+    public void addCause(Throwable... causes) {
+        if (causes != null) {
+            for (Throwable ex : causes) {
+                if (ex != null) {
+                    this.causeList.add(ex);
+                }
+            }
+        }
     }
     
     public int size() { // Retorna a quantidade de causes

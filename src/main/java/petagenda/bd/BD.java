@@ -24,11 +24,11 @@ import petagenda.exception.IllegalUsuarioException;
  */
 public class BD {
     static final String SGBD = "mysql";
-    static final String ADDRESS = "localhost";
+    static final String ADDRESS = "10.0.0.107";
     static final String PORT = "3306";
     static final String SCHEMA = "pet_agenda";
     static final String USER = "root";
-    static final String USER_PWD = "";
+    static final String USER_PWD = "tmb";
     
     static {
         DriverManager.setLoginTimeout(5);
