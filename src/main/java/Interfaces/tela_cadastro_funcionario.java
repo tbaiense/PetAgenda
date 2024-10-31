@@ -221,7 +221,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 174, -1, -1));
 
         field_cpf.setBackground(new java.awt.Color(217, 217, 217));
-
         field_cpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         field_cpf.setMinimumSize(new java.awt.Dimension(250, 50));
         field_cpf.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -236,7 +235,6 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jPanel1.add(jlbl_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 174, -1, -1));
 
         field_telefone.setBackground(new java.awt.Color(217, 217, 217));
-
         field_telefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         field_telefone.setMinimumSize(new java.awt.Dimension(250, 50));
         field_telefone.setPreferredSize(new java.awt.Dimension(250, 50));
@@ -255,9 +253,8 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jcbox_Selecao_servico.setBackground(new java.awt.Color(217, 217, 217));
         jcbox_Selecao_servico.setFont(new java.awt.Font("Merriweather", 0, 14)); // NOI18N
         jcbox_Selecao_servico.setForeground(new java.awt.Color(217, 217, 217));
-        jcbox_Selecao_servico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "DogWalker", "PetSitting", "DogWalker e PetSitting", "Cuidados Especiais" }));
         jcbox_Selecao_servico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jcbox_Selecao_servico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jcbox_Selecao_servico.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jcbox_Selecao_servico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbox_Selecao_servicoActionPerformed(evt);
@@ -329,7 +326,7 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
         jbtn_cadastrarFuncionario.setForeground(new java.awt.Color(255, 255, 255));
         jbtn_cadastrarFuncionario.setText("CADASTRAR");
         jbtn_cadastrarFuncionario.setBorder(null);
-        jbtn_cadastrarFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_cadastrarFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbtn_cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_cadastrarFuncionarioActionPerformed(evt);
@@ -430,7 +427,7 @@ public class tela_cadastro_funcionario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel_menu;
     private javax.swing.JButton jbtn_cadastrarFuncionario;
-    private javax.swing.JComboBox<String> jcbox_Selecao_servico;
+    private javax.swing.JComboBox<petagenda.servico.Servico> jcbox_Selecao_servico;
     private javax.swing.JLabel jlbl_background;
     private javax.swing.JLabel jlbl_bairro;
     private javax.swing.JLabel jlbl_cep;

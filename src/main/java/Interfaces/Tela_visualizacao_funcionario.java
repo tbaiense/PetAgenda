@@ -34,6 +34,7 @@ public class Tela_visualizacao_funcionario extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel_menu = new javax.swing.JPanel();
+        btn_cadastrarFuncionario = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollBar1 = new javax.swing.JScrollBar();
         jLabel1 = new javax.swing.JLabel();
@@ -51,6 +52,14 @@ public class Tela_visualizacao_funcionario extends javax.swing.JFrame {
         jPanel_menu.setPreferredSize(new java.awt.Dimension(205, 768));
         jPanel_menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 205, 768));
+
+        btn_cadastrarFuncionario.setText("Cadastrar");
+        btn_cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarFuncionarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_cadastrarFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 670, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -81,6 +90,12 @@ public class Tela_visualizacao_funcionario extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarFuncionarioActionPerformed
+        tela_cadastro_funcionario frame = new tela_cadastro_funcionario();
+        frame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_cadastrarFuncionarioActionPerformed
 
     private void initMenuPanel() {
         MenuPanel menuPanel = new MenuPanel();
@@ -124,6 +139,7 @@ public class Tela_visualizacao_funcionario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_cadastrarFuncionario;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel_menu;
     private javax.swing.JScrollBar jScrollBar1;
