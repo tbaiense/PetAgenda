@@ -14,13 +14,12 @@ import ui.custom.RoundedCornerButtonUI;
  *
  * @author kevin
  */
-
-public class Tela_visualizacao_pet extends javax.swing.JFrame {
+public class Tela_visualizacao_cliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form tela_cadastro_funcionario
+     * Creates new form tela_cadastro_cliente
      */
-    public Tela_visualizacao_pet() {
+    public Tela_visualizacao_cliente() {
         initComponents();
         initMenuPanel();
     }
@@ -35,6 +34,7 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel_menu = new javax.swing.JPanel();
+        jlbl_Clientes = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollBar1 = new javax.swing.JScrollBar();
         jlbl_background = new javax.swing.JLabel();
@@ -51,6 +51,12 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         jPanel_menu.setPreferredSize(new java.awt.Dimension(205, 768));
         jPanel_menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 205, 768));
+
+        jlbl_Clientes.setBackground(new java.awt.Color(255, 255, 255));
+        jlbl_Clientes.setFont(new java.awt.Font("Merriweather", 0, 45)); // NOI18N
+        jlbl_Clientes.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_Clientes.setText("Clientes");
+        getContentPane().add(jlbl_Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setMinimumSize(new java.awt.Dimension(905, 560));
@@ -73,6 +79,7 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
     private void initMenuPanel() {
         MenuPanel menuPanel = new MenuPanel();
         jPanel_menu.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 205, 768));
@@ -82,42 +89,45 @@ public class Tela_visualizacao_pet extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-    /* Set the Nimbus look and feel */
-    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-     */
-    try {
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-            if ("Nimbus".equals(info.getName())) {
-                javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                break;
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Tela_visualizacao_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Tela_visualizacao_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Tela_visualizacao_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Tela_visualizacao_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    } catch (ClassNotFoundException ex) {
-        java.util.logging.Logger.getLogger(Tela_visualizacao_pet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (InstantiationException ex) {
-        java.util.logging.Logger.getLogger(Tela_visualizacao_pet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (IllegalAccessException ex) {
-        java.util.logging.Logger.getLogger(Tela_visualizacao_pet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-        java.util.logging.Logger.getLogger(Tela_visualizacao_pet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    }
-    //</editor-fold>
-    //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
-    /* Create and display the form */
-    java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
-            new Tela_visualizacao_pet().setVisible(true);
-        }
-    });
-}
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Tela_visualizacao_cliente().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel_menu;
     private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JLabel jlbl_Clientes;
     private javax.swing.JLabel jlbl_background;
     // End of variables declaration//GEN-END:variables
 
