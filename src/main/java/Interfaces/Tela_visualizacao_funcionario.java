@@ -36,6 +36,7 @@ public class Tela_visualizacao_funcionario extends javax.swing.JFrame {
         jPanel_menu = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jScrollBar1 = new javax.swing.JScrollBar();
+        jLabel1 = new javax.swing.JLabel();
         jlbl_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,13 +53,21 @@ public class Tela_visualizacao_funcionario extends javax.swing.JFrame {
         getContentPane().add(jPanel_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 205, 768));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel6.setMinimumSize(new java.awt.Dimension(905, 560));
         jPanel6.setOpaque(false);
         jPanel6.setPreferredSize(new java.awt.Dimension(905, 560));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollBar1.setOrientation(JScrollBar.VERTICAL);
-        jPanel6.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(889, 0, -1, 560));
+        jScrollBar1.setPreferredSize(new java.awt.Dimension(12, 490));
+        jPanel6.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 70, -1, -1));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Merriweather", 0, 45)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Funcionários");
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 20, -1, -1));
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 51, -1, -1));
 
@@ -114,6 +123,7 @@ public class Tela_visualizacao_funcionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel_menu;
     private javax.swing.JScrollBar jScrollBar1;

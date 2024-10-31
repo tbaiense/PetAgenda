@@ -265,6 +265,16 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
         jbtn_cadastrarPet.setText("CADASTRAR");
         jbtn_cadastrarPet.setBorder(null);
         jbtn_cadastrarPet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtn_cadastrarPet.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jbtn_cadastrarPetMouseMoved(evt);
+            }
+        });
+        jbtn_cadastrarPet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jbtn_cadastrarPetMouseExited(evt);
+            }
+        });
         jbtn_cadastrarPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_cadastrarPetActionPerformed(evt);
@@ -303,6 +313,14 @@ public class tela_cadastro_pet extends javax.swing.JFrame {
     private void txtf_RacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_RacaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtf_RacaActionPerformed
+
+    private void jbtn_cadastrarPetMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_cadastrarPetMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtn_cadastrarPetMouseMoved
+
+    private void jbtn_cadastrarPetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_cadastrarPetMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtn_cadastrarPetMouseExited
     private void initMenuPanel() {
         MenuPanel menuPanel = new MenuPanel();
         jPanel_menu.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 205, 768));

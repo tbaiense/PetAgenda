@@ -34,9 +34,9 @@ public class Tela_visualizacao_cliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel_menu = new javax.swing.JPanel();
-        jlbl_Clientes = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollBar1 = new javax.swing.JScrollBar();
+        jlbl_Clientes = new javax.swing.JLabel();
         jlbl_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,20 +52,22 @@ public class Tela_visualizacao_cliente extends javax.swing.JFrame {
         jPanel_menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 205, 768));
 
-        jlbl_Clientes.setBackground(new java.awt.Color(255, 255, 255));
-        jlbl_Clientes.setFont(new java.awt.Font("Merriweather", 0, 45)); // NOI18N
-        jlbl_Clientes.setForeground(new java.awt.Color(0, 0, 0));
-        jlbl_Clientes.setText("Clientes");
-        getContentPane().add(jlbl_Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, -1, -1));
-
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel6.setMinimumSize(new java.awt.Dimension(905, 560));
         jPanel6.setOpaque(false);
         jPanel6.setPreferredSize(new java.awt.Dimension(905, 560));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollBar1.setOrientation(JScrollBar.VERTICAL);
-        jPanel6.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(889, 0, -1, 560));
+        jScrollBar1.setPreferredSize(new java.awt.Dimension(12, 490));
+        jPanel6.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 70, -1, -1));
+
+        jlbl_Clientes.setBackground(new java.awt.Color(255, 255, 255));
+        jlbl_Clientes.setFont(new java.awt.Font("Merriweather", 0, 45)); // NOI18N
+        jlbl_Clientes.setForeground(new java.awt.Color(0, 0, 0));
+        jlbl_Clientes.setText("Clientes");
+        jPanel6.add(jlbl_Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 20, -1, -1));
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 51, -1, -1));
 

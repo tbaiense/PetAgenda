@@ -640,6 +640,8 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="jbtn_cadastrarPetMouseMoved"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jbtn_cadastrarPetMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtn_cadastrarPetActionPerformed"/>
           </Events>
           <AuxValues>
